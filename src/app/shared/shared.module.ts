@@ -1,7 +1,17 @@
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatCheckboxModule,
-  MatIconModule, MatMenuModule, MatSidenavModule,
-  MatExpansionModule, MatListModule } from '@angular/material';
+import { MatButtonModule, 
+  MatCheckboxModule,
+  MatIconModule, 
+  MatMenuModule, 
+  MatSidenavModule,
+  MatExpansionModule, 
+  MatListModule, 
+  MatFormFieldModule, 
+  MatCardModule, 
+  MatDividerModule, 
+  MatInputModule, 
+  MatGridListModule, 
+  MatDialogModule} from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -17,6 +27,14 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FlexLayoutModule,
     MatExpansionModule,
     MatListModule,
+    MatFormFieldModule,
+    MatCardModule,
+    MatDividerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatGridListModule,
+    MatExpansionModule,
+    MatDialogModule
   ],
   exports: [
     MatButtonModule,
@@ -27,7 +45,15 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatSidenavModule,
     FlexLayoutModule,
     MatExpansionModule,
-    MatListModule
+    MatListModule,
+    MatFormFieldModule,
+    MatCardModule,
+    MatDividerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatGridListModule,
+    MatExpansionModule,
+    MatDialogModule
   ],
 })
 export class SharedModule { }

@@ -3,11 +3,11 @@ import { MediaChange, MediaObserver } from '@angular/flex-layout';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class MenuComponent implements OnInit {
+export class HomeComponent implements OnInit {
   opened = true;
   over = 'side';
   expandHeight = '42px';

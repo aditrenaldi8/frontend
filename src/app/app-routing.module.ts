@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MenuComponent } from './menu/menu.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: '', component: MenuComponent, children: [
-    // { path: '', loadChildren: './transaction/transaction.module#TransactionModule' },
-    // { path: 'a', loadChildren: './account/account.module#AccountModule' },
-  ]},
-  // { path: 'auth', loadChildren: './auth/auth.module#AuthModule' },
-  // { path: 'p', loadChildren: './pages/pages.module#PagesModule' },
-  // { path: '**', component: NotfoundComponent }
+  {
+      path: '',
+      redirectTo: '/login',
+      pathMatch: 'full'
+  },
+  {
+      path: 'login',
+      component: LoginComponent,
+  },
 ];
 
 @NgModule({
