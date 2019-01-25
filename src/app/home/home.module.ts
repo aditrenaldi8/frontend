@@ -8,13 +8,15 @@ import { QuestionComponent } from '../question/question.component';
 import { RouterModule } from '@angular/router';
 import { RegisterComponent } from '../register/register.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
+import { ResultComponent } from '../result/result.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     QuestionComponent,
     RegisterComponent,
-    DashboardComponent
+    DashboardComponent,
+    ResultComponent
   ],
   imports: [
     CommonModule,
