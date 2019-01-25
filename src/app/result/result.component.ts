@@ -11,8 +11,13 @@ export class ResultComponent implements OnInit {
   public doughnutChartData = [1, 2];
   public doughnutChartType = 'doughnut';
 
+  show:boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+    setTimeout(()=>{
+      this.show = true;
+    },200)
   }
 }
