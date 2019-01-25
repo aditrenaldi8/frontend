@@ -21,20 +21,20 @@
             </mat-grid-tile>
         </mat-grid-list>
 
-        <mat-grid-list cols="12" rowHeight="250px">
+        <!-- <mat-grid-list cols="12" rowHeight="250px">
             <mat-grid-tile
                 [colspan]="12"
                 [rowspan]="1"
-            >
-                <!-- <div style="display: block"> -->
+            > -->
+                <div class="chart">
                   <canvas baseChart
                               [data]="doughnutChartData"
                               [labels]="doughnutChartLabels"
                               [chartType]="doughnutChartType"></canvas>
-                <!-- </div> -->
-            </mat-grid-tile>
+                </div>
+            <!-- </mat-grid-tile>
 
-        </mat-grid-list>
+        </mat-grid-list> -->
     </mat-card-content>
     <mat-card-actions style="text-align: right;">
         <!-- <a routerLink="/home">
