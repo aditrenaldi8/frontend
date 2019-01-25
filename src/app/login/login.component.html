@@ -15,6 +15,7 @@
                     <mat-form-field>
                         <input matInput placeholder="Password" formControlName="password" [type]="hide ? 'password' : 'text'">
                         <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        <mat-error *ngIf="form.controls.password.invalid"> You must enter a value </mat-error>
                     </mat-form-field>
                 </form>
             </mat-card-content>

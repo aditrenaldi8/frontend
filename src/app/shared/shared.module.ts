@@ -11,7 +11,8 @@ import { MatButtonModule,
   MatDividerModule, 
   MatInputModule, 
   MatGridListModule, 
-  MatDialogModule} from '@angular/material';
+  MatDialogModule,
+  MatRadioModule} from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -34,7 +35,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatInputModule,
     MatGridListModule,
     MatExpansionModule,
-    MatDialogModule
+    MatDialogModule,
+    MatRadioModule
   ],
   exports: [
     MatButtonModule,
@@ -53,7 +55,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatInputModule,
     MatGridListModule,
     MatExpansionModule,
-    MatDialogModule
+    MatDialogModule,
+    MatRadioModule
   ],
 })
 export class SharedModule { }
