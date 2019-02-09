@@ -39,98 +39,13 @@
                         <mat-error *ngIf="form.get('package').invalid"> You must enter a value </mat-error>
                     </mat-form-field>
                 </mat-grid-tile>
-
-                <!-- <mat-grid-tile [colspan]="11" [rowspan]="1"></mat-grid-tile> -->
-
-                <mat-grid-tile
-                    [colspan]="12"
-                    [rowspan]="1"
-                >
-                    
-                    <button class="text-inside-grid-right" mat-raised-button color="primary" (click)="submit()">Submit</button>
-                </mat-grid-tile>
-
             </mat-grid-list>
-
-            <div style="margin-top:20px" *ngIf="questions && questions.length != 0" >
-                <mat-grid-list cols="12" rowHeight="50px">
-                        <mat-grid-tile
-                            [colspan]="12"
-                            [rowspan]="1"
-                        >
-                            
-                            <button *ngIf="!time" mat-raised-button color="primary" (click)="start()">Start Test</button>
-                            <h3 *ngIf="time">
-                                PsychoTest App 
-                            </h3>
-
-                        </mat-grid-tile>
-                </mat-grid-list>
-            </div>
-
-            <div *ngIf="questions && questions.length != 0&& time" >
-                <mat-grid-list cols="12" rowHeight="50px">
-                    <mat-grid-tile
-                        [colspan]="6"
-                        [rowspan]="1"
-                    >
-                        <span class="text-inside-grid"> Good luck! </span>
-                    
-                    </mat-grid-tile>
-
-                    <mat-grid-tile
-                        [colspan]="6"
-                        [rowspan]="1"
-                    >
-                        <span *ngIf="time" class="text-inside-grid-right">
-                            <b>{{time}}</b>
-                        </span>
-                    
-                    </mat-grid-tile>
-                </mat-grid-list>
-            </div>
-
-            <div *ngIf="questions && questions.length != 0&& time" >
-                <div formArrayName="question"> 
-                    <mat-accordion *ngFor="let item of formArray.controls, let i= index" [formGroupName]="i">
-                        <mat-expansion-panel>
-                            <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    Question {{ i + 1 }}
-                                </mat-panel-title>
-                                <!-- <mat-panel-description>
-                                    Fill this field
-                                </mat-panel-description> -->
-                            </mat-expansion-panel-header>
-                        
-                            <mat-grid-list cols="12" rowHeight="50px" style="margin-left:20px">
-                                <mat-grid-tile [colspan]="12" [rowspan]="1" [style.background]="gray">
-                                    <span class="text-inside-grid">
-                                        {{ questions[i].question }}
-                                    </span>
-                                </mat-grid-tile>
-                            </mat-grid-list>
-
-                            <mat-grid-list cols="12" rowHeight="150px" style="margin-left:20px">
-                                <mat-grid-tile [colspan]="12" [rowspan]="1" [style.background]="gray">
-                                    <mat-radio-group class="example-radio-group text-inside-grid" formControlName="answer">
-                                        <mat-radio-button class="example-radio-button"  *ngFor="let item of questions[i].answer" [value]="item.answer">
-                                            {{item.answer}}
-                                        </mat-radio-button>
-                                    </mat-radio-group>
-                                </mat-grid-tile>
-                            </mat-grid-list>
-
-                        </mat-expansion-panel>
-                    </mat-accordion>
-                </div>
-            </div>
-            
         </form>
+
     </mat-card-content>
-    <mat-card-actions style="text-align: right;" *ngIf="questions && questions.length != 0&& time">
-        <a routerLink="/home/register/result">
-            <button mat-raised-button color="primary">Submit Answer</button>
+    <mat-card-actions style="text-align: right;">
+        <a routerLink="/question">
+            <button mat-raised-button color="primary">Simpan</button>
         </a>
     </mat-card-actions>
 </mat-card>

@@ -13,10 +13,10 @@ import { ResultComponent } from '../result/result.component';
 @NgModule({
   declarations: [
     HomeComponent,
-    QuestionComponent,
+    // QuestionComponent,
     RegisterComponent,
     DashboardComponent,
-    ResultComponent
+    // ResultComponent
   ],
   imports: [
     CommonModule,

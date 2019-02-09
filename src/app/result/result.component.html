@@ -7,16 +7,7 @@
                 [rowspan]="1"
             >
                 <h1>
-                    Result!
-                </h1>
-            </mat-grid-tile>
-
-            <mat-grid-tile
-                [colspan]="12"
-                [rowspan]="1"
-            >
-                <h1>
-                    Your Score : 67
+                    Psychogram
                 </h1>
             </mat-grid-tile>
         </mat-grid-list>
@@ -27,18 +18,22 @@
                 [rowspan]="1"
             > -->
                 <div class="chart" *ngIf='show'>
-                  <canvas baseChart
-                              [data]="doughnutChartData"
-                              [labels]="doughnutChartLabels"
-                              [chartType]="doughnutChartType"></canvas>
+                    <canvas baseChart
+                        [datasets]="lineChartData"
+                        [labels]="lineChartLabels"
+                        [options]="lineChartOptions"
+                        [legend]="lineChartLegend"
+                        [chartType]="lineChartType"
+                    >
+                    </canvas>
                 </div>
             <!-- </mat-grid-tile>
 
         </mat-grid-list> -->
     </mat-card-content>
     <mat-card-actions style="text-align: right;">
-        <!-- <a routerLink="/home">
-            <button mat-raised-button color="primary" (click)="submit()">Submit</button>
-        </a> -->
+        <a routerLink="/home">
+            <button mat-raised-button color="warn" >Kembali ke Homepage</button>
+        </a>
     </mat-card-actions>
 </mat-card>

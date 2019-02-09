@@ -16,18 +16,18 @@ const routes : Routes = [
                 path: '',   
                 component: DashboardComponent,
             },
-            { 
-                path: 'question',   
-                component: QuestionComponent,
-            },
+            // { 
+            //     path: 'question',   
+            //     component: QuestionComponent,
+            // },
             { 
                 path: 'register',   
                 component: RegisterComponent,
             },
-            { 
-                path: 'register/result',   
-                component: ResultComponent,
-            },
+            // { 
+            //     path: 'result',   
+            //     component: ResultComponent,
+            // },
         ]
   
       }

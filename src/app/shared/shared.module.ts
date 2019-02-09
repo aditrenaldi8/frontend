@@ -12,10 +12,12 @@ import { MatButtonModule,
   MatInputModule, 
   MatGridListModule, 
   MatDialogModule,
-  MatRadioModule} from '@angular/material';
+  MatRadioModule,
+  MatTableModule} from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ChartsModule } from 'ng2-charts';
+import { CdkTableModule } from '@angular/cdk/table';
 
 @NgModule({
   imports: [
@@ -37,7 +39,9 @@ import { ChartsModule } from 'ng2-charts';
     MatExpansionModule,
     MatDialogModule,
     MatRadioModule,
-    ChartsModule
+    ChartsModule,
+    MatTableModule,
+    CdkTableModule
   ],
   exports: [
     MatButtonModule,
@@ -58,7 +62,9 @@ import { ChartsModule } from 'ng2-charts';
     MatExpansionModule,
     MatDialogModule,
     MatRadioModule,
-    ChartsModule
+    ChartsModule,
+    MatTableModule,
+    CdkTableModule
   ],
 })
 export class SharedModule { }

@@ -1,0 +1,866 @@
+[
+    {
+        "statements":[
+            {
+                "statement" : "Mudah bergaul, ramah",
+                "value": "a",
+                "like": false,
+                "dislike": false,
+                "likeValue": "s",
+                "dislikeValue": "s"  
+            },
+            {
+                "statement" : "Penuh kepercayaan dan percaya pada orang lain",
+                "value": "b",
+                "like": false,
+                "dislike": false,
+                "likeValue": "i",
+                "dislikeValue": "i"  
+            },
+            {
+                "statement" : "Petualang, mengambil resiko",
+                "value": "c",
+                "like": false,
+                "dislike": false,
+                "likeValue": "all",
+                "dislikeValue": "d"  
+            },
+            {
+                "statement" : "Toleran, penuh hormat",
+                "value": "d",
+                "like": false,
+                "dislike": false,
+                "likeValue": "c",
+                "dislikeValue": "c"  
+            }
+        ]
+    },
+    {
+        "statements":[
+            {
+                "statement" : "Yang penting adalah hasil",
+                "value": "a",
+                "like": false,
+                "dislike": false,
+                "likeValue": "c",
+                "dislikeValue": "all"  
+            },
+            {
+                "statement" : "Melakukan yang benar, ketepatan dihitung",
+                "value": "b",
+                "like": false,
+                "dislike": false,
+                "likeValue": "d",
+                "dislikeValue": "d"  
+            },
+            {
+                "statement" : "Membuat jadi Menyenangkan",
+                "value": "c",
+                "like": false,
+                "dislike": false,
+                "likeValue": "all",
+                "dislikeValue": "i"  
+            },
+            {
+                "statement" : "Mari melakukan bersama",
+                "value": "d",
+                "like": false,
+                "dislike": false,
+                "likeValue": "s",
+                "dislikeValue": "s"  
+            }
+        ]
+    },
+    {
+        "statements":[
+            {
+                "statement" : "Pendidikan dan Kebudayaan",
+                "value": "a",
+                "like": false,
+                "dislike": false,
+                "likeValue": "i",
+                "dislikeValue": "i"  
+            },
+            {
+                "statement" : "Pencapaian dan Penghargaan",
+                "value": "b",
+                "like": false,
+                "dislike": false,
+                "likeValue": "all",
+                "dislikeValue": "c"  
+            },
+            {
+                "statement" : "Keselamatan dan Keamanan",
+                "value": "c",
+                "like": false,
+                "dislike": false,
+                "likeValue": "all",
+                "dislikeValue": "s"  
+            },
+            {
+                "statement" : "Sosial dan Pertemuan Kelompok",
+                "value": "d",
+                "like": false,
+                "dislike": false,
+                "likeValue": "d",
+                "dislikeValue": "all"  
+            }
+        ]
+    },
+    {
+        "statements":[
+            {
+                "statement" : "Lembut, Pendiam",
+                "value": "a",
+                "like": false,
+                "dislike": false,
+                "likeValue": "c",
+                "dislikeValue": "c"  
+            },
+            {
+                "statement" : "Optimis, berpikir jauh ke depan",
+                "value": "b",
+                "like": false,
+                "dislike": false,
+                "likeValue": "s",
+                "dislikeValue": "s"  
+            },
+            {
+                "statement" : "Pusat perhatian, mudah bersosialisasi",
+                "value": "c",
+                "like": false,
+                "dislike": false,
+                "likeValue": "all",
+                "dislikeValue": "i"  
+            },
+            {
+                "statement" : "Pembuat perdamaian, membawa ketenangan",
+                "value": "d",
+                "like": false,
+                "dislike": false,
+                "likeValue": "d",
+                "dislikeValue": "d"  
+            }
+        ]
+    },
+    {
+        "statements":[
+            {
+                "statement" : "Akan melakukan tanpa",
+                "value": "a",
+                "like": false,
+                "dislike": false,
+                "likeValue": "i",
+                "dislikeValue": "all"  
+            },
+            {
+                "statement" : "Membeli karena hasrat",
+                "value": "b",
+                "like": false,
+                "dislike": false,
+                "likeValue": "d",
+                "dislikeValue": "d"  
+            },
+            {
+                "statement" : "Akan menunggu, tidak ada tekanan",
+                "value": "c",
+                "like": false,
+                "dislike": false,
+                "likeValue": "s",
+                "dislikeValue": "s"  
+            },
+            {
+                "statement" : "Akan membelanjakan apa yang saya inginkan",
+                "value": "d",
+                "like": false,
+                "dislike": false,
+                "likeValue": "all",
+                "dislikeValue": "c"  
+            }
+        ]
+    },
+    {
+        "statements":[
+            {
+                "statement" : "Bertanggung jawab",
+                "value": "a",
+                "like": false,
+                "dislike": false,
+                "likeValue": "c",
+                "dislikeValue": "all"  
+            },
+            {
+                "statement" : "Mudah bergaul dan antusias",
+                "value": "b",
+                "like": false,
+                "dislike": false,
+                "likeValue": "d",
+                "dislikeValue": "d"  
+            },
+            {
+                "statement" : "Mudah ditebak dan konsisten",
+                "value": "c",
+                "like": false,
+                "dislike": false,
+                "likeValue": "i",
+                "dislikeValue": "i"  
+            },
+            {
+                "statement" : "Waspada dan hati-hati",
+                "value": "d",
+                "like": false,
+                "dislike": false,
+                "likeValue": "s",
+                "dislikeValue": "s"  
+            }
+        ]
+    },
+    {
+        "statements":[
+            {
+                "statement" : "Mendorong orang lain",
+                "value": "a",
+                "like": false,
+                "dislike": false,
+                "likeValue": "s",
+                "dislikeValue": "all"  
+            },
+            {
+                "statement" : "Berjuang demi kesempurnaan",
+                "value": "b",
+                "like": false,
+                "dislike": false,
+                "likeValue": "i",
+                "dislikeValue": "i"  
+            },
+            {
+                "statement" : "Menjadi bagian tim",
+                "value": "c",
+                "like": false,
+                "dislike": false,
+                "likeValue": "all",
+                "dislikeValue": "c"  
+            },
+            {
+                "statement" : "Ingin mencapai tujuan",
+                "value": "d",
+                "like": false,
+                "dislike": false,
+                "likeValue": "all",
+                "dislikeValue": "d"  
+            }
+        ]
+    },
+    {
+        "statements":[
+            {
+                "statement" : "Ramah dan mudah berteman",
+                "value": "a",
+                "like": false,
+                "dislike": false,
+                "likeValue": "i",
+                "dislikeValue": "i"  
+            },
+            {
+                "statement" : "Unik, bosan dengan rutinitas",
+                "value": "b",
+                "like": false,
+                "dislike": false,
+                "likeValue": "s",
+                "dislikeValue": "s"  
+            },
+            {
+                "statement" : "Aktif merubah hal-hal",
+                "value": "c",
+                "like": false,
+                "dislike": false,
+                "likeValue": "c",
+                "dislikeValue": "c"  
+            },
+            {
+                "statement" : "Ingin sesuatu yang pasti",
+                "value": "d",
+                "like": false,
+                "dislike": false,
+                "likeValue": "d",
+                "dislikeValue": "d"  
+            }
+        ]
+    },
+    {
+        "statements":[
+            {
+                "statement" : "Tidak mudah dikalahkan",
+                "value": "a",
+                "like": false,
+                "dislike": false,
+                "likeValue": "d",
+                "dislikeValue": "d"  
+            },
+            {
+                "statement" : "Sesuai perintah, pengikut",
+                "value": "b",
+                "like": false,
+                "dislike": false,
+                "likeValue": "c",
+                "dislikeValue": "c"  
+            },
+            {
+                "statement" : "Riang dan ceria",
+                "value": "c",
+                "like": false,
+                "dislike": false,
+                "likeValue": "all",
+                "dislikeValue": "i"  
+            },
+            {
+                "statement" : "Teratur dan rapi",
+                "value": "d",
+                "like": false,
+                "dislike": false,
+                "likeValue": "all",
+                "dislikeValue": "s"  
+            }
+        ]
+    },
+    {
+        "statements":[
+            {
+                "statement" : "Menjadi frustasi",
+                "value": "a",
+                "like": false,
+                "dislike": false,
+                "likeValue": "all",
+                "dislikeValue": "c"  
+            },
+            {
+                "statement" : "Memendam perasaan dalam hati",
+                "value": "b",
+                "like": false,
+                "dislike": false,
+                "likeValue": "d",
+                "dislikeValue": "d"  
+            },
+            {
+                "statement" : "Menceritakan sisi kehidupan",
+                "value": "c",
+                "like": false,
+                "dislike": false,
+                "likeValue": "s",
+                "dislikeValue": "s"  
+            },
+            {
+                "statement" : "Berpihak pada oposisi",
+                "value": "d",
+                "like": false,
+                "dislike": false,
+                "likeValue": "i",
+                "dislikeValue": "all"  
+            }      
+        ]
+    },
+    {
+        "statements":[
+            {
+                "statement" : "Non konfrontasi, mengalah",
+                "value": "a",
+                "like": false,
+                "dislike": false,
+                "likeValue": "s",
+                "dislikeValue": "all"  
+            },
+            {
+                "statement" : "Penuh dengan rincian",
+                "value": "b",
+                "like": false,
+                "dislike": false,
+                "likeValue": "all",
+                "dislikeValue": "i"  
+            },
+            {
+                "statement" : "Perubahan di menit terakhir ",
+                "value": "c",
+                "like": false,
+                "dislike": false,
+                "likeValue": "d",
+                "dislikeValue": "d"  
+            },
+            {
+                "statement" : "Penuntut dan perusak",
+                "value": "d",
+                "like": false,
+                "dislike": false,
+                "likeValue": "c",
+                "dislikeValue": "c"  
+            }
+        ]
+    },
+    {
+        "statements":[
+            {
+                "statement" : "Saya akan pimpin mereka",
+                "value": "a",
+                "like": false,
+                "dislike": false,
+                "likeValue": "all",
+                "dislikeValue": "s"  
+            },
+            {
+                "statement" : "Saya akan mengikuti",
+                "value": "b",
+                "like": false,
+                "dislike": false,
+                "likeValue": "c",
+                "dislikeValue": "all"  
+            },
+            {
+                "statement" : "Saya akan membujuk mereka",
+                "value": "c",
+                "like": false,
+                "dislike": false,
+                "likeValue": "i",
+                "dislikeValue": "i"  
+            },
+            {
+                "statement" : "Saya akan dapatkan fakta",
+                "value": "d",
+                "like": false,
+                "dislike": false,
+                "likeValue": "d",
+                "dislikeValue": "d"  
+            }           
+        ]
+    },
+    {
+        "statements":[
+            {
+                "statement" : "Mudah bergaul, ramah",
+                "value": "a",
+                "like": false,
+                "dislike": false,
+                "likeValue": "d",
+                "dislikeValue": "d"  
+            },
+            {
+                "statement" : "Penuh kepercayaan dan percaya pada orang lain",
+                "value": "b",
+                "like": false,
+                "dislike": false,
+                "likeValue": "s",
+                "dislikeValue": "all"  
+            },
+            {
+                "statement" : "Petualang, mengambil resiko",
+                "value": "c",
+                "like": false,
+                "dislike": false,
+                "likeValue": "i",
+                "dislikeValue": "all"  
+            },
+            {
+                "statement" : "Toleran, penuh hormat",
+                "value": "d",
+                "like": false,
+                "dislike": false,
+                "likeValue": "all",
+                "dislikeValue": "c"  
+            }
+        ]
+    },
+    {
+        "statements":[
+            {
+                "statement" : "Yang penting adalah hasil",
+                "value": "a",
+                "like": false,
+                "dislike": false,
+                "likeValue": "c",
+                "dislikeValue": "c"  
+            },
+            {
+                "statement" : "Melakukan yang benar, ketepatan dihitung",
+                "value": "b",
+                "like": false,
+                "dislike": false,
+                "likeValue": "i",
+                "dislikeValue": "i"  
+            },
+            {
+                "statement" : "Membuat jadi Menyenangkan",
+                "value": "c",
+                "like": false,
+                "dislike": false,
+                "likeValue": "s",
+                "dislikeValue": "all"  
+            },
+            {
+                "statement" : "Mari melakukan bersama",
+                "value": "d",
+                "like": false,
+                "dislike": false,
+                "likeValue": "d",
+                "dislikeValue": "d"  
+            }
+        ]
+    },
+    {
+        "statements":[
+            {
+                "statement" : "Pendidikan dan Kebudayaan",
+                "value": "a",
+                "like": false,
+                "dislike": false,
+                "likeValue": "s",
+                "dislikeValue": "s"  
+            },
+            {
+                "statement" : "Pencapaian dan Penghargaan",
+                "value": "b",
+                "like": false,
+                "dislike": false,
+                "likeValue": "c",
+                "dislikeValue": "all"  
+            },
+            {
+                "statement" : "Keselamatan dan Keamanan",
+                "value": "c",
+                "like": false,
+                "dislike": false,
+                "likeValue": "i",
+                "dislikeValue": "i"  
+            },
+            {
+                "statement" : "Sosial dan Pertemuan Kelompok",
+                "value": "d",
+                "like": false,
+                "dislike": false,
+                "likeValue": "d",
+                "dislikeValue": "d"  
+            }
+        ]
+    },
+    {
+        "statements":[
+            {
+                "statement" : "Lembut, Pendiam",
+                "value": "a",
+                "like": false,
+                "dislike": false,
+                "likeValue": "all",
+                "dislikeValue": "d"  
+            },
+            {
+                "statement" : "Optimis, berpikir jauh ke depan",
+                "value": "b",
+                "like": false,
+                "dislike": false,
+                "likeValue": "c",
+                "dislikeValue": "all"  
+            },
+            {
+                "statement" : "Pusat perhatian, mudah bersosialisasi",
+                "value": "c",
+                "like": false,
+                "dislike": false,
+                "likeValue": "i",
+                "dislikeValue": "i"  
+            },
+            {
+                "statement" : "Pembuat perdamaian, membawa ketenangan",
+                "value": "d",
+                "like": false,
+                "dislike": false,
+                "likeValue": "s",
+                "dislikeValue": "s"  
+            }
+        ]
+    },
+    {
+        "statements":[
+            {
+                "statement" : "Akan melakukan tanpa",
+                "value": "a",
+                "like": false,
+                "dislike": false,
+                "likeValue": "all",
+                "dislikeValue": "c"  
+            },
+            {
+                "statement" : "Membeli karena hasrat",
+                "value": "b",
+                "like": false,
+                "dislike": false,
+                "likeValue": "d",
+                "dislikeValue": "d"  
+            },
+            {
+                "statement" : "Akan menunggu, tidak ada tekanan",
+                "value": "c",
+                "like": false,
+                "dislike": false,
+                "likeValue": "s",
+                "dislikeValue": "s"  
+            },
+            {
+                "statement" : "Akan membelanjakan apa yang saya inginkan",
+                "value": "d",
+                "like": false,
+                "dislike": false,
+                "likeValue": "i",
+                "dislikeValue": "all"  
+            }
+        ]
+    },
+    {
+        "statements":[
+            {
+                "statement" : "Bertanggung jawab",
+                "value": "a",
+                "like": false,
+                "dislike": false,
+                "likeValue": "d",
+                "dislikeValue": "d"  
+            },
+            {
+                "statement" : "Mudah bergaul dan antusias",
+                "value": "b",
+                "like": false,
+                "dislike": false,
+                "likeValue": "all",
+                "dislikeValue": "i"  
+            },
+            {
+                "statement" : "Mudah ditebak dan konsisten",
+                "value": "c",
+                "like": false,
+                "dislike": false,
+                "likeValue": "all",
+                "dislikeValue": "s"  
+            },
+            {
+                "statement" : "Waspada dan hati-hati",
+                "value": "d",
+                "like": false,
+                "dislike": false,
+                "likeValue": "c",
+                "dislikeValue": "all"  
+            }
+        ]
+    },
+    {
+        "statements":[
+            {
+                "statement" : "Mendorong orang lain",
+                "value": "a",
+                "like": false,
+                "dislike": false,
+                "likeValue": "d",
+                "dislikeValue": "d"  
+            },
+            {
+                "statement" : "Berjuang demi kesempurnaan",
+                "value": "b",
+                "like": false,
+                "dislike": false,
+                "likeValue": "s",
+                "dislikeValue": "all"  
+            },
+            {
+                "statement" : "Menjadi bagian tim",
+                "value": "c",
+                "like": false,
+                "dislike": false,
+                "likeValue": "i",
+                "dislikeValue": "i"  
+            },
+            {
+                "statement" : "Ingin mencapai tujuan",
+                "value": "d",
+                "like": false,
+                "dislike": false,
+                "likeValue": "all",
+                "dislikeValue": "c"  
+            }
+        ]
+    },
+    {
+        "statements":[
+            {
+                "statement" : "Ramah dan mudah berteman",
+                "value": "a",
+                "like": false,
+                "dislike": false,
+                "likeValue": "d",
+                "dislikeValue": "all"  
+            },
+            {
+                "statement" : "Unik, bosan dengan rutinitas",
+                "value": "b",
+                "like": false,
+                "dislike": false,
+                "likeValue": "s",
+                "dislikeValue": "s"  
+            },
+            {
+                "statement" : "Aktif merubah hal-hal",
+                "value": "c",
+                "like": false,
+                "dislike": false,
+                "likeValue": "i",
+                "dislikeValue": "i"  
+            },
+            {
+                "statement" : "Ingin sesuatu yang pasti",
+                "value": "d",
+                "like": false,
+                "dislike": false,
+                "likeValue": "c",
+                "dislikeValue": "all"  
+            }
+        ]
+    },
+    {
+        "statements":[
+            {
+                "statement" : "Tidak mudah dikalahkan",
+                "value": "a",
+                "like": false,
+                "dislike": false,
+                "likeValue": "s",
+                "dislikeValue": "s"  
+            },
+            {
+                "statement" : "Sesuai perintah, pengikut",
+                "value": "b",
+                "like": false,
+                "dislike": false,
+                "likeValue": "d",
+                "dislikeValue": "d"  
+            },
+            {
+                "statement" : "Riang dan ceria",
+                "value": "c",
+                "like": false,
+                "dislike": false,
+                "likeValue": "i",
+                "dislikeValue": "i"  
+            },
+            {
+                "statement" : "Teratur dan rapi",
+                "value": "d",
+                "like": false,
+                "dislike": false,
+                "likeValue": "all",
+                "dislikeValue": "c"  
+            }
+        ]
+    },
+    {
+        "statements":[
+            {
+                "statement" : "Menjadi frustasi",
+                "value": "a",
+                "like": false,
+                "dislike": false,
+                "likeValue": "s",
+                "dislikeValue": "s"  
+            },
+            {
+                "statement" : "Memendam perasaan dalam hati",
+                "value": "b",
+                "like": false,
+                "dislike": false,
+                "likeValue": "all",
+                "dislikeValue": "i"  
+            },
+            {
+                "statement" : "Menceritakan sisi kehidupan",
+                "value": "c",
+                "like": false,
+                "dislike": false,
+                "likeValue": "d",
+                "dislikeValue": "d"  
+            },
+            {
+                "statement" : "Berpihak pada oposisi",
+                "value": "d",
+                "like": false,
+                "dislike": false,
+                "likeValue": "c",
+                "dislikeValue": "c"  
+            }      
+        ]
+    },
+    {
+        "statements":[
+            {
+                "statement" : "Non konfrontasi, mengalah",
+                "value": "a",
+                "like": false,
+                "dislike": false,
+                "likeValue": "all",
+                "dislikeValue": "d"  
+            },
+            {
+                "statement" : "Penuh dengan rincian",
+                "value": "b",
+                "like": false,
+                "dislike": false,
+                "likeValue": "i",
+                "dislikeValue": "all"  
+            },
+            {
+                "statement" : "Perubahan di menit terakhir ",
+                "value": "c",
+                "like": false,
+                "dislike": false,
+                "likeValue": "s",
+                "dislikeValue": "s"  
+            },
+            {
+                "statement" : "Penuntut dan perusak",
+                "value": "d",
+                "like": false,
+                "dislike": false,
+                "likeValue": "all",
+                "dislikeValue": "c"  
+            }
+        ]
+    },
+    {
+        "statements":[
+            {
+                "statement" : "Saya akan pimpin mereka",
+                "value": "a",
+                "like": false,
+                "dislike": false,
+                "likeValue": "all",
+                "dislikeValue": "s"  
+            },
+            {
+                "statement" : "Saya akan mengikuti",
+                "value": "b",
+                "like": false,
+                "dislike": false,
+                "likeValue": "i",
+                "dislikeValue": "i"  
+            },
+            {
+                "statement" : "Saya akan membujuk mereka",
+                "value": "c",
+                "like": false,
+                "dislike": false,
+                "likeValue": "d",
+                "dislikeValue": "all"  
+            },
+            {
+                "statement" : "Saya akan dapatkan fakta",
+                "value": "d",
+                "like": false,
+                "dislike": false,
+                "likeValue": "c",
+                "dislikeValue": "all"  
+            }           
+        ]
+    }
+]

@@ -6,3 +6,12 @@
     /* margin: 5px 5px; */
     width: 100%;
 }
+
+.example-radio-button{
+    margin-right : 20px;
+}
+
+.text-inside-grid {
+    position: absolute;
+    left: 5px;
+};
