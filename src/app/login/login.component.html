@@ -8,8 +8,11 @@
             <mat-card-content>
                 <form [formGroup]="form">
                     <mat-form-field>
-                        <input matInput placeholder="User Name" formControlName="username">
-                        <mat-error *ngIf="form.controls.username.invalid"> You must enter a value </mat-error>
+                        <input matInput placeholder="Email" formControlName="email">
+                        <mat-error *ngIf="form.get('email').invalid"> 
+                            <span *ngIf="form.get('email').hasError('required')">You must enter a value </span>
+                            <span *ngIf="form.get('email').hasError('email')">Email Not Valid </span>
+                        </mat-error>
                     </mat-form-field>
                     
                     <mat-form-field>
@@ -20,9 +23,17 @@
                 </form>
             </mat-card-content>
             <mat-card-actions style="text-align: center">
-                <a routerLink="/home">
-                    <button mat-raised-button color="primary">Login</button>
+                <a routerLink="/">
+                    <button mat-raised-button color="warn">
+                        <span>Kembali</span>
+                    </button>
                 </a>
+                <!-- <a routerLink="/home"> -->
+                    <button mat-raised-button color="primary" (click)="login()">
+                        <span>Login</span>
+                        <mat-icon>exit_to_app</mat-icon>
+                    </button>
+                <!-- </a> -->
             </mat-card-actions>
             <div class="footer-login">
                 <span> &copy; Psychotest App 2019</span>

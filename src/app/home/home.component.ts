@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MediaChange, MediaObserver } from '@angular/flex-layout';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,10 @@ export class HomeComponent implements OnInit {
 
   watcher: Subscription;
 
-  constructor(media: MediaObserver) {
+  constructor(
+      media: MediaObserver,
+      private router : Router
+  ) {
     this.watcher = media.media$.subscribe((change: MediaChange) => {
       if (change.mqAlias === 'sm' || change.mqAlias === 'xs') {
         this.opened = false;
@@ -27,10 +31,20 @@ export class HomeComponent implements OnInit {
         this.over = 'side';
       }
     });
+
+    const data = localStorage.getItem('wai');
+    if(!data){
+        this.router.navigate(['/login']);
+    }
   }
 
   ngOnInit() {
 
+  }
+
+  logout(){
+    localStorage.removeItem('wai');
+    this.router.navigate(['/']);
   }
 
 }

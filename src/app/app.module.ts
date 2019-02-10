@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -15,6 +16,7 @@ import { RegisterComponent } from './register/register.component';
 import { MainComponent } from './main/main.component';
 import { DiscComponent } from './disc/disc.component';
 import { AppService } from './app.service';
+import { SnackBarComponent } from './snack-bar/snack-bar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { AppService } from './app.service';
     ResultComponent,
     RegisterComponent,
     MainComponent,
-    DiscComponent
+    DiscComponent,
+    SnackBarComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,14 @@ import { AppService } from './app.service';
     ReactiveFormsModule,
     FormsModule,
     HomeModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
+  ],
+  exports:[
+    SnackBarComponent 
+  ],
+  entryComponents:[
+    SnackBarComponent 
   ],
   providers: [AppService],
   bootstrap: [AppComponent]

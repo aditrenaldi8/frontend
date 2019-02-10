@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Result } from '../shared/model/result';
 import { AppService } from '../app.service';
+import { MatSnackBar } from '@angular/material';
+import { SnackBarComponent } from '../snack-bar/snack-bar.component';
 
 @Component({
   selector: 'app-disc',
@@ -10,7 +12,8 @@ import { AppService } from '../app.service';
 export class DiscComponent implements OnInit {
 
   constructor(
-    private appService: AppService
+    private appService: AppService,
+    private snackBar : MatSnackBar
   ) { }
 
   registerDone: boolean = false;
@@ -26,12 +29,12 @@ export class DiscComponent implements OnInit {
   getRegister(value: any){
     this.email = value;
     this.registerDone = true;
-    console.log('email', this.email);
+    this.appService.changeMessage('Input Data Berhasil');
+    this.openSnackBar();
   }
 
   getAnswer(value:Result){
     this.result = value;
-    console.log('answer', this.result);
     this.getResult();
   }
 
@@ -44,13 +47,20 @@ export class DiscComponent implements OnInit {
         this.appService.changeCloak(true);
         this.graph = response;
         this.questionDone = true;
-        console.log(response);
       },
       error=>{
         this.appService.changeCloak(true);
+        this.appService.changeMessage('Gagal mendapatkan data')
+        this.openSnackBar();
         console.log(error);
       }
     )
+  }
+
+  openSnackBar() {
+    this.snackBar.openFromComponent(SnackBarComponent, {
+      duration: 1000,
+    });
   }
 
   buildPayload(){

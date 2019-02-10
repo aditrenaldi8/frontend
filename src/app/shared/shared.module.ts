@@ -15,7 +15,8 @@ import { MatButtonModule,
   MatRadioModule,
   MatTableModule,
   MatButtonToggleModule,
-  MatProgressBarModule} from '@angular/material';
+  MatProgressBarModule,
+  MatSnackBarModule} from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ChartsModule } from 'ng2-charts';
@@ -45,7 +46,8 @@ import { CdkTableModule } from '@angular/cdk/table';
     MatTableModule,
     CdkTableModule,
     MatButtonToggleModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatSnackBarModule
   ],
   exports: [
     MatButtonModule,
@@ -70,7 +72,8 @@ import { CdkTableModule } from '@angular/cdk/table';
     MatTableModule,
     CdkTableModule,
     MatButtonToggleModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatSnackBarModule
   ],
 })
 export class SharedModule { }

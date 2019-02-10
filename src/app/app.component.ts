@@ -18,6 +18,5 @@ export class AppComponent {
     this.appService.cloakHidden.subscribe(value => {
       this.cloakHidden = value;
     });
-    console.log(this.cloakHidden)
   }
 }
