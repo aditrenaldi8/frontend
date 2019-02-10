@@ -9,6 +9,17 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif; 
 }
 
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #673ab7;
+  color: white;
+  text-align: right;
+  font-size: 12px;
+}
+
 .m-0 {
   margin: 0 !important;
 }

@@ -17,6 +17,12 @@
   margin-bottom: 20px;
 }
 
+.footer-login{
+  /* background-color: #673ab7; */
+  font-size: 12px;
+  text-align: center;
+}
+
 /* .example-container {
   display: flex;
   flex-direction: column;

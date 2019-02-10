@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  constructor() {}
+  cloakHidden : boolean = true;
+
+  constructor(
+    private appService: AppService
+  ) {}
 
   ngOnInit() {
-
+    this.appService.cloakHidden.subscribe(value => {
+      this.cloakHidden = value;
+    });
+    console.log(this.cloakHidden)
   }
 }

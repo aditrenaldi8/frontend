@@ -1,0 +1,30 @@
+<mat-toolbar color="primary" class="header-box-shadow">
+    <button mat-button>
+        PsychoTest App
+    </button>
+</mat-toolbar>
+
+<mat-grid-list cols="1" rowHeight="80px">
+    <mat-grid-tile  [colspan]="1" [rowspan]="3">
+        <div style="text-align: center; margin-bottom:10px;">
+            <h1 style="margin-bottom:20px;"> Selamat Datang di PsychoTest App</h1>
+        </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile  [colspan]="1" [rowspan]="1">
+       
+        <a routerLink="/login" style="margin-right:20px;">
+            <button mat-raised-button color="primary">Login</button>
+        </a>
+      
+        <a routerLink="/disc">
+            <button mat-raised-button color="warn">Kerjakan Soal</button>
+        </a>
+    </mat-grid-tile>
+
+</mat-grid-list>
+  
+
+<div class="footer">
+    <p style="margin-right:10px;text-align:center!Important">&copy; Psychotest App 2019</p>
+</div>

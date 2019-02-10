@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-result',
@@ -7,31 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultComponent implements OnInit {
 
-    response: any = {
-      "email": "robihidayat122@gmail.com",
-      "data": {
-        "perceivedSelf": {
-          "compliance": "27.0",
-          "dominant": "22.0",
-          "influence": "20.0",
-          "steady": "19.0"
-        },
-        "publicSelf": {
-            "compliance": "16.0",
-            "dominant": "21.0",
-            "influence": "28.0",
-            "steady": "11.0"
-        },
-        "privateSelf": {
-            "compliance": "11.0",
-            "dominant": "10.0",
-            "influence": "28.0",
-            "steady": "22.0"
-        }
-      }
-    }
+    @Input() response: any;
     
-
     lineChartLabels:Array<any> = ['Dominant', 'Influence', 'Steady', 'Compliance'];
     lineChartOptions:any = {
       responsive: true
@@ -48,11 +25,11 @@ export class ResultComponent implements OnInit {
     ngOnInit() {
       setTimeout(()=>{
         this.setData(this.response);
-        this.show = true;
       },200)
 
-    }
+      console.log(this.response)
 
+    }
 
     setData(response : any){
         this.lineChartData.push({
@@ -75,5 +52,7 @@ export class ResultComponent implements OnInit {
           ],
           label: 'Percieved'
         })
+
+        this.show = true;
     }
 }

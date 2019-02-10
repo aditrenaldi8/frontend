@@ -24,11 +24,8 @@
                     </mat-expansion-panel-header>
                     <mat-nav-list class="ml-0" dense>
                         <!-- <mat-list-item>
-                            <a routerLink="/home/question">Add Question Package</a>
-                        </mat-list-item> -->
-                        <mat-list-item>
                             <a routerLink="/home/register">User Registration</a>
-                        </mat-list-item>
+                        </mat-list-item> -->
                         <mat-list-item>
                             <a routerLink="/home/result">Result</a>
                         </mat-list-item>
@@ -57,7 +54,7 @@
                 <mat-icon>account_circle</mat-icon>
             </button>
             <mat-menu #menu="matMenu" overlapTrigger="false">
-                <a routerLink="/login">
+                <a routerLink="/">
                     <button mat-menu-item>
                         <mat-icon>exit_to_app</mat-icon>
                         <span>Logout</span>
@@ -67,6 +64,10 @@
         </mat-toolbar>
         
         <router-outlet></router-outlet>
+
+        <div class="footer">
+            <p style="margin-right:10px">&copy; Psychotest App 2019</p>
+        </div>
         
     </mat-sidenav-content>
 </mat-sidenav-container>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import QuestionJson from '../shared/model/questions.json';
 
 import * as _ from 'lodash';
@@ -11,16 +11,19 @@ import { Result } from '../shared/model/result';
   styleUrls: ['./question.component.css']
 })
 export class QuestionComponent implements OnInit {
-  timeLeft: number = 100;
+
+  @Output() sentVal = new EventEmitter<any>();
+
+  timeLeft: number = 1200;
   time : string;
   interval: any;
 
   questions: Question[] = [];
   result : Result = new Result();
-
   section: any[] = [];
-
   processDone: boolean = false;
+  selectedValue: any = 1;
+  toogleOptions : any[] = [];
 
   constructor(
   
@@ -29,27 +32,35 @@ export class QuestionComponent implements OnInit {
 
   ngOnInit() {
     this.setQuestion();
-    console.log(this.result)
   }
 
   setQuestion(){
     const data = QuestionJson;
-    data.map(value => {
+    data.map((value,index) => {
         this.questions.push(new Question(value.statements));
         this.section.push({'show':false});
+        this.toogleOptions.push(index+1);
     })
     this.section[0].show = true;
-    console.log('section', this.section)
+  }
+
+  change(value : any){
+      this.selectedValue = value.source.value;
+      const data = _.find(this.section, item => item.show == true );
+      if(data) { data.show = false };
+      this.section[this.selectedValue - 1].show = true;
   }
 
   next(index:number){
       this.section[index].show = false;
       this.section[index+1].show = true; 
+      this.selectedValue += 1;
   }
 
   previous(index:number){
     this.section[index].show = false;
     this.section[index-1].show = true; 
+    this.selectedValue -= 1;
   }
 
   startTimer() {
@@ -58,7 +69,7 @@ export class QuestionComponent implements OnInit {
         this.timeLeft--;
         this.convertTime(this.timeLeft)
       }else{
-
+        this.submit()
       }
     },1000)
   }
@@ -83,8 +94,6 @@ export class QuestionComponent implements OnInit {
           }
       })
       this.countDISC();
-      console.log('questions', this.questions)
-      console.log('result', this.result)
   }
 
   processingData(value: Question, index: number){
@@ -95,10 +104,15 @@ export class QuestionComponent implements OnInit {
   }
 
   countDISC(){
+    let counter = 0;
     this.result.reset();
     this.questions.map((value)=>{
         this.result.setValue(value.like, 'public');
         this.result.setValue(value.dislike, 'private');
+        counter++;
+        if(counter == this.questions.length - 1){
+            this.sentVal.emit(this.result)
+        }
     })
   }
 

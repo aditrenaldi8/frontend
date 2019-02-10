@@ -1,5 +1,5 @@
 <div style="margin:50px; text-align:center" *ngIf="!time">
-    <button mat-raised-button color="primary" (click)="start()">Mulai Tes</button>
+    <button mat-raised-button color="warn" (click)="start()">Mulai Tes</button>
     <!-- <a routerLink="/home" style="margin-left: 10px">
         <button mat-raised-button color="red" >Kembali</button>
     </a> -->
@@ -14,6 +14,19 @@
     <mat-divider></mat-divider>
 
     <mat-card-content>
+        <mat-grid-list cols="12" rowHeight="80px" style="margin-top:20px" fxShow.lt-md="false" fxShow.gt-sm="true">
+             <mat-grid-tile
+                [colspan]="12"
+                [rowspan]="1"
+            >
+                <mat-button-toggle-group [value]="selectedValue" #group="matButtonToggleGroup" (change)="change($event)">
+                    <mat-button-toggle *ngFor="let item of toogleOptions" [value]="item">
+                        <span> {{ item }}</span>
+                    </mat-button-toggle>
+                </mat-button-toggle-group>
+            </mat-grid-tile>
+        </mat-grid-list>
+        
         <div *ngFor="let item of questions, let i=index, let l=last, let f= first">
             <mat-card style="margin-top:20px" *ngIf="section[i].show">
                 <mat-card-content>
@@ -62,9 +75,7 @@
             <div style="text-align: right; margin-top:20px;" *ngIf="section[i].show">
                 <button mat-raised-button style="margin-right:10px" color="warn" *ngIf="!f" (click)="previous(i)">Sebelumnya</button>
                 <button mat-raised-button color="primary" *ngIf="!l" (click)="next(i)">Selanjutnya</button>
-                <a routerLink="/result">
-                    <button mat-raised-button color="primary" *ngIf="l" (click)="submit()">Submit</button>
-                </a>
+                <button mat-raised-button color="primary" *ngIf="l" (click)="submit()">Submit</button>
             </div>
         </div>
     </mat-card-content>
