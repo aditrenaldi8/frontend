@@ -28,22 +28,29 @@ export class RegisterComponent implements OnInit {
     }
 
     submit(){
-      let params = {
-        "email": this.form.get('email').value,
-        "userName": this.form.get('username').value,
-        "phoneNumber": this.form.get('phone').value,
-      }
-      this.appService.changeCloak(false);
-      this.appService.registerUser(params).subscribe(
-        response=>{
-          this.appService.changeCloak(true);
-          console.log(response);
-          this.sentVal.emit(this.form.get('email').value);
-        },
-        error=>{
-          this.appService.changeCloak(true);
-          console.log(error);
+      if (!this.form.valid) {
+        
+        Object.keys(this.form.controls).forEach(key =>{
+            this.form.get(key).markAsTouched();
+        })
+      }else{
+        let params = {
+          "email": this.form.get('email').value,
+          "userName": this.form.get('username').value,
+          "phoneNumber": this.form.get('phone').value,
         }
-      )
+        this.appService.changeCloak(false);
+        this.appService.registerUser(params).subscribe(
+          response=>{
+            this.appService.changeCloak(true);
+            console.log(response);
+            this.sentVal.emit(this.form.get('email').value);
+          },
+          error=>{
+            this.appService.changeCloak(true);
+            console.log(error);
+          }
+        )
+      }
     }
 }
