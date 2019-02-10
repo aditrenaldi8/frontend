@@ -42,9 +42,9 @@ export class DiscComponent implements OnInit {
     this.appService.getGraph(params).subscribe(
       response=>{
         this.appService.changeCloak(true);
-        console.log(response);
         this.graph = response;
         this.questionDone = true;
+        console.log(response);
       },
       error=>{
         this.appService.changeCloak(true);
@@ -61,7 +61,7 @@ export class DiscComponent implements OnInit {
         influence:  this.result.percieved.i,
         steady:  this.result.percieved.s
       },
-      doingTask: Date.now(),
+      doingTask: new Date(),
       email: this.email,
       least: {
         all:  this.result.private.all,
