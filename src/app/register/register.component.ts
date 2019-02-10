@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
     submit(){
       let params = {
         "email": this.form.get('email').value,
-        "username": this.form.get('username').value,
+        "userName": this.form.get('username').value,
         "phoneNumber": this.form.get('phone').value,
       }
       this.appService.changeCloak(false);
