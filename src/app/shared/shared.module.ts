@@ -77,7 +77,7 @@ import { SnackBarComponent } from '../shared/component/snack-bar/snack-bar.compo
     MatSnackBarModule,
   ],
   declarations: [SnackBarComponent],
-  entryComponents:[
+  bootstrap:[
     SnackBarComponent 
   ],
 })

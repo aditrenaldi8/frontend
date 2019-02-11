@@ -42,9 +42,6 @@ import { AppHelper } from './app.helper';
   exports:[
   
   ],
-  entryComponents:[
-    
-  ],
   providers: [
     AppService,
     AppHelper
