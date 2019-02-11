@@ -21,6 +21,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ChartsModule } from 'ng2-charts';
 import { CdkTableModule } from '@angular/cdk/table';
+import { SnackBarComponent } from '../shared/component/snack-bar/snack-bar.component';
 
 @NgModule({
   imports: [
@@ -73,7 +74,11 @@ import { CdkTableModule } from '@angular/cdk/table';
     CdkTableModule,
     MatButtonToggleModule,
     MatProgressBarModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+  ],
+  declarations: [SnackBarComponent],
+  entryComponents:[
+    SnackBarComponent 
   ],
 })
 export class SharedModule { }

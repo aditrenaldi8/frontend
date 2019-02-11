@@ -1,8 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AppService } from '../app.service';
-import { MatSnackBar } from '@angular/material';
-import { SnackBarComponent } from '../snack-bar/snack-bar.component';
+import { AppHelper } from '../app.helper';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +14,7 @@ export class RegisterComponent implements OnInit {
 
     constructor(
       private appService : AppService,
-      private snackBar : MatSnackBar
+      private helper : AppHelper
     ) { }
 
     ngOnInit() {
@@ -36,7 +35,7 @@ export class RegisterComponent implements OnInit {
             this.form.get(key).markAsTouched();
         })
         this.appService.changeMessage('All Mandatory Field Must be Filled')
-        this.openSnackBar()
+        this.helper.openSnackBar()
       }else{
         let params = {
           "email": this.form.get('email').value,
@@ -52,16 +51,10 @@ export class RegisterComponent implements OnInit {
           error=>{
             this.appService.changeCloak(true);
             this.appService.changeMessage('Input Data Gagal')
-            this.openSnackBar();
+            this.helper.openSnackBar();
             console.log(error);
           }
         )
       }
-    }
-
-    openSnackBar() {
-      this.snackBar.openFromComponent(SnackBarComponent, {
-        duration: 1000,
-      });
     }
 }

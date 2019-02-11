@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AppService } from '../app.service';
 import { Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material';
-import { SnackBarComponent } from '../snack-bar/snack-bar.component';
+import { AppHelper } from '../app.helper';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +14,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private appService : AppService,
     private router : Router,
-    private snackBar : MatSnackBar
+    private helper : AppHelper
   ) { }
 
   ngOnInit() {
@@ -38,7 +37,7 @@ export class LoginComponent implements OnInit {
           this.form.get(key).markAsTouched();
       })
       this.appService.changeMessage('All Mandatory Field Must be Filled')
-      this.openSnackBar()
+      this.helper.openSnackBar()
     }else{
       let params = {
         "email" : this.form.get('email').value,
@@ -54,16 +53,10 @@ export class LoginComponent implements OnInit {
         error=>{
           this.appService.changeCloak(true);
           this.appService.changeMessage('Wrong Email or Password');
-          this.openSnackBar();
+          this.helper.openSnackBar();
           console.log(error);
         }
       )
     }
-  }
-
-  openSnackBar() {
-    this.snackBar.openFromComponent(SnackBarComponent, {
-      duration: 1000,
-    });
   }
 }

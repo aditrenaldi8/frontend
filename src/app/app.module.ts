@@ -16,7 +16,7 @@ import { RegisterComponent } from './register/register.component';
 import { MainComponent } from './main/main.component';
 import { DiscComponent } from './disc/disc.component';
 import { AppService } from './app.service';
-import { SnackBarComponent } from './snack-bar/snack-bar.component';
+import { AppHelper } from './app.helper';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,6 @@ import { SnackBarComponent } from './snack-bar/snack-bar.component';
     RegisterComponent,
     MainComponent,
     DiscComponent,
-    SnackBarComponent
   ],
   imports: [
     BrowserModule,
@@ -41,12 +40,15 @@ import { SnackBarComponent } from './snack-bar/snack-bar.component';
     RouterModule
   ],
   exports:[
-    SnackBarComponent 
+  
   ],
   entryComponents:[
-    SnackBarComponent 
+    
   ],
-  providers: [AppService],
+  providers: [
+    AppService,
+    AppHelper
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
