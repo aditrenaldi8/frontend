@@ -1,15 +1,2 @@
-<mat-toolbar color="primary" class="header-box-shadow">
-    <button mat-button>
-        PsychoTest App
-    </button>
-</mat-toolbar>
-
-
-<app-register *ngIf="!registerDone" (sentVal)="getRegister($event)"></app-register>
-<app-question *ngIf="registerDone && !questionDone" (sentVal)="getAnswer($event)"></app-question>
+<app-question (sentVal)="getAnswer($event)"></app-question>
 <app-result *ngIf="questionDone" [response]="graph"></app-result>
-
-
-<div class="footer">
-    <p style="margin-right:10px;text-align:center!Important">&copy; Psychotest App 2019</p>
-</div>

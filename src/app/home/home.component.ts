@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   // overlap = false;
 
   watcher: Subscription;
+  user : string;
 
   constructor(
       media: MediaObserver,
@@ -31,15 +32,10 @@ export class HomeComponent implements OnInit {
         this.over = 'side';
       }
     });
-
-    const data = localStorage.getItem('wai');
-    if(!data){
-        this.router.navigate(['/login']);
-    }
   }
 
   ngOnInit() {
-
+    this.user = JSON.parse(localStorage.getItem('data')).sub;
   }
 
   logout(){

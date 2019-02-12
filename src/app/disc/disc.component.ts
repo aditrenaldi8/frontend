@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Result } from '../shared/model/result';
-import { AppService } from '../app.service';
-import { AppHelper } from '../app.helper';
+import { AppService } from '../service/app.service';
+import { AppHelper } from '../helper/app.helper';
 
 @Component({
   selector: 'app-disc',
@@ -22,15 +22,15 @@ export class DiscComponent implements OnInit {
   graph : any;
 
   ngOnInit() {
-
+    this.email = JSON.parse(localStorage.getItem('data')).sub;
   }
 
-  getRegister(value: any){
-    this.email = value;
-    this.registerDone = true;
-    this.appService.changeMessage('Input Data Berhasil');
-    this.helper.openSnackBar();
-  }
+  // getRegister(value: any){
+  //   this.email = value;
+  //   this.registerDone = true;
+  //   this.appService.changeMessage('Input Data Berhasil');
+  //   this.helper.openSnackBar();
+  // }
 
   getAnswer(value:Result){
     this.result = value;

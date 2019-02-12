@@ -19,11 +19,16 @@
                 [colspan]="12"
                 [rowspan]="1"
             >
-                <mat-button-toggle-group [value]="selectedValue" #group="matButtonToggleGroup" (change)="change($event)">
+                <!-- <mat-button-toggle-group [value]="selectedValue" #group="matButtonToggleGroup" (change)="change($event)">
                     <mat-button-toggle *ngFor="let item of toogleOptions" [value]="item">
                         <span> {{ item }}</span>
                     </mat-button-toggle>
-                </mat-button-toggle-group>
+                </mat-button-toggle-group> -->
+                <div *ngFor="let item of toogleOptions">
+                    <button *ngIf="section[item-1].show && !questions[item-1].valid" mat-mini-fab color="accent" (click)="change(item)"> {{ item }}</button>
+                    <button *ngIf="!section[item-1].show && !questions[item-1].valid" mat-mini-fab color="basic" (click)="change(item)"> {{ item }}</button>
+                    <button *ngIf="questions[item-1].valid" mat-mini-fab color="primary" (click)="change(item)"> {{ item }}</button>
+                </div>
             </mat-grid-tile>
         </mat-grid-list>
         

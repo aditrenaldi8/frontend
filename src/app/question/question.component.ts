@@ -1,9 +1,10 @@
 import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import QuestionJson from '../shared/model/questions.json';
-
-import * as _ from 'lodash';
 import { Question } from '../shared/model/question';
 import { Result } from '../shared/model/result';
+import { AppService } from '../service/app.service';
+
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-question',
@@ -14,7 +15,7 @@ export class QuestionComponent implements OnInit {
 
   @Output() sentVal = new EventEmitter<any>();
 
-  timeLeft: number = 1200;
+  timeStart: number = 0;
   time : string;
   interval: any;
 
@@ -26,7 +27,7 @@ export class QuestionComponent implements OnInit {
   toogleOptions : any[] = [];
 
   constructor(
-  
+    private appService : AppService
   ) { }
 
 
@@ -45,7 +46,7 @@ export class QuestionComponent implements OnInit {
   }
 
   change(value : any){
-      this.selectedValue = value.source.value;
+      this.selectedValue = value;
       const data = _.find(this.section, item => item.show == true );
       if(data) { data.show = false };
       this.section[this.selectedValue - 1].show = true;
@@ -65,12 +66,8 @@ export class QuestionComponent implements OnInit {
 
   startTimer() {
     this.interval = setInterval(() => {
-      if(this.timeLeft > 0) {
-        this.timeLeft--;
-        this.convertTime(this.timeLeft)
-      }else{
-        this.submit()
-      }
+      this.timeStart ++;
+      this.convertTime(this.timeStart)
     },1000)
   }
   
@@ -87,6 +84,7 @@ export class QuestionComponent implements OnInit {
   }
 
   submit(){
+    if(this.isValid()){
       this.questions.map((value, index)=>{
           this.processingData(value, index);
           if(index == this.questions.length -1){
@@ -94,6 +92,17 @@ export class QuestionComponent implements OnInit {
           }
       })
       this.countDISC();
+    }
+  }
+
+  isValid(){
+      const data = _.find(this.questions, item => item.valid == false );
+      if(data){
+        this.appService.changeMessage('Pastikan Semua soal terisi');
+        return false;
+      }else{
+        return true;
+      }
   }
 
   processingData(value: Question, index: number){
@@ -128,6 +137,8 @@ export class QuestionComponent implements OnInit {
     if(othertrueVal){
       othertrueVal.like = !othertrueVal.like;
     }
+  
+    this.valid(index);
   }
 
   dislikes(index: number, subIndex: number ){
@@ -138,6 +149,25 @@ export class QuestionComponent implements OnInit {
     if(othertrueVal){
       othertrueVal.dislike = !othertrueVal.dislike;
     }
+   
+    this.valid(index);
+  }
+
+  valid(index : number){
+    setTimeout(()=>{
+      const data = this.questions[index];
+      const like = _.find(data.statements, value => value.like == true );
+      const dislike = _.find(data.statements, value => value.dislike == true );
+      
+      if(like && dislike){
+        this.questions[index].valid = true;
+        if(this.questions.length != (index+1)){
+          setTimeout(()=>{
+              this.next(index)
+          },1000)
+        }
+      }
+    },100)
   }
 
 }

@@ -3,7 +3,8 @@
 }
 
 .mat-toolbar {
-  color: #fff;
+  color: #673ab7;
+  background-color: #fff;
 }
 
 .container {
@@ -19,12 +20,12 @@ mat-sidenav {
 }
 
 .circle {
-  border-radius: 50%;
+  border-radius: 60%;
   background-color: white;
 }
 
 .with-bg {
-  background: url('../../assets/images/office.jpg') no-repeat center;
+  background: url('../../assets/images/background.jpg') no-repeat center;
   /* background-color: #3f51b5; */
   overflow: hidden;
   position: absolute;

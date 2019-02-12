@@ -12,6 +12,7 @@ export class AppService {
   constructor(private http: HttpClient) { }
 
   baseUrl : string = "http://157.230.240.55/api-service/";
+  // baseUrl : string = "http://localhost:8090/api-service/";
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
@@ -20,12 +21,17 @@ export class AppService {
   };
 
   cloakHidden = new BehaviorSubject(true);
+  snackBarMessage = new BehaviorSubject('Selamat Datang');
 
   changeCloak(value : boolean){
     setTimeout(() => {
         this.cloakHidden.next(value);
     });
-}
+  }
+
+  changeMessage(value : string){
+      this.snackBarMessage.next(value);
+  }
 
   registerUser(value: any): Observable<any> {
     return this.http.post<any>(this.baseUrl+'user', value, this.httpOptions)
@@ -37,6 +43,10 @@ export class AppService {
       .pipe(map(response => response));
   }
 
+  login(value : any): Observable<any> {
+    return this.http.post<any>(this.baseUrl+'auth', value, this.httpOptions)
+      .pipe(map(response => response));
+  }
 
 
 

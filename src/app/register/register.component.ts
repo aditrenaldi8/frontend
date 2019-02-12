@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { AppService } from '../app.service';
-import { AppHelper } from '../app.helper';
+import { AppService } from '../service/app.service';
+import { AppHelper } from '../helper/app.helper';
 
 @Component({
   selector: 'app-register',
@@ -34,8 +34,7 @@ export class RegisterComponent implements OnInit {
         Object.keys(this.form.controls).forEach(key =>{
             this.form.get(key).markAsTouched();
         })
-        this.appService.changeMessage('All Mandatory Field Must be Filled')
-        this.helper.openSnackBar()
+        this.appService.changeMessage('Pastikan semua field terisi')
       }else{
         let params = {
           "email": this.form.get('email').value,

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -15,18 +15,19 @@ import { ResultComponent } from './result/result.component';
 import { RegisterComponent } from './register/register.component';
 import { MainComponent } from './main/main.component';
 import { DiscComponent } from './disc/disc.component';
-import { AppService } from './app.service';
-import { AppHelper } from './app.helper';
+import { AppService } from './service/app.service';
+import { AppHelper } from './helper/app.helper';
+import { AuthGuard } from './service/auth.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    QuestionComponent,
-    ResultComponent,
+    // QuestionComponent,
+    // ResultComponent,
     RegisterComponent,
     MainComponent,
-    DiscComponent,
+    // DiscComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +35,6 @@ import { AppHelper } from './app.helper';
     BrowserAnimationsModule,
     SharedModule,
     ReactiveFormsModule,
-    FormsModule,
     HomeModule,
     HttpClientModule,
     RouterModule
@@ -44,6 +44,7 @@ import { AppHelper } from './app.helper';
   ],
   providers: [
     AppService,
+    AuthGuard,
     AppHelper
   ],
   bootstrap: [AppComponent]

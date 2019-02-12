@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AppService } from '../app.service';
+import { AppService } from '../service/app.service';
 import { Router } from '@angular/router';
-import { AppHelper } from '../app.helper';
+import { AppHelper } from '../helper/app.helper';
+
+import * as jwt_decode from "jwt-decode";
 
 @Component({
   selector: 'app-login',
@@ -36,7 +38,7 @@ export class LoginComponent implements OnInit {
       Object.keys(this.form.controls).forEach(key =>{
           this.form.get(key).markAsTouched();
       })
-      this.appService.changeMessage('All Mandatory Field Must be Filled')
+      this.appService.changeMessage('Pastikan semua field terisi')
       this.helper.openSnackBar()
     }else{
       let params = {
@@ -47,12 +49,13 @@ export class LoginComponent implements OnInit {
       this.appService.login(params).subscribe(
         response=>{
           this.appService.changeCloak(true);
-          localStorage.setItem('wai', JSON.stringify(response))
+          localStorage.setItem('wai', JSON.stringify(response.token))
+          localStorage.setItem('data', JSON.stringify(jwt_decode(response.token)))
           this.router.navigate(['/home/']);
         },
         error=>{
           this.appService.changeCloak(true);
-          this.appService.changeMessage('Wrong Email or Password');
+          this.appService.changeMessage('Email atau Password Salah');
           this.helper.openSnackBar();
           console.log(error);
         }
