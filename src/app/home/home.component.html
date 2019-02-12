@@ -10,28 +10,28 @@
         </div>
 
         <div class="mt-3">
-            <mat-nav-list>
+            <!-- <mat-nav-list>
                 <a routerLink="/home" mat-list-item class="ml-2" style="font-size:15px;">
                     Halaman Soal
                 </a>
-            </mat-nav-list>
-            <!-- <mat-accordion multi="true" [displayMode]="displayMode">
+            </mat-nav-list> -->
+            <mat-accordion multi="true" [displayMode]="displayMode">
                 <mat-expansion-panel class="no-shadow">
                     <mat-expansion-panel-header fxLayout="row" [expandedHeight]="expandHeight" [collapsedHeight]="collapseHeight">
                         <mat-panel-title>
-                            Tools
+                            Halaman Soal
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <mat-nav-list class="ml-0" dense>
                         <mat-list-item>
-                            <a routerLink="/home/register">User Registration</a>
+                            <a routerLink="/home/">Cara Pengerjaan</a>
                         </mat-list-item>
                         <mat-list-item>
-                            <a routerLink="/home/result">Result</a>
+                            <a routerLink="/home/disc">Halaman Pengerjaan</a>
                         </mat-list-item>
                     </mat-nav-list>
                 </mat-expansion-panel>
-            </mat-accordion> -->
+            </mat-accordion>
         </div>
     </mat-sidenav>
 
@@ -67,7 +67,7 @@
         <router-outlet></router-outlet>
         
         <div class="footer">
-            <p style="margin-right:10px">&copy; Psychotest App 2019</p>
+            <p style="margin-right:10px">&copy; 2019 Psychotest App</p>
         </div>
         
     </mat-sidenav-content>

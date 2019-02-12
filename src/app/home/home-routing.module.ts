@@ -12,12 +12,12 @@ const routes : Routes = [
         canActivate: [AuthGuard],
         children: [
             // start_children
-            // { 
-            //     path: '',   
-            //     component: DashboardComponent,
-            // },
             { 
                 path: '',   
+                component: DashboardComponent,
+            },
+            { 
+                path: 'disc',   
                 component: DiscComponent,
             },
         ]

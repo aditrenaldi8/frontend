@@ -1,26 +1,5 @@
-.register{
-    margin: 20px;
-}
-
 .mat-form-field {
-    /* margin: 5px 5px; */
     width: 100%;
-}
-
-.text-inside-grid {
-    position: absolute;
-    left: 5px;
-}
-
-.text-inside-grid-right {
-    position: absolute;
-    right: 5px;
-}
-.example-radio-group {
-    display: inline-flex;
-    flex-direction: column;
+    margin-bottom: 20px;
 }
   
-.example-radio-button {
-    margin: 5px;
-}

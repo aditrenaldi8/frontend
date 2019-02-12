@@ -51,6 +51,7 @@ export class LoginComponent implements OnInit {
           this.appService.changeCloak(true);
           localStorage.setItem('wai', JSON.stringify(response.token))
           localStorage.setItem('data', JSON.stringify(jwt_decode(response.token)))
+          this.appService.changeMessage('Login Berhasil');
           this.router.navigate(['/home/']);
         },
         error=>{

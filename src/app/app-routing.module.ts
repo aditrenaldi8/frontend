@@ -17,14 +17,6 @@ const routes: Routes = [
       path: 'main',
       component: MainComponent,
   },
-  {
-      path: 'login',
-      component: LoginComponent,
-  },
-  {
-      path: 'disc',
-      component: DiscComponent,
-  },
   // {
   //     path: 'question',
   //     component: QuestionComponent,

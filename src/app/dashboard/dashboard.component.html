@@ -1,16 +1,29 @@
 <mat-card class="dashboard mat-elevation-z4"> 
     <div style="margin-bottom:10px">
-        <span>Dashboard</span>
+        <span>Cara Pengerjaan</span>
     </div>
     <mat-divider></mat-divider>
 
     <mat-card-content>
-      
+        <div style="margin-top: 30px">
+            <p>
+                Pada  setiap baris, ada empat pernyataan, pilihlah satu yang <b>paling sesuai dengan diri ANDA</b> dengan mencentang checkbox berketerangan <b>Most</b>, 
+                dan kemudian satu yang <b>paling tidak sesuai dengan diri ANDA</b> dengan mencentang checkbox berketerangan <b>Least</b> yang masing-masing berada di sebelah kanan pernyataan.
+            </p>
+            <p>
+            Contoh :
+            </p>
 
+            <img src="./assets/images/example.png">
+            <p>
+                Pada keempat pernyataan berikut, seorang merasa dirinya lebih <b> "Mudah Bergaul, ramah" </b> maka centanglah checkbox <b>Most</b> di pernyatan tersebut, 
+                dan begitupun jika yang bersangkutan menilai bahwa pernyataan <b>"Penuh kepercayaan dan percaya pada orang lain"</b> paling tidak sesuai dengan dirinya,maka centanglah checkbox <b>Least</b> di pernyatan tersebut.   
+            </p>
+        </div>
     </mat-card-content>
-    <mat-card-actions style="text-align: right;">
-        <!-- <a routerLink="/home">
-            <button mat-raised-button color="primary" (click)="submit()">Submit</button>
-        </a> -->
+    <mat-card-actions style="text-align: center;">
+        <a routerLink="/home/disc">
+            <button mat-raised-button color="primary" (click)="submit()">Kerjakan Soal</button>
+        </a>
     </mat-card-actions>
 </mat-card>

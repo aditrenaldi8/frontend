@@ -15,7 +15,6 @@ export class DiscComponent implements OnInit {
     private helper : AppHelper
   ) { }
 
-  registerDone: boolean = false;
   questionDone: boolean = false;
   email : string;
   result: Result;
@@ -24,13 +23,6 @@ export class DiscComponent implements OnInit {
   ngOnInit() {
     this.email = JSON.parse(localStorage.getItem('data')).sub;
   }
-
-  // getRegister(value: any){
-  //   this.email = value;
-  //   this.registerDone = true;
-  //   this.appService.changeMessage('Input Data Berhasil');
-  //   this.helper.openSnackBar();
-  // }
 
   getAnswer(value:Result){
     this.result = value;

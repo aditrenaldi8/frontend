@@ -40,6 +40,7 @@ export class HomeComponent implements OnInit {
 
   logout(){
     localStorage.removeItem('wai');
+    localStorage.removeItem('data');
     this.router.navigate(['/']);
   }
 

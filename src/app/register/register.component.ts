@@ -9,8 +9,10 @@ import { AppHelper } from '../helper/app.helper';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-    form: FormGroup;
+
     @Output() sentVal = new EventEmitter<any>();
+    form: FormGroup;
+    hide: boolean = true;
 
     constructor(
       private appService : AppService,
@@ -23,7 +25,8 @@ export class RegisterComponent implements OnInit {
 
     initForm(){
       this.form = new FormGroup({
-          username: new FormControl('',[Validators.required]),
+          fullName: new FormControl('',[Validators.required]),
+          password: new FormControl('',[Validators.required]),
           email: new FormControl('',[Validators.required, Validators.email]),
           phone: new FormControl('',[Validators.required,]),
       })

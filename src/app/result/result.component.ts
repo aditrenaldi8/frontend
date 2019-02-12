@@ -7,18 +7,23 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ResultComponent implements OnInit {
 
-    @Input() response: any;
+    @Input() response: any ;
     
-    lineChartLabels:Array<any> = ['Dominant', 'Influence', 'Steady', 'Compliance'];
+    lineChartLabels:Array<any> = ['D', 'I', 'S', 'C'];
     lineChartOptions:any = {
       responsive: true
     };
 
-    lineChartData:Array<any> = []
+    lineChartDataPublic:Array<any> = []
+    lineChartDataPrivate:Array<any> = []
+    lineChartDataPercieved:Array<any> = []
+
     lineChartLegend:boolean = true;
     lineChartType:string = 'line';
 
     show:boolean = false;
+    type : string;
+    description: string;
 
     constructor() { }
 
@@ -32,26 +37,29 @@ export class ResultComponent implements OnInit {
     }
 
     setData(response : any){
-        this.lineChartData.push({
+        this.lineChartDataPublic.push({
           'data' : [
               response.data.publicSelf.dominant, response.data.publicSelf.influence, response.data.publicSelf.steady, response.data.publicSelf.compliance 
           ],
           label: 'Public'
         })
 
-        this.lineChartData.push({
+        this.lineChartDataPrivate.push({
           'data' : [
               response.data.privateSelf.dominant, response.data.privateSelf.influence, response.data.privateSelf.steady, response.data.privateSelf.compliance
           ],
           label: 'Private'
         })
 
-        this.lineChartData.push({
+        this.lineChartDataPercieved.push({
           'data' : [
               response.data.perceivedSelf.dominant, response.data.perceivedSelf.influence, response.data.perceivedSelf.steady, response.data.perceivedSelf.compliance 
           ],
           label: 'Percieved'
         })
+
+        this.type = response.data.resultProfiling.profileName;
+        this.description = response.data.resultProfiling.profileDescription;
 
         this.show = true;
     }

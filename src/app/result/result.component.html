@@ -12,14 +12,14 @@
             </mat-grid-tile>
         </mat-grid-list>
 
-        <!-- <mat-grid-list cols="12" rowHeight="250px">
+        <mat-grid-list cols="12" rowHeight="250px">
             <mat-grid-tile
-                [colspan]="12"
+                [colspan]="4"
                 [rowspan]="1"
-            > -->
+            >
                 <div class="chart" *ngIf='show'>
                     <canvas baseChart
-                        [datasets]="lineChartData"
+                        [datasets]="lineChartDataPublic"
                         [labels]="lineChartLabels"
                         [options]="lineChartOptions"
                         [legend]="lineChartLegend"
@@ -27,9 +27,63 @@
                     >
                     </canvas>
                 </div>
-            <!-- </mat-grid-tile>
+            </mat-grid-tile>
 
-        </mat-grid-list> -->
+            <mat-grid-tile
+                [colspan]="4"
+                [rowspan]="1"
+            >
+                <div class="chart" *ngIf='show'>
+                    <canvas baseChart
+                        [datasets]="lineChartDataPrivate"
+                        [labels]="lineChartLabels"
+                        [options]="lineChartOptions"
+                        [legend]="lineChartLegend"
+                        [chartType]="lineChartType"
+                    >
+                    </canvas>
+                </div>
+            </mat-grid-tile>
+
+            <mat-grid-tile
+                [colspan]="4"
+                [rowspan]="1"
+            >
+                <div class="chart" *ngIf='show'>
+                    <canvas baseChart
+                        [datasets]="lineChartDataPercieved"
+                        [labels]="lineChartLabels"
+                        [options]="lineChartOptions"
+                        [legend]="lineChartLegend"
+                        [chartType]="lineChartType"
+                    >
+                    </canvas>
+                </div>
+            </mat-grid-tile>
+
+        </mat-grid-list>
+
+        <mat-grid-list cols="12" rowHeight="100px">
+                <mat-grid-tile
+                    [colspan]="12"
+                    [rowspan]="1"
+                >
+                    <h1>
+                        {{type}}
+                    </h1>
+
+                </mat-grid-tile>
+
+                <mat-grid-tile
+                    [colspan]="12"
+                    [rowspan]="1"
+                >
+                    <p align="center">
+                        {{description}}
+                    </p>
+
+                </mat-grid-tile>
+            </mat-grid-list>
     </mat-card-content>
     <mat-card-actions style="text-align: right;">
         <a routerLink="/">
