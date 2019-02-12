@@ -13,10 +13,13 @@ export class AppService {
 
   baseUrl : string = "http://157.230.240.55/api-service/";
   // baseUrl : string = "http://localhost:8090/api-service/";
+
+  token :string = localStorage.getItem('wai') ? 'Bearer ' + JSON.parse(localStorage.getItem('wai')) : 'my-auth-token';
+
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
-      'Authorization': 'my-auth-token'
+      'Authorization': this.token
     })
   };
 
@@ -34,7 +37,7 @@ export class AppService {
   }
 
   registerUser(value: any): Observable<any> {
-    return this.http.post<any>(this.baseUrl+'user', value, this.httpOptions)
+    return this.http.post<any>(this.baseUrl+'register', value, this.httpOptions)
       .pipe(map(response => response));
   }
 

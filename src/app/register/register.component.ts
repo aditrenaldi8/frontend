@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AppService } from '../service/app.service';
 import { AppHelper } from '../helper/app.helper';
@@ -10,7 +10,6 @@ import { AppHelper } from '../helper/app.helper';
 })
 export class RegisterComponent implements OnInit {
 
-    @Output() sentVal = new EventEmitter<any>();
     form: FormGroup;
     hide: boolean = true;
 
@@ -40,15 +39,18 @@ export class RegisterComponent implements OnInit {
         this.appService.changeMessage('Pastikan semua field terisi')
       }else{
         let params = {
+          "authorityName" : "ROLE_USER",
           "email": this.form.get('email').value,
-          "userName": this.form.get('username').value,
+          "fullName": this.form.get('fullName').value,
           "phoneNumber": this.form.get('phone').value,
+          "password": this.form.get('password').value
         }
         this.appService.changeCloak(false);
         this.appService.registerUser(params).subscribe(
           response=>{
             this.appService.changeCloak(true);
-            this.sentVal.emit(this.form.get('email').value);
+            this.appService.changeMessage('Proses Sign Up Berhasil, Silahkan Login')
+            this.resetForm()
           },
           error=>{
             this.appService.changeCloak(true);
@@ -58,5 +60,9 @@ export class RegisterComponent implements OnInit {
           }
         )
       }
+    }
+
+    resetForm(){
+      this.form.reset();
     }
 }

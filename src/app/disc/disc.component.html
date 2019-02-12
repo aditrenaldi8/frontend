@@ -1,2 +1,2 @@
-<app-question (sentVal)="getAnswer($event)"></app-question>
+<app-question *ngIf="!questionDone"(sentVal)="getAnswer($event)"></app-question>
 <app-result *ngIf="questionDone" [response]="graph"></app-result>
