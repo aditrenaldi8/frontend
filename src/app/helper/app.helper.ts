@@ -10,7 +10,6 @@ export class AppHelper {
     }
 
     openSnackBar() {
-        console.log('snackbar')
         this.snackBar.openFromComponent(SnackBarComponent, {
           duration: 2000,
         });

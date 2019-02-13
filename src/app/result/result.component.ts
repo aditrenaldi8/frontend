@@ -31,9 +31,6 @@ export class ResultComponent implements OnInit {
       setTimeout(()=>{
         this.setData(this.response);
       },200)
-
-      console.log(this.response)
-
     }
 
     setData(response : any){

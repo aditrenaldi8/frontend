@@ -14,12 +14,10 @@ export class AppService {
   baseUrl : string = "http://157.230.240.55/api-service/";
   // baseUrl : string = "http://localhost:8090/api-service/";
 
-  token :string = localStorage.getItem('wai') ? 'Bearer ' + JSON.parse(localStorage.getItem('wai')) : 'my-auth-token';
-
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
-      'Authorization': this.token
+      'Authorization': 'my-auth-token'
     })
   };
 
@@ -42,7 +40,16 @@ export class AppService {
   }
 
   getGraph(value: any): Observable<any> {
-    return this.http.post<any>(this.baseUrl+'graph', value, this.httpOptions)
+    let token :string = 'Bearer ' + JSON.parse(localStorage.getItem('wai'));
+    
+    const  httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': token
+      })
+    };
+    
+    return this.http.post<any>(this.baseUrl+'graph', value, httpOptions)
       .pipe(map(response => response));
   }
 
