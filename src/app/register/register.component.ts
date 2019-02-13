@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AppService } from '../service/app.service';
 import { AppHelper } from '../helper/app.helper';
+import { NumberValidator } from '../shared/validator/number.validator';
 
 @Component({
   selector: 'app-register',
@@ -27,7 +28,7 @@ export class RegisterComponent implements OnInit {
           fullName: new FormControl('',[Validators.required]),
           password: new FormControl('',[Validators.required]),
           email: new FormControl('',[Validators.required, Validators.email]),
-          phone: new FormControl('',[Validators.required,]),
+          phone: new FormControl('',[Validators.required, NumberValidator]),
       })
     }
 

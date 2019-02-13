@@ -20,6 +20,7 @@
         <input matInput placeholder="Nomor Telepon" formControlName="phone">
         <mat-error *ngIf="form.get('phone').invalid"> 
             <span *ngIf="form.get('phone').hasError('required')">You must enter a value </span>
+            <span *ngIf="form.get('phone').hasError('number')">Must be a Number</span>
         </mat-error>
     </mat-form-field>
     
