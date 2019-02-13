@@ -30,7 +30,10 @@
 
         <mat-grid-tile [colspan]="4" [rowspan]="1">
             <mat-card class="mat-elevation-z4"> 
-                <div style='text-align: center; margin-bottom:20px'> 
+                <div style='text-align: center; margin-bottom:10px'>
+                    <span>Selamat datang di Psychotest App</span>
+                </div>
+                <div style='text-align: center; margin-bottom:10px'> 
                     <mat-button-toggle-group [value]="selectedValue" #group="matButtonToggleGroup" (change)="change($event)">
                         <mat-button-toggle *ngFor="let item of toogleOptions" [value]="item">
                             <span> <b>{{ item }} </b></span>

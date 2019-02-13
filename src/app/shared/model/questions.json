@@ -10,7 +10,7 @@
                 "dislikeValue": "s"  
             },
             {
-                "statement" : "Penuh kepercayaan dan percaya pada orang lain",
+                "statement" : "Percaya pada orang lain",
                 "value": "b",
                 "like": false,
                 "dislike": false,
@@ -18,7 +18,7 @@
                 "dislikeValue": "i"  
             },
             {
-                "statement" : "Petualang, mengambil resiko",
+                "statement" : "Suka mengambil resiko",
                 "value": "c",
                 "like": false,
                 "dislike": false,
@@ -26,7 +26,7 @@
                 "dislikeValue": "d"  
             },
             {
-                "statement" : "Toleran, penuh hormat",
+                "statement" : "Penuh toleransi",
                 "value": "d",
                 "like": false,
                 "dislike": false,
@@ -46,7 +46,7 @@
                 "dislikeValue": "all"  
             },
             {
-                "statement" : "Melakukan yang benar, ketepatan dihitung",
+                "statement" : "Kerjakan dengan benar",
                 "value": "b",
                 "like": false,
                 "dislike": false,
@@ -54,7 +54,7 @@
                 "dislikeValue": "d"  
             },
             {
-                "statement" : "Membuat jadi Menyenangkan",
+                "statement" : "Buat agar menyenangkan",
                 "value": "c",
                 "like": false,
                 "dislike": false,
@@ -62,7 +62,7 @@
                 "dislikeValue": "i"  
             },
             {
-                "statement" : "Mari melakukan bersama",
+                "statement" : "Kerjakan bersama-sama",
                 "value": "d",
                 "like": false,
                 "dislike": false,
@@ -74,7 +74,7 @@
     {
         "statements":[
             {
-                "statement" : "Pendidikan dan Kebudayaan",
+                "statement" : "Pendidikan, kebudayaan",
                 "value": "a",
                 "like": false,
                 "dislike": false,
@@ -82,7 +82,7 @@
                 "dislikeValue": "i"  
             },
             {
-                "statement" : "Pencapaian dan Penghargaan",
+                "statement" : "Pencapaian, penghargaan",
                 "value": "b",
                 "like": false,
                 "dislike": false,
@@ -90,7 +90,7 @@
                 "dislikeValue": "c"  
             },
             {
-                "statement" : "Keselamatan dan Keamanan",
+                "statement" : "Keselamatan, keamanan",
                 "value": "c",
                 "like": false,
                 "dislike": false,
@@ -98,7 +98,7 @@
                 "dislikeValue": "s"  
             },
             {
-                "statement" : "Sosial dan Pertemuan Kelompok",
+                "statement" : "Sosial, pertemuan kelompok",
                 "value": "d",
                 "like": false,
                 "dislike": false,
@@ -110,7 +110,7 @@
     {
         "statements":[
             {
-                "statement" : "Lembut, Pendiam",
+                "statement" : "Lembut, tertutup",
                 "value": "a",
                 "like": false,
                 "dislike": false,
@@ -118,7 +118,7 @@
                 "dislikeValue": "c"  
             },
             {
-                "statement" : "Optimis, berpikir jauh ke depan",
+                "statement" : "Visioner, masa depan",
                 "value": "b",
                 "like": false,
                 "dislike": false,
@@ -126,7 +126,7 @@
                 "dislikeValue": "s"  
             },
             {
-                "statement" : "Pusat perhatian, mudah bersosialisasi",
+                "statement" : "Pusat perhatian",
                 "value": "c",
                 "like": false,
                 "dislike": false,
@@ -134,7 +134,7 @@
                 "dislikeValue": "i"  
             },
             {
-                "statement" : "Pembuat perdamaian, membawa ketenangan",
+                "statement" : "Pendamai",
                 "value": "d",
                 "like": false,
                 "dislike": false,
@@ -146,7 +146,7 @@
     {
         "statements":[
             {
-                "statement" : "Akan melakukan tanpa",
+                "statement" : "Menahan diri",
                 "value": "a",
                 "like": false,
                 "dislike": false,
@@ -154,7 +154,7 @@
                 "dislikeValue": "all"  
             },
             {
-                "statement" : "Membeli karena hasrat",
+                "statement" : "Dorongan, hasrat",
                 "value": "b",
                 "like": false,
                 "dislike": false,
@@ -162,7 +162,7 @@
                 "dislikeValue": "d"  
             },
             {
-                "statement" : "Akan menunggu, tidak ada tekanan",
+                "statement" : "Sabar menunggu",
                 "value": "c",
                 "like": false,
                 "dislike": false,
@@ -170,7 +170,7 @@
                 "dislikeValue": "s"  
             },
             {
-                "statement" : "Akan membelanjakan apa yang saya inginkan",
+                "statement" : "Yang diinginkan",
                 "value": "d",
                 "like": false,
                 "dislike": false,
@@ -182,7 +182,7 @@
     {
         "statements":[
             {
-                "statement" : "Bertanggung jawab",
+                "statement" : "Mengambil Kendali",
                 "value": "a",
                 "like": false,
                 "dislike": false,
@@ -190,7 +190,7 @@
                 "dislikeValue": "all"  
             },
             {
-                "statement" : "Mudah bergaul dan antusias",
+                "statement" : "Antusias",
                 "value": "b",
                 "like": false,
                 "dislike": false,
@@ -198,7 +198,7 @@
                 "dislikeValue": "d"  
             },
             {
-                "statement" : "Mudah ditebak dan konsisten",
+                "statement" : "Konsisten",
                 "value": "c",
                 "like": false,
                 "dislike": false,
@@ -206,7 +206,7 @@
                 "dislikeValue": "i"  
             },
             {
-                "statement" : "Waspada dan hati-hati",
+                "statement" : "Waspada",
                 "value": "d",
                 "like": false,
                 "dislike": false,
@@ -218,7 +218,7 @@
     {
         "statements":[
             {
-                "statement" : "Mendorong orang lain",
+                "statement" : "Memberi Semangat",
                 "value": "a",
                 "like": false,
                 "dislike": false,
@@ -226,7 +226,7 @@
                 "dislikeValue": "all"  
             },
             {
-                "statement" : "Berjuang demi kesempurnaan",
+                "statement" : "Mencapai kesempurnaan",
                 "value": "b",
                 "like": false,
                 "dislike": false,
@@ -234,7 +234,7 @@
                 "dislikeValue": "i"  
             },
             {
-                "statement" : "Menjadi bagian tim",
+                "statement" : "Bagian Kelompok",
                 "value": "c",
                 "like": false,
                 "dislike": false,
@@ -242,7 +242,7 @@
                 "dislikeValue": "c"  
             },
             {
-                "statement" : "Ingin mencapai tujuan",
+                "statement" : "Menetapkan tujuan",
                 "value": "d",
                 "like": false,
                 "dislike": false,
@@ -254,7 +254,7 @@
     {
         "statements":[
             {
-                "statement" : "Ramah dan mudah berteman",
+                "statement" : "Bersahabat",
                 "value": "a",
                 "like": false,
                 "dislike": false,
@@ -262,7 +262,7 @@
                 "dislikeValue": "i"  
             },
             {
-                "statement" : "Unik, bosan dengan rutinitas",
+                "statement" : "Bosan pada rutinitas",
                 "value": "b",
                 "like": false,
                 "dislike": false,
@@ -270,7 +270,7 @@
                 "dislikeValue": "s"  
             },
             {
-                "statement" : "Aktif merubah hal-hal",
+                "statement" : "Melakukan perubahan",
                 "value": "c",
                 "like": false,
                 "dislike": false,
@@ -278,7 +278,7 @@
                 "dislikeValue": "c"  
             },
             {
-                "statement" : "Ingin sesuatu yang pasti",
+                "statement" : "Akurat dan pasti",
                 "value": "d",
                 "like": false,
                 "dislike": false,
@@ -290,7 +290,7 @@
     {
         "statements":[
             {
-                "statement" : "Tidak mudah dikalahkan",
+                "statement" : "Sulit ditundukkan",
                 "value": "a",
                 "like": false,
                 "dislike": false,
@@ -298,7 +298,7 @@
                 "dislikeValue": "d"  
             },
             {
-                "statement" : "Sesuai perintah, pengikut",
+                "statement" : "Sesuai perintah",
                 "value": "b",
                 "like": false,
                 "dislike": false,
@@ -306,7 +306,7 @@
                 "dislikeValue": "c"  
             },
             {
-                "statement" : "Riang dan ceria",
+                "statement" : "Bersemangat",
                 "value": "c",
                 "like": false,
                 "dislike": false,
@@ -326,7 +326,7 @@
     {
         "statements":[
             {
-                "statement" : "Menjadi frustasi",
+                "statement" : "Frustasi",
                 "value": "a",
                 "like": false,
                 "dislike": false,
@@ -334,7 +334,7 @@
                 "dislikeValue": "c"  
             },
             {
-                "statement" : "Memendam perasaan dalam hati",
+                "statement" : "Memendam perasaan",
                 "value": "b",
                 "like": false,
                 "dislike": false,
@@ -342,7 +342,7 @@
                 "dislikeValue": "d"  
             },
             {
-                "statement" : "Menceritakan sisi kehidupan",
+                "statement" : "Pandangan Pribadi",
                 "value": "c",
                 "like": false,
                 "dislike": false,
@@ -350,7 +350,7 @@
                 "dislikeValue": "s"  
             },
             {
-                "statement" : "Berpihak pada oposisi",
+                "statement" : "Berani beroposisi",
                 "value": "d",
                 "like": false,
                 "dislike": false,
@@ -362,7 +362,7 @@
     {
         "statements":[
             {
-                "statement" : "Non konfrontasi, mengalah",
+                "statement" : "Mengalah",
                 "value": "a",
                 "like": false,
                 "dislike": false,
@@ -370,7 +370,7 @@
                 "dislikeValue": "all"  
             },
             {
-                "statement" : "Penuh dengan rincian",
+                "statement" : "Mendetail",
                 "value": "b",
                 "like": false,
                 "dislike": false,
@@ -378,7 +378,7 @@
                 "dislikeValue": "i"  
             },
             {
-                "statement" : "Perubahan di menit terakhir ",
+                "statement" : "Menit-menit terakhir",
                 "value": "c",
                 "like": false,
                 "dislike": false,
@@ -386,7 +386,7 @@
                 "dislikeValue": "d"  
             },
             {
-                "statement" : "Penuntut dan perusak",
+                "statement" : "Mendesak",
                 "value": "d",
                 "like": false,
                 "dislike": false,
@@ -398,7 +398,7 @@
     {
         "statements":[
             {
-                "statement" : "Saya akan pimpin mereka",
+                "statement" : "Memimpin",
                 "value": "a",
                 "like": false,
                 "dislike": false,
@@ -406,7 +406,7 @@
                 "dislikeValue": "s"  
             },
             {
-                "statement" : "Saya akan mengikuti",
+                "statement" : "Mengikuti",
                 "value": "b",
                 "like": false,
                 "dislike": false,
@@ -414,7 +414,7 @@
                 "dislikeValue": "all"  
             },
             {
-                "statement" : "Saya akan membujuk mereka",
+                "statement" : "Mempengaruhi",
                 "value": "c",
                 "like": false,
                 "dislike": false,
@@ -422,7 +422,7 @@
                 "dislikeValue": "i"  
             },
             {
-                "statement" : "Saya akan dapatkan fakta",
+                "statement" : "Memperoleh data/fakta",
                 "value": "d",
                 "like": false,
                 "dislike": false,
@@ -434,7 +434,7 @@
     {
         "statements":[
             {
-                "statement" : "Mudah bergaul, ramah",
+                "statement" : "Banyak bicara",
                 "value": "a",
                 "like": false,
                 "dislike": false,
@@ -442,7 +442,7 @@
                 "dislikeValue": "d"  
             },
             {
-                "statement" : "Penuh kepercayaan dan percaya pada orang lain",
+                "statement" : "Penuh keyakinan",
                 "value": "b",
                 "like": false,
                 "dislike": false,
@@ -450,7 +450,7 @@
                 "dislikeValue": "all"  
             },
             {
-                "statement" : "Petualang, mengambil resiko",
+                "statement" : "Menjaga Keseimbangan",
                 "value": "c",
                 "like": false,
                 "dislike": false,
@@ -458,7 +458,7 @@
                 "dislikeValue": "all"  
             },
             {
-                "statement" : "Toleran, penuh hormat",
+                "statement" : "Patuh pada aturan",
                 "value": "d",
                 "like": false,
                 "dislike": false,
@@ -470,7 +470,7 @@
     {
         "statements":[
             {
-                "statement" : "Yang penting adalah hasil",
+                "statement" : "Ingin kemajuan",
                 "value": "a",
                 "like": false,
                 "dislike": false,
@@ -478,7 +478,7 @@
                 "dislikeValue": "c"  
             },
             {
-                "statement" : "Melakukan yang benar, ketepatan dihitung",
+                "statement" : "Puas dengan keadaan",
                 "value": "b",
                 "like": false,
                 "dislike": false,
@@ -486,7 +486,7 @@
                 "dislikeValue": "i"  
             },
             {
-                "statement" : "Membuat jadi Menyenangkan",
+                "statement" : "Menunjukkan perasaan",
                 "value": "c",
                 "like": false,
                 "dislike": false,
@@ -494,7 +494,7 @@
                 "dislikeValue": "all"  
             },
             {
-                "statement" : "Mari melakukan bersama",
+                "statement" : "Sederhana",
                 "value": "d",
                 "like": false,
                 "dislike": false,
@@ -506,7 +506,7 @@
     {
         "statements":[
             {
-                "statement" : "Pendidikan dan Kebudayaan",
+                "statement" : "Memikirkan orang lain",
                 "value": "a",
                 "like": false,
                 "dislike": false,
@@ -514,7 +514,7 @@
                 "dislikeValue": "s"  
             },
             {
-                "statement" : "Pencapaian dan Penghargaan",
+                "statement" : "Suka tantangan",
                 "value": "b",
                 "like": false,
                 "dislike": false,
@@ -522,7 +522,7 @@
                 "dislikeValue": "all"  
             },
             {
-                "statement" : "Keselamatan dan Keamanan",
+                "statement" : "Optimis",
                 "value": "c",
                 "like": false,
                 "dislike": false,
@@ -530,7 +530,7 @@
                 "dislikeValue": "i"  
             },
             {
-                "statement" : "Sosial dan Pertemuan Kelompok",
+                "statement" : "Sistematis, logis",
                 "value": "d",
                 "like": false,
                 "dislike": false,
@@ -542,7 +542,7 @@
     {
         "statements":[
             {
-                "statement" : "Lembut, Pendiam",
+                "statement" : "Mengelola waktu",
                 "value": "a",
                 "like": false,
                 "dislike": false,
@@ -550,7 +550,7 @@
                 "dislikeValue": "d"  
             },
             {
-                "statement" : "Optimis, berpikir jauh ke depan",
+                "statement" : "Terburu-buru",
                 "value": "b",
                 "like": false,
                 "dislike": false,
@@ -558,7 +558,7 @@
                 "dislikeValue": "all"  
             },
             {
-                "statement" : "Pusat perhatian, mudah bersosialisasi",
+                "statement" : "Hal-hal sosial",
                 "value": "c",
                 "like": false,
                 "dislike": false,
@@ -566,7 +566,7 @@
                 "dislikeValue": "i"  
             },
             {
-                "statement" : "Pembuat perdamaian, membawa ketenangan",
+                "statement" : "Menyelesaikan",
                 "value": "d",
                 "like": false,
                 "dislike": false,
@@ -578,7 +578,7 @@
     {
         "statements":[
             {
-                "statement" : "Akan melakukan tanpa",
+                "statement" : "Tenang, diam",
                 "value": "a",
                 "like": false,
                 "dislike": false,
@@ -586,7 +586,7 @@
                 "dislikeValue": "c"  
             },
             {
-                "statement" : "Membeli karena hasrat",
+                "statement" : "Gembira, bebas",
                 "value": "b",
                 "like": false,
                 "dislike": false,
@@ -594,7 +594,7 @@
                 "dislikeValue": "d"  
             },
             {
-                "statement" : "Akan menunggu, tidak ada tekanan",
+                "statement" : "Menyenangkan",
                 "value": "c",
                 "like": false,
                 "dislike": false,
@@ -602,7 +602,7 @@
                 "dislikeValue": "s"  
             },
             {
-                "statement" : "Akan membelanjakan apa yang saya inginkan",
+                "statement" : "Berani",
                 "value": "d",
                 "like": false,
                 "dislike": false,
@@ -614,7 +614,7 @@
     {
         "statements":[
             {
-                "statement" : "Bertanggung jawab",
+                "statement" : "Ramah, penurut",
                 "value": "a",
                 "like": false,
                 "dislike": false,
@@ -622,7 +622,7 @@
                 "dislikeValue": "d"  
             },
             {
-                "statement" : "Mudah bergaul dan antusias",
+                "statement" : "Tertawa bebas, hidup",
                 "value": "b",
                 "like": false,
                 "dislike": false,
@@ -630,7 +630,7 @@
                 "dislikeValue": "i"  
             },
             {
-                "statement" : "Mudah ditebak dan konsisten",
+                "statement" : "Pemberani, tegas",
                 "value": "c",
                 "like": false,
                 "dislike": false,
@@ -638,7 +638,7 @@
                 "dislikeValue": "s"  
             },
             {
-                "statement" : "Waspada dan hati-hati",
+                "statement" : "Pendiam, tenang",
                 "value": "d",
                 "like": false,
                 "dislike": false,
@@ -650,7 +650,7 @@
     {
         "statements":[
             {
-                "statement" : "Mendorong orang lain",
+                "statement" : "Menolak perubahan",
                 "value": "a",
                 "like": false,
                 "dislike": false,
@@ -658,7 +658,7 @@
                 "dislikeValue": "d"  
             },
             {
-                "statement" : "Berjuang demi kesempurnaan",
+                "statement" : "Banyak berjanji",
                 "value": "b",
                 "like": false,
                 "dislike": false,
@@ -666,7 +666,7 @@
                 "dislikeValue": "all"  
             },
             {
-                "statement" : "Menjadi bagian tim",
+                "statement" : "Mundur bila ada tekanan",
                 "value": "c",
                 "like": false,
                 "dislike": false,
@@ -674,79 +674,7 @@
                 "dislikeValue": "i"  
             },
             {
-                "statement" : "Ingin mencapai tujuan",
-                "value": "d",
-                "like": false,
-                "dislike": false,
-                "likeValue": "all",
-                "dislikeValue": "c"  
-            }
-        ]
-    },
-    {
-        "statements":[
-            {
-                "statement" : "Ramah dan mudah berteman",
-                "value": "a",
-                "like": false,
-                "dislike": false,
-                "likeValue": "d",
-                "dislikeValue": "all"  
-            },
-            {
-                "statement" : "Unik, bosan dengan rutinitas",
-                "value": "b",
-                "like": false,
-                "dislike": false,
-                "likeValue": "s",
-                "dislikeValue": "s"  
-            },
-            {
-                "statement" : "Aktif merubah hal-hal",
-                "value": "c",
-                "like": false,
-                "dislike": false,
-                "likeValue": "i",
-                "dislikeValue": "i"  
-            },
-            {
-                "statement" : "Ingin sesuatu yang pasti",
-                "value": "d",
-                "like": false,
-                "dislike": false,
-                "likeValue": "c",
-                "dislikeValue": "all"  
-            }
-        ]
-    },
-    {
-        "statements":[
-            {
-                "statement" : "Tidak mudah dikalahkan",
-                "value": "a",
-                "like": false,
-                "dislike": false,
-                "likeValue": "s",
-                "dislikeValue": "s"  
-            },
-            {
-                "statement" : "Sesuai perintah, pengikut",
-                "value": "b",
-                "like": false,
-                "dislike": false,
-                "likeValue": "d",
-                "dislikeValue": "d"  
-            },
-            {
-                "statement" : "Riang dan ceria",
-                "value": "c",
-                "like": false,
-                "dislike": false,
-                "likeValue": "i",
-                "dislikeValue": "i"  
-            },
-            {
-                "statement" : "Teratur dan rapi",
+                "statement" : "Tidak takut berkelahi",
                 "value": "d",
                 "like": false,
                 "dislike": false,
@@ -758,7 +686,43 @@
     {
         "statements":[
             {
-                "statement" : "Menjadi frustasi",
+                "statement" : "Menyediakan waktu",
+                "value": "a",
+                "like": false,
+                "dislike": false,
+                "likeValue": "d",
+                "dislikeValue": "all"  
+            },
+            {
+                "statement" : "Merencanakan",
+                "value": "b",
+                "like": false,
+                "dislike": false,
+                "likeValue": "s",
+                "dislikeValue": "s"  
+            },
+            {
+                "statement" : "Bertualang",
+                "value": "c",
+                "like": false,
+                "dislike": false,
+                "likeValue": "i",
+                "dislikeValue": "i"  
+            },
+            {
+                "statement" : "Mencapai target",
+                "value": "d",
+                "like": false,
+                "dislike": false,
+                "likeValue": "c",
+                "dislikeValue": "all"  
+            }
+        ]
+    },
+    {
+        "statements":[
+            {
+                "statement" : "Wewenang",
                 "value": "a",
                 "like": false,
                 "dislike": false,
@@ -766,7 +730,43 @@
                 "dislikeValue": "s"  
             },
             {
-                "statement" : "Memendam perasaan dalam hati",
+                "statement" : "Kesempatan baru",
+                "value": "b",
+                "like": false,
+                "dislike": false,
+                "likeValue": "d",
+                "dislikeValue": "d"  
+            },
+            {
+                "statement" : "Hindari konflik",
+                "value": "c",
+                "like": false,
+                "dislike": false,
+                "likeValue": "i",
+                "dislikeValue": "i"  
+            },
+            {
+                "statement" : "Arahan jelas",
+                "value": "d",
+                "like": false,
+                "dislike": false,
+                "likeValue": "all",
+                "dislikeValue": "c"  
+            }
+        ]
+    },
+    {
+        "statements":[
+            {
+                "statement" : "Menyemangati",
+                "value": "a",
+                "like": false,
+                "dislike": false,
+                "likeValue": "s",
+                "dislikeValue": "s"  
+            },
+            {
+                "statement" : "Mendengar",
                 "value": "b",
                 "like": false,
                 "dislike": false,
@@ -774,7 +774,7 @@
                 "dislikeValue": "i"  
             },
             {
-                "statement" : "Menceritakan sisi kehidupan",
+                "statement" : "Menganalisa",
                 "value": "c",
                 "like": false,
                 "dislike": false,
@@ -782,7 +782,7 @@
                 "dislikeValue": "d"  
             },
             {
-                "statement" : "Berpihak pada oposisi",
+                "statement" : "Mendelegasikan",
                 "value": "d",
                 "like": false,
                 "dislike": false,
@@ -794,7 +794,7 @@
     {
         "statements":[
             {
-                "statement" : "Non konfrontasi, mengalah",
+                "statement" : "Menguji aturan",
                 "value": "a",
                 "like": false,
                 "dislike": false,
@@ -802,7 +802,7 @@
                 "dislikeValue": "d"  
             },
             {
-                "statement" : "Penuh dengan rincian",
+                "statement" : "Membuat aturan",
                 "value": "b",
                 "like": false,
                 "dislike": false,
@@ -810,7 +810,7 @@
                 "dislikeValue": "all"  
             },
             {
-                "statement" : "Perubahan di menit terakhir ",
+                "statement" : "Aturan membosankan",
                 "value": "c",
                 "like": false,
                 "dislike": false,
@@ -818,7 +818,7 @@
                 "dislikeValue": "s"  
             },
             {
-                "statement" : "Penuntut dan perusak",
+                "statement" : "Aturan membuat aman",
                 "value": "d",
                 "like": false,
                 "dislike": false,
@@ -830,7 +830,7 @@
     {
         "statements":[
             {
-                "statement" : "Saya akan pimpin mereka",
+                "statement" : "Dapat diandalkan",
                 "value": "a",
                 "like": false,
                 "dislike": false,
@@ -838,7 +838,7 @@
                 "dislikeValue": "s"  
             },
             {
-                "statement" : "Saya akan mengikuti",
+                "statement" : "Kreatif dan unik",
                 "value": "b",
                 "like": false,
                 "dislike": false,
@@ -846,7 +846,7 @@
                 "dislikeValue": "i"  
             },
             {
-                "statement" : "Saya akan membujuk mereka",
+                "statement" : "Orientasi hasil",
                 "value": "c",
                 "like": false,
                 "dislike": false,
@@ -854,7 +854,7 @@
                 "dislikeValue": "all"  
             },
             {
-                "statement" : "Saya akan dapatkan fakta",
+                "statement" : "Standar dan akurasi",
                 "value": "d",
                 "like": false,
                 "dislike": false,
