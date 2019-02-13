@@ -1,14 +1,18 @@
 import { DISC } from './disc';
+import { Answer } from './answer';
+import { Question } from './question';
 
 export class Result{
     public : DISC;
     private: DISC;
     percieved: DISC;
+    summary : Answer[];
 
     constructor(){
         this.public = new DISC();
         this.private = new DISC();
         this.percieved = new DISC();
+        this.summary = [];
     }
 
     setValue(val : string, type: string){
@@ -53,5 +57,10 @@ export class Result{
         this.public = new DISC();
         this.percieved = new DISC();
         this.private = new DISC();
+        this.summary = [];
+    }
+
+    setSummary(data : Question){
+        this.summary.push(new Answer(data));
     }
 }

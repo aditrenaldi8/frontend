@@ -73,7 +73,8 @@ export class DiscComponent implements OnInit {
         influence: this.result.public.i,
         mostEqual: this.result.public.all + this.result.public.c + this.result.public.d + this.result.public.i + this.result.public.s, 
         steady: this.result.public.s
-      }
+      },
+      respondenData: JSON.stringify(this.result.summary)
     }
 
     return data;

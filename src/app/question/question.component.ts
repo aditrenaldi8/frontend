@@ -118,6 +118,7 @@ export class QuestionComponent implements OnInit {
     this.questions.map((value)=>{
         this.result.setValue(value.like, 'public');
         this.result.setValue(value.dislike, 'private');
+        this.result.setSummary(value);
         counter++;
         if(counter == this.questions.length - 1){
             this.sentVal.emit(this.result)
