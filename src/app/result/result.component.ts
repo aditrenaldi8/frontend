@@ -18,6 +18,33 @@ export class ResultComponent implements OnInit {
     lineChartDataPrivate:Array<any> = []
     lineChartDataPercieved:Array<any> = []
 
+    color:Array<any>=[
+      {
+        fillColor: 'red',
+        strokeColor: 'red',
+        highlightFill: 'red',
+        highlightStroke: 'red'
+      }
+    ];
+
+    color2:Array<any>=[
+      {
+        fillColor: 'blue',
+        strokeColor: 'blue',
+        highlightFill: 'blue',
+        highlightStroke: 'blue'
+      }
+    ];
+
+    color3:Array<any>=[
+      {
+        fillColor: 'yellow',
+        strokeColor: 'yellow',
+        highlightFill: 'yellow',
+        highlightStroke: 'yellow'
+      }
+    ]
+
     lineChartLegend:boolean = true;
     lineChartType:string = 'line';
 

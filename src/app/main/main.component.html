@@ -7,10 +7,10 @@
         </div>
     </mat-toolbar>
 
-    <mat-grid-list cols="12" rowHeight="500px">
-        <mat-grid-tile  [colspan]="6" [rowspan]="1">
+    <mat-grid-list cols="12" rowHeight="{{height}}">
+        <mat-grid-tile  [colspan]="colLeft" [rowspan]="rowLeft">
             <div style="text-align: center; margin-bottom:10px;padding:50px;" >
-                <img class="circle" src="./assets/images/primasi.png" >
+                <img class="circle" src="./assets/images/primasi.png">
 
                 <h1 style="margin-bottom:20px;"> 
                     Best Solution for Human Capital Development 
@@ -24,11 +24,11 @@
             </div>
         </mat-grid-tile>
 
-        <mat-grid-tile  [colspan]="1" [rowspan]="1">
+        <mat-grid-tile  [colspan]="1" [rowspan]="1" *ngIf="!hide">
                
         </mat-grid-tile>
 
-        <mat-grid-tile [colspan]="4" [rowspan]="1">
+        <mat-grid-tile [colspan]="colRight" [rowspan]="rowRight">
             <mat-card class="mat-elevation-z4"> 
                 <div style='text-align: center; margin-bottom:10px'>
                     <span>Selamat datang di DISC Pesonality Test</span>

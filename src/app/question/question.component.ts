@@ -5,6 +5,8 @@ import { Result } from '../shared/model/result';
 import { AppService } from '../service/app.service';
 
 import * as _ from 'lodash';
+import { Subscription } from 'rxjs';
+import { MediaObserver, MediaChange } from '@angular/flex-layout';
 
 @Component({
   selector: 'app-question',
@@ -26,9 +28,27 @@ export class QuestionComponent implements OnInit {
   selectedValue: any = 1;
   toogleOptions : any[] = [];
 
+  watcher : Subscription;
+  column :number;
+  statementColumn :number;
+  hide:boolean;
+
   constructor(
-    private appService : AppService
-  ) { }
+    private appService : AppService,
+    media : MediaObserver
+  ) { 
+    this.watcher = media.media$.subscribe((change: MediaChange) => {
+      if (change.mqAlias === 'sm' || change.mqAlias === 'xs') {
+        this.statementColumn = 7;
+        this.column = 12;
+        this.hide = true;
+      } else {
+        this.statementColumn = 3;
+        this.column = 2;
+        this.hide = false;
+      }
+    });
+  }
 
 
   ngOnInit() {
@@ -132,6 +152,7 @@ export class QuestionComponent implements OnInit {
 
   likes(index: number, subIndex: number ){
     const data = this.questions[index].statements[subIndex];
+    data.like = !data.like;
     data.dislike = data.dislike ? !data.dislike : false;
     const othertrueVal = _.find(this.questions[index].statements, value => (value.like == true && value.value != data.value));
    
@@ -144,6 +165,7 @@ export class QuestionComponent implements OnInit {
 
   dislikes(index: number, subIndex: number ){
     const data = this.questions[index].statements[subIndex];
+    data.dislike = !data.dislike;
     data.like = data.like ? !data.like : false;
     const othertrueVal = _.find(this.questions[index].statements, value => (value.dislike == true && value.value != data.value));
     

@@ -35,8 +35,11 @@
         <div *ngFor="let item of questions, let i=index, let l=last, let f= first">
             <mat-card style="margin-top:20px" *ngIf="section[i].show">
                 <mat-card-content>
-                    <mat-grid-list cols="12" rowHeight="40px" >
+                    <mat-grid-list cols="12" rowHeight="50px" >
                         <div *ngFor="let value of item.statements, let vi= index, let f = first">
+
+                            <mat-grid-tile *ngIf="section[i].show && !hide" [colspan]="2" [rowspan]="1">
+                            </mat-grid-tile>
 
                             <mat-grid-tile *ngIf="section[i].show"
                                 [colspan]="1"
@@ -46,7 +49,7 @@
                             </mat-grid-tile>
                             
                             <mat-grid-tile *ngIf="section[i].show"
-                                [colspan]="7"
+                                [colspan]="statementColumn"
                                 [rowspan]="1"
                             >
                                 <span class="text-inside-grid">{{value.statement}}</span>
@@ -56,10 +59,18 @@
                                 [colspan]="2"
                                 [rowspan]="1"
                             >
-                                    
-                                <mat-checkbox class="example-margin" color="primary" (click)="likes(i, vi)" [(ngModel)]="value.like">
+
+                                <button mat-mini-fab color="basic" *ngIf="!value.like" (click)="likes(i, vi)"> 
+                                    <mat-icon> thumb_up </mat-icon>
+                                </button>
+
+                                <button mat-mini-fab color="primary" *ngIf="value.like" (click)="likes(i, vi)"> 
+                                    <mat-icon> thumb_up </mat-icon>
+                                </button>
+
+                                <span style="margin-left: 10px" fxShow.lt-md="false" fxShow.gt-sm="true">
                                     <b> Most </b>
-                                </mat-checkbox>
+                                </span>
                         
                             </mat-grid-tile>
 
@@ -67,12 +78,23 @@
                                 [colspan]="2"
                                 [rowspan]="1"
                             >
-                                    
-                                <mat-checkbox class="example-margin" color="warn" (click)="dislikes(i, vi)" [(ngModel)]="value.dislike"> 
+                                <button mat-mini-fab color="basic" *ngIf="!value.dislike" (click)="dislikes(i, vi)"> 
+                                    <mat-icon> thumb_down </mat-icon>
+                                </button>
+
+                                <button mat-mini-fab color="warn" *ngIf="value.dislike" (click)="dislikes(i, vi)"> 
+                                    <mat-icon> thumb_down </mat-icon>
+                                </button>
+
+                                <span style="margin-left: 10px" fxShow.lt-md="false" fxShow.gt-sm="true">
                                     <b> Least </b>
-                                </mat-checkbox>
+                                </span>
                         
                             </mat-grid-tile>
+
+                            <mat-grid-tile *ngIf="section[i].show && !hide" [colspan]="2" [rowspan]="1">
+                            </mat-grid-tile>
+
                         </div>
                     </mat-grid-list>
                 </mat-card-content> 

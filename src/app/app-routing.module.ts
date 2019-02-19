@@ -18,8 +18,8 @@ const routes: Routes = [
       component: MainComponent,
   },
   // {
-  //     path: 'question',
-  //     component: QuestionComponent,
+  //     path: 'home',
+  //     loadChildren: './home/home.module#HomeModule',
   // },
   // {
   //     path: 'result',
