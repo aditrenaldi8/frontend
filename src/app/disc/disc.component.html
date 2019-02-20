@@ -1,23 +1,8 @@
-<mat-card class="question mat-elevation-z4" *ngIf="!canAnswer"> 
-    <mat-card-content>
-        <mat-grid-list cols="12" rowHeight="80px" style="margin-top:20px">
-            <mat-grid-tile
-                [colspan]="12"
-                [rowspan]="1"
-            >
-                <p align="center" style="font-size:18px"> <b>Anda telah mengerjakan tes ini dalam kurun waktu 6 Bulan terakhir </b></p>
-            </mat-grid-tile>
-
-            <mat-grid-tile
-                [colspan]="12"
-                [rowspan]="1"
-            >
-                <button mat-raised-button color="primary" (click)="setGraph()">Lihat Hasil Test</button>
-
-            </mat-grid-tile>
-        </mat-grid-list>
-    </mat-card-content>
-</mat-card>
+<div style="margin:50px; text-align:center" *ngIf="!canAnswer">
+    <p align="center" style="font-size:18px; margin-bottom:20px"> <b>Anda telah mengerjakan tes ini dalam kurun waktu 6 Bulan terakhir </b></p>
+    
+    <button mat-raised-button color="primary" (click)="setGraph()">Lihat Hasil Test</button>
+</div>
 
 <app-question *ngIf="!questionDone && canAnswer" (sentVal)="getAnswer($event)"></app-question>
 <app-result *ngIf="questionDone" [response]="graph"></app-result>

@@ -31,9 +31,17 @@ export class DiscComponent implements OnInit {
   checkLatest(){
     this.graphVal = localStorage.getItem('latest') ? JSON.parse(localStorage.getItem('latest')) : null;
     if(this.graphVal){
-      this.canAnswer = true;
+      const latestDate = new Date (this.graphVal.data.createDate);
+      const now = new Date();
+      const timeDiff = Math.abs(now.getTime() - latestDate.getTime());
+      const diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+      if(diffDays > 180){
+        this.canAnswer = true;
+      }else{
+        this.canAnswer = false;
+      }
     }else{
-      this.canAnswer = false;
+      this.canAnswer = true;
     }
   }
 
@@ -41,6 +49,25 @@ export class DiscComponent implements OnInit {
     this.graph = value ? value : this.graphVal;
     this.questionDone = true;
     this.canAnswer = true;
+
+    value && this.setlatest();
+  }
+
+  setlatest(){
+    this.appService.changeCloak(false)
+    this.appService.initUser().subscribe(response=>{
+      this.appService.changeCloak(true)
+      if(localStorage.getItem('latest')){
+        localStorage.removeItem('latest')
+        localStorage.setItem('latest', JSON.stringify(response));      
+      }else{
+        localStorage.setItem('latest', JSON.stringify(response));
+      }
+  
+    },error=>{
+      this.appService.changeCloak(true)
+      console.log(error);
+    });
   }
 
   getAnswer(value:Result){

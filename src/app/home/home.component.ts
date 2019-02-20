@@ -4,6 +4,8 @@ import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { AppService } from '../service/app.service';
 
+import * as _ from 'lodash';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -44,7 +46,9 @@ export class HomeComponent implements OnInit {
         this.appService.changeCloak(false)
         this.appService.initUser().subscribe(response=>{
           this.appService.changeCloak(true)
-          localStorage.setItem('latest', JSON.stringify(response));
+          if(!_.isEmpty(response.data)){
+            localStorage.setItem('latest', JSON.stringify(response));
+          }
         },error=>{
           this.appService.changeCloak(true)
           console.log(error);

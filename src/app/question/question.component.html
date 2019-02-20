@@ -99,7 +99,7 @@
                     </mat-grid-list>
                 </mat-card-content> 
             </mat-card>
-            <div style="text-align: right; margin-top:20px;" *ngIf="section[i].show">
+            <div style="text-align: right; margin-top:20px; margin-bottom:20px;" *ngIf="section[i].show">
                 <button mat-raised-button style="margin-right:10px" color="warn" *ngIf="!f" (click)="previous(i)">Sebelumnya</button>
                 <button mat-raised-button color="primary" *ngIf="!l" (click)="next(i)">Selanjutnya</button>
                 <button mat-raised-button color="primary" *ngIf="l" (click)="submit()">Submit</button>

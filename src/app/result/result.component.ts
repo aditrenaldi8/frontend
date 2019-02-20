@@ -20,6 +20,39 @@ export class ResultComponent implements OnInit {
     lineChartDataPrivate:Array<any> = []
     lineChartDataPercieved:Array<any> = []
 
+    publicChartColors:Array<any> = [
+      { // blue
+        backgroundColor: '#B0C4DE',
+        borderColor: '#27408B',
+        pointBackgroundColor: '#6495ED',
+        pointBorderColor: '#4876FF',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: '#4876FF'
+      },
+    ];
+
+    privateChartColors:Array<any> = [
+      { // sea green
+        backgroundColor: '#BDFCC9',
+        borderColor: '#2E8B57',
+        pointBackgroundColor: '#54FF9F',
+        pointBorderColor: '#43CD80',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: '#43CD80'
+      },
+    ];
+
+    percievedChartColors:Array<any> = [
+      { // gold
+        backgroundColor: '#EEDC82',
+        borderColor: '#8B7500',
+        pointBackgroundColor: '#CDBE70',
+        pointBorderColor: '#CDAD00',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: '#CDAD00'
+      },
+    ];
+
     lineChartLegend:boolean = true;
     lineChartType:string = 'line';
 
@@ -43,6 +76,7 @@ export class ResultComponent implements OnInit {
     }
 
     ngOnInit() {
+      console.log('resp', this.response.result.profileDescription);
       setTimeout(()=>{
         this.setData(this.response);
       },200)
@@ -54,8 +88,6 @@ export class ResultComponent implements OnInit {
               response.data.publicSelf.dominant, response.data.publicSelf.influence, response.data.publicSelf.steady, response.data.publicSelf.compliance 
           ],
           label: 'Public',
-          backgroundColor : 'rgb(0,0,255)',
-          borderColor : 'rgb(0,0,255)'
         })
 
         this.lineChartDataPrivate.push({
@@ -73,7 +105,7 @@ export class ResultComponent implements OnInit {
         })
 
         // this.type = response.data.resultProfiling.profileName;
-        this.description = response.data.resultProfiling.profileDescription;
+        this.description = response.data.resultProfiling ?  response.data.resultProfiling.profileDescription : response.result.profileDescription;
 
         this.show = true;
     }

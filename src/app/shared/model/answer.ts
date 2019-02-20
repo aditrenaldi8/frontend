@@ -4,8 +4,8 @@ import * as _ from 'lodash';
 export class Answer{
     most : string;
     least : string;
-    mostVal : string;
-    leastVal : string;
+    // mostVal : string;
+    // leastVal : string;
 
     constructor(data : Question = null){
         if(data){
@@ -19,12 +19,12 @@ export class Answer{
 
         if(likes){
             this.most = likes.value;
-            this.mostVal = likes.likeValue;
+            // this.mostVal = likes.likeValue;
         }
 
         if(dislikes){
             this.least = dislikes.value;
-            this.leastVal = dislikes.dislikeValue;
+            // this.leastVal = dislikes.dislikeValue;
         }
     }
 }
