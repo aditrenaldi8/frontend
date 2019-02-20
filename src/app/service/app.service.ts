@@ -23,6 +23,7 @@ export class AppService {
 
   cloakHidden = new BehaviorSubject(true);
   snackBarMessage = new BehaviorSubject('Selamat Datang');
+  latest = new BehaviorSubject({});
 
   changeCloak(value : boolean){
     setTimeout(() => {
@@ -32,6 +33,10 @@ export class AppService {
 
   changeMessage(value : string){
       this.snackBarMessage.next(value);
+  }
+
+  changeLatest(value){
+    this.latest.next(value);
   }
 
   registerUser(value: any): Observable<any> {

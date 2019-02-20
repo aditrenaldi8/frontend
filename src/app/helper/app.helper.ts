@@ -15,4 +15,16 @@ export class AppHelper {
         });
     }
 
+    compareDate(value : any){
+        const latestDate = new Date (value);
+        const now = new Date();
+        const timeDiff = Math.abs(now.getTime() - latestDate.getTime());
+        const diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+        if(diffDays > 180){
+          return true;
+        }else{
+          return false;
+        }
+    }
+
 }

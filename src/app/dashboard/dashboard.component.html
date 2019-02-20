@@ -22,10 +22,17 @@
                 dan begitupun jika yang bersangkutan menilai bahwa pernyataan <b>"Percaya pada orang lain"</b> paling tidak sesuai dengan dirinya, maka pilihlah ikon thumb down <b>Least</b> di pernyatan tersebut.   
             </p>
         </div>
+
+        <div style="margin: 20px" *ngIf="!canAnswer">
+            <p align="center" style="font-size:18px;"> <b>Anda telah mengerjakan tes ini dalam kurun waktu 6 Bulan terakhir </b></p>
+        </div>
     </mat-card-content>
     <mat-card-actions style="text-align: center;">
         <a routerLink="/home/disc">
-            <button mat-raised-button color="primary">Kerjakan Soal</button>
+            <button mat-raised-button color="primary">
+                <span *ngIf="canAnswer"> Kerjakan Soal </span>
+                <span *ngIf="!canAnswer"> Lihat Hasil Test </span>
+            </button>
         </a>
     </mat-card-actions>
 </mat-card>

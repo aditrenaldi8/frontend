@@ -20,7 +20,7 @@ export class DiscComponent implements OnInit {
   result: Result;
   graph : any;
 
-  canAnswer : boolean;
+  // canAnswer : boolean;
   graphVal : any;
 
   ngOnInit() {
@@ -31,24 +31,17 @@ export class DiscComponent implements OnInit {
   checkLatest(){
     this.graphVal = localStorage.getItem('latest') ? JSON.parse(localStorage.getItem('latest')) : null;
     if(this.graphVal){
-      const latestDate = new Date (this.graphVal.data.createDate);
-      const now = new Date();
-      const timeDiff = Math.abs(now.getTime() - latestDate.getTime());
-      const diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-      if(diffDays > 180){
-        this.canAnswer = true;
-      }else{
-        this.canAnswer = false;
+      const canAnswer = this.helper.compareDate(this.graphVal.updateDate)
+      if(!canAnswer){
+        this.setGraph();
       }
-    }else{
-      this.canAnswer = true;
     }
   }
 
   setGraph(value? : any){
     this.graph = value ? value : this.graphVal;
     this.questionDone = true;
-    this.canAnswer = true;
+    // this.canAnswer = true;
 
     value && this.setlatest();
   }
@@ -59,15 +52,20 @@ export class DiscComponent implements OnInit {
       this.appService.changeCloak(true)
       if(localStorage.getItem('latest')){
         localStorage.removeItem('latest')
-        localStorage.setItem('latest', JSON.stringify(response));      
+        this.saveLatest(response);
       }else{
-        localStorage.setItem('latest', JSON.stringify(response));
+        this.saveLatest(response);
       }
   
     },error=>{
       this.appService.changeCloak(true)
       console.log(error);
     });
+  }
+
+  saveLatest(response : any){
+    localStorage.setItem('latest', JSON.stringify(response));
+    this.appService.changeLatest(response);
   }
 
   getAnswer(value:Result){

@@ -48,6 +48,7 @@ export class HomeComponent implements OnInit {
           this.appService.changeCloak(true)
           if(!_.isEmpty(response.data)){
             localStorage.setItem('latest', JSON.stringify(response));
+            this.appService.changeLatest(response)
           }
         },error=>{
           this.appService.changeCloak(true)

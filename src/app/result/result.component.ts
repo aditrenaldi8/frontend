@@ -76,7 +76,6 @@ export class ResultComponent implements OnInit {
     }
 
     ngOnInit() {
-      console.log('resp', this.response.result.profileDescription);
       setTimeout(()=>{
         this.setData(this.response);
       },200)

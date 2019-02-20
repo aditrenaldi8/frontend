@@ -1,8 +1,8 @@
-<div style="margin:50px; text-align:center" *ngIf="!canAnswer">
+<!-- <div style="margin:50px; text-align:center" *ngIf="!canAnswer">
     <p align="center" style="font-size:18px; margin-bottom:20px"> <b>Anda telah mengerjakan tes ini dalam kurun waktu 6 Bulan terakhir </b></p>
     
     <button mat-raised-button color="primary" (click)="setGraph()">Lihat Hasil Test</button>
-</div>
+</div> -->
 
-<app-question *ngIf="!questionDone && canAnswer" (sentVal)="getAnswer($event)"></app-question>
+<app-question *ngIf="!questionDone" (sentVal)="getAnswer($event)"></app-question>
 <app-result *ngIf="questionDone" [response]="graph"></app-result>
