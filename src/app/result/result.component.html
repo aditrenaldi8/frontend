@@ -7,14 +7,14 @@
                 [rowspan]="1"
             >
                 <h1>
-                    Psychogram
+                    Psikogram
                 </h1>
             </mat-grid-tile>
         </mat-grid-list>
 
         <mat-grid-list cols="12" rowHeight="250px">
             <mat-grid-tile
-                [colspan]="4"
+                [colspan]="column"
                 [rowspan]="1"
             >
                 <div class="chart" *ngIf='show'>
@@ -24,14 +24,13 @@
                         [options]="lineChartOptions"
                         [legend]="lineChartLegend"
                         [chartType]="lineChartType"
-                        [colors]="color"
                     >
                     </canvas>
                 </div>
             </mat-grid-tile>
 
             <mat-grid-tile
-                [colspan]="4"
+                [colspan]="column"
                 [rowspan]="1"
             >
                 <div class="chart" *ngIf='show'>
@@ -41,14 +40,13 @@
                         [options]="lineChartOptions"
                         [legend]="lineChartLegend"
                         [chartType]="lineChartType"
-                        [colors]="color2"
                     >
                     </canvas>
                 </div>
             </mat-grid-tile>
 
             <mat-grid-tile
-                [colspan]="4"
+                [colspan]="column"
                 [rowspan]="1"
             >
                 <div class="chart" *ngIf='show'>
@@ -58,7 +56,6 @@
                         [options]="lineChartOptions"
                         [legend]="lineChartLegend"
                         [chartType]="lineChartType"
-                        [colors]="color3"
                     >
                     </canvas>
                 </div>
@@ -66,27 +63,17 @@
 
         </mat-grid-list>
 
-        <mat-grid-list cols="12" rowHeight="100px">
-                <mat-grid-tile
-                    [colspan]="12"
-                    [rowspan]="1"
-                >
-                    <h1>
-                        {{type}}
-                    </h1>
+    
+        <div style="margin-top: 30px">
+            <p align="center" style="font-size: 24px">
+                <b>Deskripsi </b>
+            </p>
 
-                </mat-grid-tile>
+            <p align="center">
+                {{description}}
+            </p>
+        </div>
 
-                <mat-grid-tile
-                    [colspan]="12"
-                    [rowspan]="1"
-                >
-                    <p align="center">
-                        {{description}}
-                    </p>
-
-                </mat-grid-tile>
-            </mat-grid-list>
     </mat-card-content>
     <mat-card-actions style="text-align: right;">
         <a routerLink="/">

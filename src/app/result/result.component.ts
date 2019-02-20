@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { MediaObserver, MediaChange } from '@angular/flex-layout';
 
 @Component({
   selector: 'app-result',
@@ -18,41 +20,27 @@ export class ResultComponent implements OnInit {
     lineChartDataPrivate:Array<any> = []
     lineChartDataPercieved:Array<any> = []
 
-    color:Array<any>=[
-      {
-        fillColor: 'red',
-        strokeColor: 'red',
-        highlightFill: 'red',
-        highlightStroke: 'red'
-      }
-    ];
-
-    color2:Array<any>=[
-      {
-        fillColor: 'blue',
-        strokeColor: 'blue',
-        highlightFill: 'blue',
-        highlightStroke: 'blue'
-      }
-    ];
-
-    color3:Array<any>=[
-      {
-        fillColor: 'yellow',
-        strokeColor: 'yellow',
-        highlightFill: 'yellow',
-        highlightStroke: 'yellow'
-      }
-    ]
-
     lineChartLegend:boolean = true;
     lineChartType:string = 'line';
 
     show:boolean = false;
-    type : string;
+    // type : string;
     description: string;
 
-    constructor() { }
+    watcher: Subscription;
+    column : number;
+
+    constructor(
+      media : MediaObserver,
+    ) { 
+      this.watcher = media.media$.subscribe((change: MediaChange) => {
+        if (change.mqAlias === 'sm' || change.mqAlias === 'xs') {
+          this.column = 12;
+        } else {
+          this.column = 4;
+        }
+      });
+    }
 
     ngOnInit() {
       setTimeout(()=>{
@@ -65,7 +53,9 @@ export class ResultComponent implements OnInit {
           'data' : [
               response.data.publicSelf.dominant, response.data.publicSelf.influence, response.data.publicSelf.steady, response.data.publicSelf.compliance 
           ],
-          label: 'Public'
+          label: 'Public',
+          backgroundColor : 'rgb(0,0,255)',
+          borderColor : 'rgb(0,0,255)'
         })
 
         this.lineChartDataPrivate.push({
@@ -82,7 +72,7 @@ export class ResultComponent implements OnInit {
           label: 'Percieved'
         })
 
-        this.type = response.data.resultProfiling.profileName;
+        // this.type = response.data.resultProfiling.profileName;
         this.description = response.data.resultProfiling.profileDescription;
 
         this.show = true;

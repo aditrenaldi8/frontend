@@ -68,7 +68,7 @@
                                     <mat-icon> thumb_up </mat-icon>
                                 </button>
 
-                                <span style="margin-left: 10px" fxShow.lt-md="false" fxShow.gt-sm="true">
+                                <span style="margin-left: 10px" *ngIf="!hide">
                                     <b> Most </b>
                                 </span>
                         
@@ -86,7 +86,7 @@
                                     <mat-icon> thumb_down </mat-icon>
                                 </button>
 
-                                <span style="margin-left: 10px" fxShow.lt-md="false" fxShow.gt-sm="true">
+                                <span style="margin-left: 10px" *ngIf="!hide">
                                     <b> Least </b>
                                 </span>
                         

@@ -20,8 +20,27 @@ export class DiscComponent implements OnInit {
   result: Result;
   graph : any;
 
+  canAnswer : boolean;
+  graphVal : any;
+
   ngOnInit() {
     this.email = JSON.parse(localStorage.getItem('data')).sub;
+    this.checkLatest()
+  }
+
+  checkLatest(){
+    this.graphVal = localStorage.getItem('latest') ? JSON.parse(localStorage.getItem('latest')) : null;
+    if(this.graphVal){
+      this.canAnswer = true;
+    }else{
+      this.canAnswer = false;
+    }
+  }
+
+  setGraph(value? : any){
+    this.graph = value ? value : this.graphVal;
+    this.questionDone = true;
+    this.canAnswer = true;
   }
 
   getAnswer(value:Result){
@@ -36,8 +55,7 @@ export class DiscComponent implements OnInit {
     this.appService.getGraph(params).subscribe(
       response=>{
         this.appService.changeCloak(true);
-        this.graph = response;
-        this.questionDone = true;
+        this.setGraph(response);
       },
       error=>{
         this.appService.changeCloak(true);
