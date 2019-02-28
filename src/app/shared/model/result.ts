@@ -7,12 +7,14 @@ export class Result{
     private: DISC;
     percieved: DISC;
     summary : Answer[];
+    valid : boolean;
 
     constructor(){
         this.public = new DISC();
         this.private = new DISC();
         this.percieved = new DISC();
         this.summary = [];
+        this.valid = false;
     }
 
     setValue(val : string, type: string){
@@ -44,6 +46,16 @@ export class Result{
         }
 
         this.setPercievedData();
+        this.isValid();
+    }
+
+    isValid(){
+        let privateLength = this.private.all + this.private.c + this.private.d + this.private.i + this.private.s;
+        let publicLength = this.public.all + this.public.c + this.public.d + this.public.i + this.public.s;
+
+        if(publicLength == 24 && privateLength == 24){
+            this.valid = true;
+        }
     }
 
     setPercievedData(){

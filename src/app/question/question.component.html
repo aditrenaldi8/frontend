@@ -9,12 +9,12 @@
         <h3>
             Selamat Mengerjakan
         </h3>
-        <span> {{time}}</span>
+        <span class="red"> {{time}}</span>
     </div>
     <mat-divider></mat-divider>
 
     <mat-card-content>
-        <mat-grid-list cols="12" rowHeight="80px" style="margin-top:20px" fxShow.lt-md="false" fxShow.gt-sm="true">
+        <mat-grid-list cols="12" rowHeight="80px" style="margin-top:20px" *ngIf="!hide">
              <mat-grid-tile
                 [colspan]="12"
                 [rowspan]="1"
@@ -25,15 +25,15 @@
                     </mat-button-toggle>
                 </mat-button-toggle-group> -->
                 <div *ngFor="let item of toogleOptions">
-                    <button *ngIf="section[item-1].show && !questions[item-1].valid" mat-mini-fab color="accent" (click)="change(item)"> {{ item }}</button>
-                    <button *ngIf="!section[item-1].show && !questions[item-1].valid" mat-mini-fab color="basic" (click)="change(item)"> {{ item }}</button>
-                    <button *ngIf="questions[item-1].valid" mat-mini-fab color="primary" (click)="change(item)"> {{ item }}</button>
+                    <button *ngIf="section[item-1].show && !questions[item-1].valid" class="button button-warn" (click)="change(item)"> {{ item }}</button>
+                    <button *ngIf="!section[item-1].show && !questions[item-1].valid" class="button button-trans" (click)="change(item)"> {{ item }}</button>
+                    <button *ngIf="questions[item-1].valid" class="button button-primary" (click)="change(item)"> {{ item }}</button>
                 </div>
             </mat-grid-tile>
         </mat-grid-list>
         
         <div *ngFor="let item of questions, let i=index, let l=last, let f= first">
-            <mat-card style="margin-top:20px" *ngIf="section[i].show">
+            <mat-card style="margin-top:20px" id="question{{i}}">
                 <mat-card-content>
                     <mat-grid-list cols="12" rowHeight="50px" >
                         <div *ngFor="let value of item.statements, let vi= index, let f = first">
@@ -41,7 +41,7 @@
                             <mat-grid-tile *ngIf="section[i].show && !hide" [colspan]="2" [rowspan]="1">
                             </mat-grid-tile>
 
-                            <mat-grid-tile *ngIf="section[i].show"
+                            <mat-grid-tile *ngIf="section[i].show && hide" 
                                 [colspan]="1"
                                 [rowspan]="1"
                             >
@@ -60,11 +60,11 @@
                                 [rowspan]="1"
                             >
 
-                                <button mat-mini-fab color="basic" *ngIf="!value.like" (click)="likes(i, vi)"> 
+                                <button class="button-choice button-trans" *ngIf="!value.like" (click)="likes(i, vi)"> 
                                     <mat-icon> thumb_up </mat-icon>
                                 </button>
 
-                                <button mat-mini-fab color="primary" *ngIf="value.like" (click)="likes(i, vi)"> 
+                                <button class="button-choice button-primary" *ngIf="value.like" (click)="likes(i, vi)"> 
                                     <mat-icon> thumb_up </mat-icon>
                                 </button>
 
@@ -78,11 +78,11 @@
                                 [colspan]="2"
                                 [rowspan]="1"
                             >
-                                <button mat-mini-fab color="basic" *ngIf="!value.dislike" (click)="dislikes(i, vi)"> 
+                                <button class="button-choice button-trans" *ngIf="!value.dislike" (click)="dislikes(i, vi)"> 
                                     <mat-icon> thumb_down </mat-icon>
                                 </button>
 
-                                <button mat-mini-fab color="warn" *ngIf="value.dislike" (click)="dislikes(i, vi)"> 
+                                <button class="button-choice button-danger" *ngIf="value.dislike" (click)="dislikes(i, vi)"> 
                                     <mat-icon> thumb_down </mat-icon>
                                 </button>
 
@@ -99,7 +99,7 @@
                     </mat-grid-list>
                 </mat-card-content> 
             </mat-card>
-            <div style="text-align: right; margin-top:20px; margin-bottom:20px;" *ngIf="section[i].show">
+            <div style="text-align: center; margin-top:20px; margin-bottom:20px;" *ngIf="section[i].show">
                 <button mat-raised-button style="margin-right:10px" color="warn" *ngIf="!f" (click)="previous(i)">Sebelumnya</button>
                 <button mat-raised-button color="primary" *ngIf="!l" (click)="next(i)">Selanjutnya</button>
                 <button mat-raised-button color="primary" *ngIf="l" (click)="submit()">Submit</button>

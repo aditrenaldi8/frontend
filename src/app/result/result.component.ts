@@ -13,7 +13,23 @@ export class ResultComponent implements OnInit {
     
     lineChartLabels:Array<any> = ['D', 'I', 'S', 'C'];
     lineChartOptions:any = {
-      responsive: true
+      responsive: true,
+      maintainAspectRatio: false,
+      elements: {
+        line: {
+            tension: 0, // disables bezier curves
+        }
+      },
+      scales: {
+        yAxes: [
+          {
+            ticks: {
+              min: -40,
+              max: 40
+            }
+          }
+        ],
+      }
     };
 
     lineChartDataPublic:Array<any> = []

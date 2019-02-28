@@ -3,7 +3,8 @@
 }
 
 .chart{
-    display: block; 
+    display: block;
+    height:400px;
     /* max-width:50%;  */
     margin-left:25%; 
     margin-right:25%;

@@ -75,7 +75,7 @@ export class DiscComponent implements OnInit {
 
   getResult(){
     let params = this.buildPayload()
-    
+
     this.appService.changeCloak(false);
     this.appService.getGraph(params).subscribe(
       response=>{
@@ -84,7 +84,11 @@ export class DiscComponent implements OnInit {
       },
       error=>{
         this.appService.changeCloak(true);
-        this.appService.changeMessage('Gagal mendapatkan data')
+        if(error.status == 401){
+          this.appService.changeMessage('Otorisasi tidak Sah, Silahkan Login Ulang');
+        }else{
+          this.appService.changeMessage('Gagal mendapatkan data')
+        }
         this.helper.openSnackBar();
         console.log(error);
       }
@@ -106,7 +110,7 @@ export class DiscComponent implements OnInit {
         compliance: this.result.private.c,
         dominant: this.result.private.d,
         influence: this.result.private.i,
-        mostEqual: this.result.public.all + this.result.private.c + this.result.private.d + this.result.private.i + this.result.private.s,
+        mostEqual: this.result.private.all + this.result.private.c + this.result.private.d + this.result.private.i + this.result.private.s,
         steady: this.result.private.s
       },
       most: {

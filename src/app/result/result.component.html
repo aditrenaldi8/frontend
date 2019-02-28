@@ -12,13 +12,13 @@
             </mat-grid-tile>
         </mat-grid-list>
 
-        <mat-grid-list cols="12" rowHeight="250px">
+        <mat-grid-list cols="12" rowHeight="500px">
             <mat-grid-tile
                 [colspan]="column"
                 [rowspan]="1"
             >
                 <div class="chart" *ngIf='show'>
-                    <canvas baseChart
+                    <canvas baseChart 
                         [datasets]="lineChartDataPublic"
                         [labels]="lineChartLabels"
                         [options]="lineChartOptions"

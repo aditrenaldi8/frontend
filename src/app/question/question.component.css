@@ -14,4 +14,56 @@
 .text-inside-grid {
     position: absolute;
     left: 5px;
-};
+}
+
+.button{
+    box-shadow: 1px 1px #d3d2cf;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.red{
+    color: #f44336;
+}
+
+.button-choice{
+    box-shadow: 1px 1px #d3d2cf;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.button-trans{
+    background-color: white; 
+    border: 1px solid #d3d2cf;
+    color: #616063;
+}
+
+.button-primary{
+    background-color: #673ab7; 
+    border: 1px solid #d3d2cf;
+    color: white;
+}
+
+.button-warn{
+    background-color: #ffd740; 
+    border: 1px solid #d3d2cf;
+    color: white;
+}
+
+.button-danger{
+    background-color: #f44336; 
+    border: 1px solid #d3d2cf;
+    color: white;
+}
+
+
+
+
+
+

@@ -5,6 +5,7 @@ import { Result } from '../shared/model/result';
 import { AppService } from '../service/app.service';
 
 import * as _ from 'lodash';
+import * as $ from 'jquery';
 import { Subscription } from 'rxjs';
 import { MediaObserver, MediaChange } from '@angular/flex-layout';
 
@@ -43,7 +44,7 @@ export class QuestionComponent implements OnInit {
         this.column = 12;
         this.hide = true;
       } else {
-        this.statementColumn = 3;
+        this.statementColumn = 4;
         this.column = 2;
         this.hide = false;
       }
@@ -53,6 +54,37 @@ export class QuestionComponent implements OnInit {
 
   ngOnInit() {
     this.setQuestion();
+  }
+
+  init(){
+    this.questions.map((val,index)=>{
+      this.initShowHide(index);
+    })
+  }
+
+  initShowHide(index:number){
+    let data = $("#question"+index); 
+    if(index == 0){
+      data.show()
+    }else{
+      data.hide()
+    }
+  }
+
+
+  showHide(index :number, index2:number){
+    this.hideQ(index);
+    this.showQ(index2);
+  }
+
+  hideQ(index:number):void{
+      let data = $("#question"+index); 
+      data.hide()
+  }
+
+  showQ(index:number):void{
+      let data = $("#question"+index); 
+      data.show('slow')
   }
 
   setQuestion(){
@@ -68,20 +100,24 @@ export class QuestionComponent implements OnInit {
   change(value : any){
       this.selectedValue = value;
       const data = _.find(this.section, item => item.show == true );
+      const index = _.findIndex(this.section, item => item.show == true );
       if(data) { data.show = false };
       this.section[this.selectedValue - 1].show = true;
+      this.showHide(index, this.selectedValue-1)
   }
 
   next(index:number){
       this.section[index].show = false;
       this.section[index+1].show = true; 
       this.selectedValue += 1;
+      this.showHide(index, index+1);
   }
 
   previous(index:number){
     this.section[index].show = false;
     this.section[index-1].show = true; 
     this.selectedValue -= 1;
+    this.showHide(index, index-1);
   }
 
   startTimer() {
@@ -89,6 +125,10 @@ export class QuestionComponent implements OnInit {
       this.timeStart ++;
       this.convertTime(this.timeStart)
     },1000)
+
+    setTimeout(() => {
+      this.init()
+    }, 1000);
   }
   
   convertTime(value : number){
@@ -133,17 +173,17 @@ export class QuestionComponent implements OnInit {
   }
 
   countDISC(){
-    let counter = 0;
+
     this.result.reset();
     this.questions.map((value)=>{
         this.result.setValue(value.like, 'public');
         this.result.setValue(value.dislike, 'private');
         this.result.setSummary(value);
-        counter++;
-        if(counter == this.questions.length - 1){
-            this.sentVal.emit(this.result)
-        }
     })
+
+    if(this.result.valid){
+      this.sentVal.emit(this.result)
+    }
   }
 
   start(){
@@ -185,9 +225,9 @@ export class QuestionComponent implements OnInit {
       if(like && dislike){
         this.questions[index].valid = true;
         if(this.questions.length != (index+1)){
-          setTimeout(()=>{
+          // setTimeout(()=>{
               this.next(index)
-          },1000)
+          // },1000)
         }
       }
     },100)
