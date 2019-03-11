@@ -4,7 +4,7 @@ import { MediaObserver, MediaChange } from '@angular/flex-layout';
 import { yAxis } from '../shared/model/y-axis';
 import publicJson from '../shared/model/public.json';
 import privateJson from '../shared/model/private.json';
-import percieved from '../shared/model/percieved.json';
+import percievedJson from '../shared/model/percieved.json';
 
 import * as _ from 'lodash';
 
@@ -30,6 +30,12 @@ export class ResultComponent implements OnInit {
         c : 0
       },
       private : {
+        d : 0,
+        i : 0,
+        s : 0,
+        c : 0
+      },
+      percieved : {
         d : 0,
         i : 0,
         s : 0,
@@ -130,7 +136,7 @@ export class ResultComponent implements OnInit {
     ngOnInit() {
       this.publicValue = publicJson;
       this.privateValue = privateJson;
-      this.percievedValue = publicJson;
+      this.percievedValue = percievedJson;
       
       this.show = true;
       setTimeout(()=>{  
@@ -203,10 +209,10 @@ export class ResultComponent implements OnInit {
         steady = _.find(this.privateValue.S, item => item.value == this.data.private.s );
         compliance = _.find(this.privateValue.C, item => item.value == this.data.private.c );
       }else{
-        dominance = _.find(this.percievedValue.D, item => item.value == this.data.public.d );
-        influence = _.find(this.percievedValue.I, item => item.value == this.data.public.i );
-        steady = _.find(this.percievedValue.S, item => item.value == this.data.public.s );
-        compliance = _.find(this.percievedValue.C, item => item.value == this.data.public.c );
+        dominance = _.find(this.percievedValue.D, item => item.value == this.data.percieved.d );
+        influence = _.find(this.percievedValue.I, item => item.value == this.data.percieved.i );
+        steady = _.find(this.percievedValue.S, item => item.value == this.data.percieved.s );
+        compliance = _.find(this.percievedValue.C, item => item.value == this.data.percieved.c );
       }
 
       if(type == 'public'){
