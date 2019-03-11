@@ -6,10 +6,21 @@
 
     <mat-card-content>
         <div style="margin-top: 30px">
+            <p align="center" style="font-size:24px"> 
+                <b>
+                    Selamat Datang di DISC Personality test PT. Prima Kompetensi (PRIMASI)
+                </b>
+            </p>
+
+            <p align="center" style="font-size:18px"> 
+                <b>Berikut Kami berikan panduan pengerjaannya : </b>
+            </p>
+            
             <p align="justify">
                 Pada  setiap baris, ada empat pernyataan, pilihlah satu yang <b>paling sesuai dengan diri ANDA</b> dengan memilih ikon thumb up berketerangan <b>Most</b>, 
                 dan kemudian satu yang <b>paling tidak sesuai dengan diri ANDA</b> dengan memilih ikon thumb down berketerangan <b>Least</b> yang masing-masing berada di sebelah kanan pernyataan.
             </p>
+
             <p>
             Contoh :
             </p>
@@ -29,7 +40,7 @@
     </mat-card-content>
     <mat-card-actions style="text-align: center;">
         <a routerLink="/home/disc">
-            <button mat-raised-button color="primary" style="margin-bottom:20px">
+            <button mat-raised-button color="primary" style="margin-bottom:40px">
                 <span *ngIf="canAnswer"> Kerjakan Soal </span>
                 <span *ngIf="!canAnswer"> Lihat Hasil Test </span>
             </button>

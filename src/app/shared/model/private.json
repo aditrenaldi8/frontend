@@ -1,0 +1,334 @@
+{
+    "D": [
+        {
+            "value" : "0",
+            "yAxis" : "450"
+        },
+        {
+            "value" : "1",
+            "yAxis" : "425"
+        },
+        {
+            "value" : "2",
+            "yAxis" : "375"
+        },
+        {
+            "value" : "3",
+            "yAxis" : "370"
+        },
+        {
+            "value" : "4",
+            "yAxis" : "340"
+        },
+        {
+            "value" : "5",
+            "yAxis" : "330"
+        },
+        {
+            "value" : "6",
+            "yAxis" : "300"
+        },
+        {
+            "value" : "7",
+            "yAxis" : "290"
+        },
+        {
+            "value" : "8",
+            "yAxis" : "275"
+        },
+        {
+            "value" : "9",
+            "yAxis" : "250"
+        },
+        {
+            "value" : "10",
+            "yAxis" : "225"
+        },
+        {
+            "value" : "11",
+            "yAxis" : "210"
+        },
+        {
+            "value" : "12",
+            "yAxis" : "200"
+        },
+        {
+            "value" : "13",
+            "yAxis" : "185"
+        },
+        {
+            "value" : "14",
+            "yAxis" : "175"
+        },
+        {
+            "value" : "15",
+            "yAxis" : "135"
+        },
+        {
+            "value" : "16",
+            "yAxis" : "125"
+        },
+        {
+            "value" : "17",
+            "yAxis" : "123"
+        },
+        {
+            "value" : "18",
+            "yAxis" : "121"
+        },
+        {
+            "value" : "19",
+            "yAxis" : "119"
+        },
+        {
+            "value" : "20",
+            "yAxis" : "117"
+        },
+        {
+            "value" : "21",
+            "yAxis" : "115"
+        }
+    ],
+    "I" : [
+        {
+            "value" : "0",
+            "yAxis" : "475"
+        },
+        {
+            "value" : "1",
+            "yAxis" : "420"
+        },
+        {
+            "value" : "2",
+            "yAxis" : "370"
+        },
+        {
+            "value" : "3",
+            "yAxis" : "330"
+        },
+        {
+            "value" : "4",
+            "yAxis" : "275"
+        },
+        {
+            "value" : "5",
+            "yAxis" : "225"
+        },
+        {
+            "value" : "6",
+            "yAxis" : "210"
+        },
+        {
+            "value" : "7",
+            "yAxis" : "175"
+        },
+        {
+            "value" : "8",
+            "yAxis" : "165"
+        },
+        {
+            "value" : "9",
+            "yAxis" : "150"
+        },
+        {
+            "value" : "10",
+            "yAxis" : "135"
+        },
+        {
+            "value" : "11",
+            "yAxis" : "125"
+        },
+        {
+            "value" : "12",
+            "yAxis" : "124"
+        },
+        {
+            "value" : "13",
+            "yAxis" : "123"
+        },
+        {
+            "value" : "14",
+            "yAxis" : "123"
+        },
+        {
+            "value" : "15",
+            "yAxis" : "121"
+        },
+        {
+            "value" : "16",
+            "yAxis" : "120"
+        },
+        {
+            "value" : "17",
+            "yAxis" : "119"
+        },
+        {
+            "value" : "18",
+            "yAxis" : "118"
+        },
+        {
+            "value" : "19",
+            "yAxis" : "115"
+        }
+    ],
+    "S" : [
+        {
+            "value" : "0",
+            "yAxis" : "445"
+        },
+        {
+            "value" : "1",
+            "yAxis" : "420"
+        },
+        {
+            "value" : "2",
+            "yAxis" : "385"
+        },
+        {
+            "value" : "3",
+            "yAxis" : "340"
+        },
+        {
+            "value" : "4",
+            "yAxis" : "320"
+        },
+        {
+            "value" : "5",
+            "yAxis" : "290"
+        },
+        {
+            "value" : "6",
+            "yAxis" : "275"
+        },
+        {
+            "value" : "7",
+            "yAxis" : "240"
+        },
+        {
+            "value" : "8",
+            "yAxis" : "225"
+        },
+        {
+            "value" : "9",
+            "yAxis" : "200"
+        },
+        {
+            "value" : "10",
+            "yAxis" : "190"
+        },
+        {
+            "value" : "11",
+            "yAxis" : "180"
+        },
+        {
+            "value" : "12",
+            "yAxis" : "165"
+        },
+        {
+            "value" : "13",
+            "yAxis" : "163"
+        },
+        {
+            "value" : "14",
+            "yAxis" : "135"
+        },
+        {
+            "value" : "15",
+            "yAxis" : "125"
+        },
+        {
+            "value" : "16",
+            "yAxis" : "122"
+        },
+        {
+            "value" : "17",
+            "yAxis" : "121"
+        },
+        {
+            "value" : "18",
+            "yAxis" : "118"
+        },
+        {
+            "value" : "19",
+            "yAxis" : "117"
+        },
+        {
+            "value" : "20",
+            "yAxis" : "115"
+        }
+    ],
+    "C" : [
+        {
+            "value" : "0",
+            "yAxis" : "450"
+        },
+        {
+            "value" : "1",
+            "yAxis" : "420"
+        },
+        {
+            "value" : "2",
+            "yAxis" : "385"
+        },
+        {
+            "value" : "3",
+            "yAxis" : "340"
+        },
+        {
+            "value" : "4",
+            "yAxis" : "275"
+        },
+        {
+            "value" : "5",
+            "yAxis" : "250"
+        },
+        {
+            "value" : "6",
+            "yAxis" : "225"
+        },
+        {
+            "value" : "7",
+            "yAxis" : "175"
+        },
+        {
+            "value" : "8",
+            "yAxis" : "165"
+        },
+        {
+            "value" : "9",
+            "yAxis" : "155"
+        },
+        {
+            "value" : "10",
+            "yAxis" : "150"
+        },
+        {
+            "value" : "11",
+            "yAxis" : "135"
+        },
+        {
+            "value" : "12",
+            "yAxis" : "130"
+        },
+        {
+            "value" : "13",
+            "yAxis" : "125"
+        },
+        {
+            "value" : "14",
+            "yAxis" : "123"
+        },
+        {
+            "value" : "15",
+            "yAxis" : "120"
+        },
+        {
+            "value" : "16",
+            "yAxis" : "117"
+        },
+        {
+            "value" : "17",
+            "yAxis" : "115"
+        }
+    ]
+}

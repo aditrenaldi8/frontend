@@ -1,0 +1,15 @@
+.welcome{
+    margin: 20px;
+}
+
+.responsive {
+    width: 60%;
+    height: auto;
+}
+
+canvas {
+    margin: -4px -5px;
+    border-style: none;
+    left: 0px;
+    top: 0px;
+}
