@@ -3,6 +3,8 @@ import { Subscription } from 'rxjs';
 import { MediaObserver, MediaChange } from '@angular/flex-layout';
 import { yAxis } from '../shared/model/y-axis';
 import publicJson from '../shared/model/public.json';
+import privateJson from '../shared/model/private.json';
+import percieved from '../shared/model/percieved.json';
 
 import * as _ from 'lodash';
 
@@ -22,10 +24,16 @@ export class ResultComponent implements OnInit {
     //sementara
     data : any = {
       public : {
-        d : 7,
-        i : 6,
-        s : 2,
-        c : 3
+        d : 0,
+        i : 0,
+        s : 0,
+        c : 0
+      },
+      private : {
+        d : 0,
+        i : 0,
+        s : 0,
+        c : 0
       }
     }    
     // lineChartLabels:Array<any> = ['D', 'I', 'S', 'C'];
@@ -121,9 +129,9 @@ export class ResultComponent implements OnInit {
 
     ngOnInit() {
       this.publicValue = publicJson;
-      console.log(this.publicValue)
-      this.privateValue = publicJson;
+      this.privateValue = privateJson;
       this.percievedValue = publicJson;
+      
       this.show = true;
       setTimeout(()=>{  
         // this.setData(this.response);
@@ -190,10 +198,10 @@ export class ResultComponent implements OnInit {
         steady = _.find(this.publicValue.S, item => item.value == this.data.public.s );
         compliance = _.find(this.publicValue.C, item => item.value == this.data.public.c );
       }else if(type == 'private'){
-        dominance = _.find(this.privateValue.D, item => item.value == this.data.public.d );
-        influence = _.find(this.privateValue.I, item => item.value == this.data.public.i );
-        steady = _.find(this.privateValue.S, item => item.value == this.data.public.s );
-        compliance = _.find(this.privateValue.C, item => item.value == this.data.public.c );
+        dominance = _.find(this.privateValue.D, item => item.value == this.data.private.d );
+        influence = _.find(this.privateValue.I, item => item.value == this.data.private.i );
+        steady = _.find(this.privateValue.S, item => item.value == this.data.private.s );
+        compliance = _.find(this.privateValue.C, item => item.value == this.data.private.c );
       }else{
         dominance = _.find(this.percievedValue.D, item => item.value == this.data.public.d );
         influence = _.find(this.percievedValue.I, item => item.value == this.data.public.i );
@@ -217,10 +225,10 @@ export class ResultComponent implements OnInit {
       context.fillText("Graph "+number+", "+detail,60,15);
       context.fillText(detail2+", "+title,55,35);
 
-      context.fillText("D = 7",30,60);
-      context.fillText("I = 2",70,60);
-      context.fillText("S = 3",110,60);
-      context.fillText("C = 4",150,60);
+      context.fillText("D = "+ dominance.value,30,60);
+      context.fillText("I = "+ influence.value,70,60);
+      context.fillText("S = "+ steady.value,110,60);
+      context.fillText("C = "+ compliance.value,150,60);
 
       // vertical
       context.fillText("D",30,90);
