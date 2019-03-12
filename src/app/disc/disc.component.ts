@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Result } from '../shared/model/result';
 import { AppService } from '../service/app.service';
 import { AppHelper } from '../helper/app.helper';
+import { Answer } from '../shared/model/answer';
 
 @Component({
   selector: 'app-disc',
@@ -121,10 +122,18 @@ export class DiscComponent implements OnInit {
         mostEqual: this.result.public.all + this.result.public.c + this.result.public.d + this.result.public.i + this.result.public.s, 
         steady: this.result.public.s
       },
-      respondenData: JSON.stringify(this.result.summary)
+      respondenData: this.setResponseData(this.result.summary)
     }
 
     return data;
+  }
+
+  setResponseData(value : Answer[]){
+      let data :any[] = [];
+      value.map((val,index)=>{
+        data.push([index,val.most, val.least]);
+      })
+      return JSON.stringify(data);
   }
 
 }

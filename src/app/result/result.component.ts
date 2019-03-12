@@ -21,27 +21,6 @@ export class ResultComponent implements OnInit {
     privateValue : yAxis;
     percievedValue : yAxis;
 
-    //sementara
-    data : any = {
-      public : {
-        d : 0,
-        i : 0,
-        s : 0,
-        c : 0
-      },
-      private : {
-        d : 0,
-        i : 0,
-        s : 0,
-        c : 0
-      },
-      percieved : {
-        d : 0,
-        i : 0,
-        s : 0,
-        c : 0
-      }
-    }    
     // lineChartLabels:Array<any> = ['D', 'I', 'S', 'C'];
     // lineChartOptions:any = {
     //   responsive: true,
@@ -192,6 +171,8 @@ export class ResultComponent implements OnInit {
       let number : string = type == 'public' ? '1' : type=='private' ? '2' : '3';
       let detail : string = type == 'public' ? 'MOST' : type=='private' ? 'LEAST' : 'CHANGE';
       let detail2 : string = type == 'public' ? 'Mask' : type=='private' ? 'Core' : 'Mirror';
+
+      let data = response.formData ? response.formData : response.data.formData;
     
       let dominance : any;
       let influence : any;
@@ -199,20 +180,20 @@ export class ResultComponent implements OnInit {
       let compliance : any;
 
       if(type == 'public'){
-        dominance = _.find(this.publicValue.D, item => item.value == this.data.public.d );
-        influence = _.find(this.publicValue.I, item => item.value == this.data.public.i );
-        steady = _.find(this.publicValue.S, item => item.value == this.data.public.s );
-        compliance = _.find(this.publicValue.C, item => item.value == this.data.public.c );
+        dominance = _.find(this.publicValue.D, item => item.value == data.most.dominant );
+        influence = _.find(this.publicValue.I, item => item.value == data.most.influence );
+        steady = _.find(this.publicValue.S, item => item.value == data.most.steady);
+        compliance = _.find(this.publicValue.C, item => item.value == data.most.compliance );
       }else if(type == 'private'){
-        dominance = _.find(this.privateValue.D, item => item.value == this.data.private.d );
-        influence = _.find(this.privateValue.I, item => item.value == this.data.private.i );
-        steady = _.find(this.privateValue.S, item => item.value == this.data.private.s );
-        compliance = _.find(this.privateValue.C, item => item.value == this.data.private.c );
+        dominance = _.find(this.privateValue.D, item => item.value == data.least.dominant );
+        influence = _.find(this.privateValue.I, item => item.value == data.least.influence );
+        steady = _.find(this.privateValue.S, item => item.value == data.least.steady );
+        compliance = _.find(this.privateValue.C, item => item.value ==data.least.compliance );
       }else{
-        dominance = _.find(this.percievedValue.D, item => item.value == this.data.percieved.d );
-        influence = _.find(this.percievedValue.I, item => item.value == this.data.percieved.i );
-        steady = _.find(this.percievedValue.S, item => item.value == this.data.percieved.s );
-        compliance = _.find(this.percievedValue.C, item => item.value == this.data.percieved.c );
+        dominance = _.find(this.percievedValue.D, item => item.value ==  data.change.dominant );
+        influence = _.find(this.percievedValue.I, item => item.value == data.change.influence );
+        steady = _.find(this.percievedValue.S, item => item.value == data.change.steady );
+        compliance = _.find(this.percievedValue.C, item => item.value == data.change.compliance );
       }
 
       if(type == 'public'){
@@ -316,19 +297,19 @@ export class ResultComponent implements OnInit {
       context.strokeStyle = color;
       context.fillStyle = color;
       
-      context.arc(40, dominance.yAxis, 2, 0, 2 * Math.PI);
+      // context.arc(40, dominance.yAxis, 2, 0, 2 * Math.PI);
       context.moveTo(40, dominance.yAxis);
       context.lineTo(80, influence.yAxis);  
       
-      context.arc(80, influence.yAxis, 2, 0, 2 * Math.PI);
+      // context.arc(80, influence.yAxis, 2, 0, 2 * Math.PI);
       context.moveTo(80, influence.yAxis);
       context.lineTo(120, steady.yAxis); 
       
-      context.arc(120, steady.yAxis, 2, 0, 2 * Math.PI);
+      // context.arc(120, steady.yAxis, 2, 0, 2 * Math.PI);
       context.moveTo(120, steady.yAxis);
       context.lineTo(160, compliance.yAxis); 
       
-      context.arc(160, compliance.yAxis, 2, 0, 2 * Math.PI);
+      // context.arc(160, compliance.yAxis, 2, 0, 2 * Math.PI);
 
       context.stroke();
       context.closePath();
