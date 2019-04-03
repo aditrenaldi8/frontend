@@ -35,7 +35,7 @@ export class AdminComponent implements OnInit {
   displayedColumns: string[] = ['no','nama', 'email', 'selesai', 'waktu'];
 
   length: number;
-  pageSize: number = 10;
+  pageSize:number = 10;
   pageSizeOptions: number[] = [10];
   page: number = 0;
   step: number = 0;
@@ -47,7 +47,7 @@ export class AdminComponent implements OnInit {
 
   // MatPaginator Output
   pageChangeEvent(event : PageEvent){
-    this.page = event.pageIndex;
+    this.page = (event.pageIndex * this.pageSize);
     this.getDataList();
   }
 
@@ -78,7 +78,7 @@ export class AdminComponent implements OnInit {
         this.appService.changeCloak(true);
         this.data = response.data;
         this.changeDateFormat();
-        this.length = Math.ceil(response.countAllData/this.pageSize);
+        this.length = response.countAllData;
       },
       error=>{
         this.appService.changeCloak(true);
