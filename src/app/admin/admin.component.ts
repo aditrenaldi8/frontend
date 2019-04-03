@@ -43,6 +43,7 @@ export class AdminComponent implements OnInit {
   title: string;
 
   graph:any;
+  user: any;
 
   // MatPaginator Output
   pageChangeEvent(event : PageEvent){
@@ -95,10 +96,10 @@ export class AdminComponent implements OnInit {
   buildPayload(){
     const data =  {
       "email": this.form.get('email').value,
-      "endDate": this.form.get('endDate').value,
+      "endDate": this.form.get('endDate').value ? this.helper.changeDateFormat2(this.form.get('endDate').value) : '',
       "length": this.pageSize,
       "start": this.page,
-      "startDate": this.form.get('startDate').value
+      "startDate": this.form.get('startDate').value ? this.helper.changeDateFormat2(this.form.get('startDate').value) : ''
     }
     return data;
   }
@@ -112,7 +113,9 @@ export class AdminComponent implements OnInit {
   }
 
   getData(data: any){
-    this.getUserDetail(data);
+    if(data.has_kuis){
+      this.getUserDetail(data);
+    }
   }
 
   getUserDetail(data: any){
@@ -125,6 +128,7 @@ export class AdminComponent implements OnInit {
         this.graph = response;
         this.setStep(1);
         this.title = data.name;
+        this.user = data;
       },
       error=>{
         this.appService.changeCloak(true);

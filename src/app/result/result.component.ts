@@ -19,7 +19,7 @@ export class ResultComponent implements OnInit {
 
     @Input() response: any ;
     @Input() hideButton: boolean = false;
-    @Input() name: string = '';
+    @Input() user: any = null;
 
     publicValue : yAxis;
     privateValue : yAxis;
@@ -329,10 +329,10 @@ export class ResultComponent implements OnInit {
         var heightLeft = imgHeight;  
     
         const contentDataURL = canvas.toDataURL('image/png')  
-        let pdf = new jspdf('l', 'mm', 'a5'); // A4 size page of PDF  
+        let pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF  
         var position = 0;  
         pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)  
-        pdf.save(this.name+'.pdf'); // Generated PDF   
+        pdf.save(this.user.name+'.pdf'); // Generated PDF   
       });  
   } 
 }

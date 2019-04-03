@@ -1,98 +1,116 @@
 <mat-card class="result mat-elevation-z4"> 
     <mat-card-content > 
         <div id="contentToConvert">
-        <mat-grid-list cols="12" rowHeight="40px">
-            <mat-grid-tile
-                [colspan]="12"
-                [rowspan]="1"
-            >
-                <h1>
+
+            <div *ngIf="user" class="profile-div">
+
+                <div class="img">
+                    <img class="circle" src="./assets/images/primasi.png" width="200">
+                </div>
+
+                <div class="profile">
+                    <span> <b> Nama : {{user.name}}</b> </span>
+                </div>
+
+                <div class="profile">
+                    <span> <b> Email : {{user.email}}</b> </span>
+                </div>
+
+            </div>
+            
+            <div class="psikogram" *ngIf="user">
+                <h3>
                     Psikogram
-                </h1>
-            </mat-grid-tile>
+                </h3>
+            </div>
 
-            <mat-grid-tile *ngIf="name"
-                [colspan]="12"
-                [rowspan]="1"
-            >
+            <mat-grid-list cols="12" rowHeight="40px" *ngIf="!user">
+                <mat-grid-tile
+                    [colspan]="12"
+                    [rowspan]="1"
+                >
+                    <h1>
+                        Psikogram
+                    </h1>
+                </mat-grid-tile>
+            </mat-grid-list>
 
-                <h4 > <b> Nama : {{name}}</b> </h4>
+            <mat-grid-list cols="12" rowHeight="600px">
+                <mat-grid-tile
+                    [colspan]="column"
+                    [rowspan]="1"
+                >
+                    <div class="chart" *ngIf='show'>
+                        <!-- <canvas baseChart 
+                            [datasets]="lineChartDataPublic"
+                            [labels]="lineChartLabels"
+                            [options]="lineChartOptions"
+                            [legend]="lineChartLegend"
+                            [chartType]="lineChartType"
+                            [colors]="publicChartColors"
+                        >
+                        </canvas> -->
+                        <canvas #canvasPublic width="200" height="600"></canvas>
 
-            </mat-grid-tile>
-        </mat-grid-list>
+                    </div>
+                </mat-grid-tile>
 
-        <mat-grid-list cols="12" rowHeight="650px">
-            <mat-grid-tile
-                [colspan]="column"
-                [rowspan]="1"
-            >
-                <div class="chart" *ngIf='show'>
-                    <!-- <canvas baseChart 
-                        [datasets]="lineChartDataPublic"
-                        [labels]="lineChartLabels"
-                        [options]="lineChartOptions"
-                        [legend]="lineChartLegend"
-                        [chartType]="lineChartType"
-                        [colors]="publicChartColors"
-                    >
-                    </canvas> -->
-                    <canvas #canvasPublic width="200" height="600"></canvas>
+                <mat-grid-tile
+                    [colspan]="column"
+                    [rowspan]="1"
+                >
+                    <div class="chart" *ngIf='show'>
+                        <!-- <canvas baseChart
+                            [datasets]="lineChartDataPrivate"
+                            [labels]="lineChartLabels"
+                            [options]="lineChartOptions"
+                            [legend]="lineChartLegend"
+                            [chartType]="lineChartType"
+                            [colors]="privateChartColors"
+                        >
+                        </canvas> -->
 
-                </div>
-            </mat-grid-tile>
+                        <canvas #canvasPrivate width="200" height="600"></canvas>
 
-            <mat-grid-tile
-                [colspan]="column"
-                [rowspan]="1"
-            >
-                <div class="chart" *ngIf='show'>
-                    <!-- <canvas baseChart
-                        [datasets]="lineChartDataPrivate"
-                        [labels]="lineChartLabels"
-                        [options]="lineChartOptions"
-                        [legend]="lineChartLegend"
-                        [chartType]="lineChartType"
-                        [colors]="privateChartColors"
-                    >
-                    </canvas> -->
+                    </div>
+                </mat-grid-tile>
 
-                    <canvas #canvasPrivate width="200" height="600"></canvas>
+                <mat-grid-tile
+                    [colspan]="column"
+                    [rowspan]="1"
+                >
+                    <div class="chart" *ngIf='show'>
+                        <!-- <canvas baseChart
+                            [datasets]="lineChartDataPercieved"
+                            [labels]="lineChartLabels"
+                            [options]="lineChartOptions"
+                            [legend]="lineChartLegend"
+                            [chartType]="lineChartType"
+                            [colors]="percievedChartColors"
+                        >
+                        </canvas> -->
 
-                </div>
-            </mat-grid-tile>
+                        <canvas #canvasPercieved width="200" height="600"></canvas>
 
-            <mat-grid-tile
-                [colspan]="column"
-                [rowspan]="1"
-            >
-                <div class="chart" *ngIf='show'>
-                    <!-- <canvas baseChart
-                        [datasets]="lineChartDataPercieved"
-                        [labels]="lineChartLabels"
-                        [options]="lineChartOptions"
-                        [legend]="lineChartLegend"
-                        [chartType]="lineChartType"
-                        [colors]="percievedChartColors"
-                    >
-                    </canvas> -->
+                    </div>
+                </mat-grid-tile>
 
-                    <canvas #canvasPercieved width="200" height="600"></canvas>
+            </mat-grid-list>
+        
+            <div style="margin-left:10%; margin-right:10%;">
+                <h3 *ngIf="user">
+                    Deskripsi
+                </h3>
 
-                </div>
-            </mat-grid-tile>
+                <p align="center" style="font-size: 24px" *ngIf="!user">
+                    <b>Deskripsi</b>
+                </p>
 
-        </mat-grid-list>
-
-        </div>
-    
-        <div style="margin-top: 30px">
-            <p align="center" style="font-size: 24px">
-                <b>Deskripsi</b>
-            </p>
-
-            <p align="justify" style="font-size: 18px">
-                {{description}}
-            </p>
+                <p align="justify" style="font-size: 18px">
+                    {{description}}
+                </p>
+            </div>
+            
         </div>
         
     </mat-card-content>

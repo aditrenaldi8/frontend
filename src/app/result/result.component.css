@@ -10,3 +10,30 @@
     margin-right:25%; */
     margin-top:20px;
 }
+
+.profile-div{
+    display: block;
+    text-align: left;
+    margin-top:50px;
+    margin-bottom:50px;
+}
+
+.profile{
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.psikogram{
+    display: block;
+    margin-top: 10px;
+    margin-bottom:50px;
+}
+
+.img{
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    margin-left: 30px;
+}

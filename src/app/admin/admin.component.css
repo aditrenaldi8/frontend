@@ -11,9 +11,15 @@ table{
     text-align: center;
 }
 
-tr{
+.canClick{
+    font-weight: normal;
     cursor:pointer;
 }
-tr :hover{
+
+.canClick :hover{
     color: #673ab7;
+}
+
+.cantClick{
+    font-weight: normal;
 }

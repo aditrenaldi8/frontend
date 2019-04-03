@@ -46,4 +46,17 @@ export class AppHelper {
         return date2 +" "+ monthNames[month] +" "+ year +", "+ hours+":"+ minutes;
     }
 
+    changeDateFormat2(date : any){
+  
+      const data = new Date(date);
+      const year = data.getFullYear();
+      const month = String(data.getMonth() +1);
+      const date2 = String(data.getDate());
+
+      const months = (month.length == 1) ? "0"+month : month; 
+      const dates = (date2.length == 1) ? "0"+date2 : date2; 
+
+      return year +"-"+ months +"-"+ dates;
+    }
+
 }
