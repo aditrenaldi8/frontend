@@ -1,0 +1,19 @@
+.admin{
+    margin: 20px;
+}
+
+table{
+    width: 100%;
+    text-align: center !important;
+}
+
+.mat-header-cell {
+    text-align: center;
+}
+
+tr{
+    cursor:pointer;
+}
+tr :hover{
+    color: #673ab7;
+}

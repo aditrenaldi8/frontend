@@ -4,6 +4,7 @@ import { HomeComponent } from './home.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { AuthGuard } from '../service/auth.guard';
 import { DiscComponent } from '../disc/disc.component';
+import { AdminComponent } from '../admin/admin.component';
 
 const routes : Routes = [
     {
@@ -15,6 +16,10 @@ const routes : Routes = [
             { 
                 path: '',   
                 component: DashboardComponent,
+            },
+            { 
+                path: 'dashboard',   
+                component: AdminComponent,
             },
             { 
                 path: 'disc',   

@@ -3,6 +3,7 @@ import { Result } from '../shared/model/result';
 import { AppService } from '../service/app.service';
 import { AppHelper } from '../helper/app.helper';
 import { Answer } from '../shared/model/answer';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-disc',
@@ -13,7 +14,8 @@ export class DiscComponent implements OnInit {
 
   constructor(
     private appService: AppService,
-    private helper : AppHelper
+    private helper : AppHelper,
+    private router : Router
   ) { }
 
   questionDone: boolean = false;
@@ -26,7 +28,12 @@ export class DiscComponent implements OnInit {
 
   ngOnInit() {
     this.email = JSON.parse(localStorage.getItem('data')).sub;
-    this.checkLatest()
+    this.checkLatest();
+
+    const account = JSON.parse(localStorage.getItem('account'));
+    if(account != 'NORMAL'){
+      this.router.navigate(['/home/dashboard']);
+    }
   }
 
   checkLatest(){
@@ -131,7 +138,7 @@ export class DiscComponent implements OnInit {
   setResponseData(value : Answer[]){
       let data :any[] = [];
       value.map((val,index)=>{
-        data.push([index,val.most, val.least]);
+        data.push([index+1,val.most, val.least]);
       })
       return JSON.stringify(data);
   }

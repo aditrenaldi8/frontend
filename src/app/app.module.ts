@@ -18,6 +18,7 @@ import { DiscComponent } from './disc/disc.component';
 import { AppService } from './service/app.service';
 import { AppHelper } from './helper/app.helper';
 import { AuthGuard } from './service/auth.guard';
+// import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { AuthGuard } from './service/auth.guard';
     // ResultComponent,
     RegisterComponent,
     MainComponent,
+    // AdminComponent,
     // DiscComponent,
   ],
   imports: [

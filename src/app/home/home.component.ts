@@ -22,6 +22,8 @@ export class HomeComponent implements OnInit {
   watcher: Subscription;
   user : string;
 
+  account: string;
+
   constructor(
       media: MediaObserver,
       private router : Router,
@@ -41,6 +43,14 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.user = JSON.parse(localStorage.getItem('data')).sub;
 
+    this.account = JSON.parse(localStorage.getItem('account'));
+    if(this.account && this.account == 'NORMAL'){
+      this.getLatest();
+    }
+
+  }
+
+  getLatest(){
     const latest = localStorage.getItem('latest');
     if(!latest){
         this.appService.changeCloak(false)
@@ -55,13 +65,10 @@ export class HomeComponent implements OnInit {
           console.log(error);
         });
     }
-
   }
 
   logout(){
-    localStorage.removeItem('wai');
-    localStorage.removeItem('data');
-    localStorage.removeItem('latest');
+    localStorage.clear();
     this.router.navigate(['/']);
   }
 

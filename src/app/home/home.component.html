@@ -22,12 +22,15 @@
                             DISC Personality Test
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <mat-nav-list class="ml-0" dense>
-                        <mat-list-item>
+                    <mat-nav-list class="ml-0">
+                        <mat-list-item *ngIf="account == 'NORMAL'">
                             <a routerLink="/home/">Cara Pengerjaan</a>
                         </mat-list-item>
-                        <mat-list-item>
+                        <mat-list-item *ngIf="account == 'NORMAL'">
                             <a routerLink="/home/disc">Halaman Soal dan Hasil Pengerjaan</a>
+                        </mat-list-item>
+                        <mat-list-item *ngIf="account == 'ADMIN'">
+                            <a routerLink="/home/dashboard">Dashboard</a>
                         </mat-list-item>
                     </mat-nav-list>
                 </mat-expansion-panel>

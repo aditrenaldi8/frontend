@@ -9,6 +9,7 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
 import { QuestionComponent } from '../question/question.component';
 import { DiscComponent } from '../disc/disc.component';
 import { ResultComponent } from '../result/result.component';
+import { AdminComponent } from '../admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ResultComponent } from '../result/result.component';
     DashboardComponent,
     QuestionComponent,
     DiscComponent,
-    ResultComponent
+    ResultComponent,
+    AdminComponent
   ],
   imports: [
     CommonModule,

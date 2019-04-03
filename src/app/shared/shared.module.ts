@@ -16,7 +16,10 @@ import { MatButtonModule,
   MatTableModule,
   MatButtonToggleModule,
   MatProgressBarModule,
-  MatSnackBarModule} from '@angular/material';
+  MatSnackBarModule,
+  MatPaginatorModule,
+  MatDatepickerModule,
+  MatNativeDateModule} from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ChartsModule } from 'ng2-charts';
@@ -48,7 +51,10 @@ import { SnackBarComponent } from '../shared/component/snack-bar/snack-bar.compo
     CdkTableModule,
     MatButtonToggleModule,
     MatProgressBarModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatPaginatorModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports: [
     MatButtonModule,
@@ -75,6 +81,9 @@ import { SnackBarComponent } from '../shared/component/snack-bar/snack-bar.compo
     MatButtonToggleModule,
     MatProgressBarModule,
     MatSnackBarModule,
+    MatPaginatorModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   declarations: [SnackBarComponent],
   bootstrap:[

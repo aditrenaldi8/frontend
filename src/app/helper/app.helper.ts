@@ -27,4 +27,23 @@ export class AppHelper {
         }
     }
 
+    changesDateFormat(date : any){
+
+        const monthNames = [
+          "Januari", "Februari", "Maret","April", "Mei", "Juni", "Juli","Agustus", "September", "Oktober","November", "Desember"
+        ];
+    
+        const data = new Date(date);
+        const year = data.getFullYear();
+        const month = data.getMonth();
+        const date2 = data.getDate();
+        let hours = String(data.getHours());
+        let minutes = String(data.getMinutes());
+
+        hours = (hours.length == 1) ? "0"+hours : hours; 
+        minutes = (minutes.length == 1) ? "0"+minutes : minutes; 
+
+        return date2 +" "+ monthNames[month] +" "+ year +", "+ hours+":"+ minutes;
+    }
+
 }

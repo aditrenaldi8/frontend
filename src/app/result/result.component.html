@@ -1,6 +1,6 @@
 <mat-card class="result mat-elevation-z4"> 
-    <mat-card-content>
-      
+    <mat-card-content > 
+        <div id="contentToConvert">
         <mat-grid-list cols="12" rowHeight="40px">
             <mat-grid-tile
                 [colspan]="12"
@@ -9,6 +9,15 @@
                 <h1>
                     Psikogram
                 </h1>
+            </mat-grid-tile>
+
+            <mat-grid-tile *ngIf="name"
+                [colspan]="12"
+                [rowspan]="1"
+            >
+
+                <h4 > <b> Nama : {{name}}</b> </h4>
+
             </mat-grid-tile>
         </mat-grid-list>
 
@@ -74,6 +83,7 @@
 
         </mat-grid-list>
 
+        </div>
     
         <div style="margin-top: 30px">
             <p align="center" style="font-size: 24px">
@@ -84,11 +94,15 @@
                 {{description}}
             </p>
         </div>
-
+        
     </mat-card-content>
     <mat-card-actions style="text-align: right; margin-bottom:20px">
+        <button *ngIf="hideButton" mat-raised-button color="primary" (click)="print()">
+            <mat-icon> print </mat-icon>
+                Print PDF
+        </button>
         <a routerLink="/">
-            <button mat-raised-button color="warn" >Kembali</button>
+            <button *ngIf="!hideButton" mat-raised-button color="warn" >Kembali</button>
         </a>
     </mat-card-actions>
 </mat-card>

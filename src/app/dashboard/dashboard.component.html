@@ -26,7 +26,8 @@
             </p>
 
             <p align="center">
-                <img class="responsive" src="./assets/images/example2.png">
+                <img *ngIf="!hide" class="{{class}}" src="./assets/images/example2.png">
+                <img *ngIf="hide" class="responsive2" src="./assets/images/example3.png">
             </p>
             <p align="justify">
                 Pada keempat pernyataan berikut, seorang merasa dirinya lebih <b> "Mudah Bergaul, ramah" </b> maka pilihlah ikon thumb up <b>Most</b> di pernyatan tersebut, 

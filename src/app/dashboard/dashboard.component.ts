@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AppHelper } from '../helper/app.helper';
 import { AppService } from '../service/app.service';
+import { MediaObserver, MediaChange } from '../../../node_modules/@angular/flex-layout';
+import { Subscription } from '../../../node_modules/rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,17 +14,38 @@ export class DashboardComponent implements OnInit {
 
   graphVal : any;
   canAnswer : boolean;
+  hide : boolean = false;
+  class: string = 'responsive60';
+
+  watcher : Subscription;
   constructor(
     private helper : AppHelper,
-    private appService : AppService
+    private appService : AppService,
+    private router : Router,
+    media : MediaObserver
   ) { 
-
+    this.watcher = media.media$.subscribe((change: MediaChange) => {
+      if (change.mqAlias === 'xs') {
+        this.hide = true;
+      } else if (change.mqAlias === 'sm'){
+        this.class = 'responsive80'
+        this.hide = false;
+      }else{
+        this.class = 'responsive50';
+        this.hide = false;
+      }
+    });
   }
 
   ngOnInit() {
     this.appService.latest.subscribe(value => {
       this.checkLatest();
     });
+    
+    const account = JSON.parse(localStorage.getItem('account'));
+    if(account != 'NORMAL'){
+      this.router.navigate(['/home/dashboard']);
+    }
   }
 
   checkLatest(){

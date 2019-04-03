@@ -7,6 +7,8 @@ import privateJson from '../shared/model/private.json';
 import percievedJson from '../shared/model/percieved.json';
 
 import * as _ from 'lodash';
+import * as jspdf from 'jspdf';  
+import html2canvas from 'html2canvas';  
 
 @Component({
   selector: 'app-result',
@@ -16,6 +18,8 @@ import * as _ from 'lodash';
 export class ResultComponent implements OnInit {
 
     @Input() response: any ;
+    @Input() hideButton: boolean = false;
+    @Input() name: string = '';
 
     publicValue : yAxis;
     privateValue : yAxis;
@@ -314,4 +318,21 @@ export class ResultComponent implements OnInit {
       context.stroke();
       context.closePath();
   }
+
+  print(){ 
+      var data = document.getElementById('contentToConvert');  
+      html2canvas(data).then(canvas => {  
+        // Few necessary setting options  
+        var imgWidth = 208;   
+        var pageHeight = 295;    
+        var imgHeight = canvas.height * imgWidth / canvas.width;  
+        var heightLeft = imgHeight;  
+    
+        const contentDataURL = canvas.toDataURL('image/png')  
+        let pdf = new jspdf('l', 'mm', 'a5'); // A4 size page of PDF  
+        var position = 0;  
+        pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)  
+        pdf.save(this.name+'.pdf'); // Generated PDF   
+      });  
+  } 
 }

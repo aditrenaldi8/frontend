@@ -51,8 +51,13 @@ export class LoginComponent implements OnInit {
           this.appService.changeCloak(true);
           localStorage.setItem('wai', JSON.stringify(response.token))
           localStorage.setItem('data', JSON.stringify(jwt_decode(response.token)))
+          localStorage.setItem('account', JSON.stringify(response.statusAccount));
           this.appService.changeMessage('Login Berhasil');
-          this.router.navigate(['/home/']);
+          if(response.statusAccount == 'NORMAL'){
+            this.router.navigate(['/home/']);
+          }else{
+            this.router.navigate(['/home/dashboard']);
+          }
         },
         error=>{
           this.appService.changeCloak(true);
