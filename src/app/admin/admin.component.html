@@ -16,6 +16,11 @@
                 </mat-expansion-panel-header>
                 
                 <form [formGroup]="form" style="text-align: right; margin-right:10px">
+
+                    <mat-form-field style="margin-right:20px">
+                        <input matInput placeholder="Nama" formControlName="name">
+                    </mat-form-field>
+
                     <mat-form-field style="margin-right:20px">
                         <input matInput placeholder="Email" formControlName="email">
                     </mat-form-field>
@@ -54,12 +59,20 @@
                       <th mat-header-cell *matHeaderCellDef> Email </th>
                       <td mat-cell *matCellDef="let element"> {{element.email}} </td>
                     </ng-container>
+
+                    <ng-container matColumnDef="phone">
+                      <th mat-header-cell *matHeaderCellDef> No. Telp </th>
+                      <td mat-cell *matCellDef="let element">
+                          <span *ngIf="!element.phone"> - </span>
+                          <span *ngIf="element.phone"> {{element.phone}}  </span> 
+                      </td>
+                    </ng-container>
                   
-                    <ng-container matColumnDef="selesai">
-                      <th mat-header-cell *matHeaderCellDef> Selesai </th>
+                    <ng-container matColumnDef="result">
+                      <th mat-header-cell *matHeaderCellDef> Hasil Tes </th>
                       <td mat-cell *matCellDef="let element"> 
                         <span *ngIf="!element.has_kuis"> - </span>
-                        <span *ngIf="element.has_kuis"> Selesai </span>
+                        <span *ngIf="element.has_kuis"> Lihat Hasil </span>
                       </td>
                     </ng-container>
                   
@@ -90,7 +103,7 @@
               <mat-expansion-panel *ngIf="step == 1" [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
                 <mat-expansion-panel-header>
                   <mat-panel-title>
-                    Hasil Test : {{title}}
+                    Hasil Tes : {{title}}
                   </mat-panel-title>
                 </mat-expansion-panel-header>
 

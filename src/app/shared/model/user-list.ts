@@ -5,4 +5,5 @@ export interface UserList{
     id: string;
     email: string;
     join_date: string;
+    phone: string;
 }

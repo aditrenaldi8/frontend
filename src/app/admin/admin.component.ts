@@ -32,7 +32,7 @@ export class AdminComponent implements OnInit {
   form: FormGroup;
   data: UserList[] = [];
 
-  displayedColumns: string[] = ['no','nama', 'email', 'selesai', 'waktu'];
+  displayedColumns: string[] = ['no','nama', 'email', 'phone', 'result', 'waktu'];
 
   length: number;
   pageSize:number = 10;
@@ -78,7 +78,7 @@ export class AdminComponent implements OnInit {
         this.appService.changeCloak(true);
         this.data = response.data;
         this.changeDateFormat();
-        this.length = response.countAllData;
+        this.length = response.countFilterData;
       },
       error=>{
         this.appService.changeCloak(true);
@@ -96,6 +96,7 @@ export class AdminComponent implements OnInit {
   buildPayload(){
     const data =  {
       "email": this.form.get('email').value,
+	  "name": this.form.get('name').value,
       "endDate": this.form.get('endDate').value ? this.helper.changeDateFormat2(this.form.get('endDate').value) : '',
       "length": this.pageSize,
       "start": this.page,
