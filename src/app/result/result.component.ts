@@ -216,10 +216,20 @@ export class ResultComponent implements OnInit {
       context.fillText("Graph "+number+", "+detail,60,15);
       context.fillText(detail2+", "+title,55,35);
 
-      context.fillText("D = "+ dominance.value,30,60);
-      context.fillText("I = "+ influence.value,70,60);
-      context.fillText("S = "+ steady.value,110,60);
-      context.fillText("C = "+ compliance.value,150,60);
+      if(type == 'public' || type == 'private'){
+        const all = 24 - Number((Number(dominance.value) + Number(influence.value) + Number(steady.value) + Number(compliance.value)));
+        context.fillText("D = "+ dominance.value,10,60);
+        context.fillText("I = "+ influence.value,50,60);
+        context.fillText("S = "+ steady.value,90,60);
+        context.fillText("C = "+ compliance.value,130,60);
+        context.fillText("* = "+ all,170,60);
+      }else{
+        context.fillText("D = "+ dominance.value,30,60);
+        context.fillText("I = "+ influence.value,70,60);
+        context.fillText("S = "+ steady.value,110,60);
+        context.fillText("C = "+ compliance.value,150,60);
+      }
+      
 
       // vertical
       context.fillText("D",30,90);
