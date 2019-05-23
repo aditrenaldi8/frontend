@@ -11,7 +11,7 @@ export class AppService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl : string = "http://devtechinlabs-125514040.ap-southeast-1.elb.amazonaws.com/api-service/";
+  baseUrl : string = "http://35.198.200.111/api-service/";
 
   httpOptions = {
     headers: new HttpHeaders({
