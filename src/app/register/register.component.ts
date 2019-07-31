@@ -40,10 +40,10 @@ export class RegisterComponent implements OnInit {
         this.appService.changeMessage('Pastikan semua field terisi')
       }else{
         let params = {
-          "authorityName" : "ROLE_USER",
+          "admin" : false,
           "email": this.form.get('email').value,
-          "fullName": this.form.get('fullName').value,
-          "phoneNumber": this.form.get('phone').value,
+          "username": this.form.get('fullName').value,
+          "phone": this.form.get('phone').value,
           "password": this.form.get('password').value
         }
         this.appService.changeCloak(false);

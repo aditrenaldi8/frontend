@@ -96,7 +96,7 @@ export class AdminComponent implements OnInit {
   buildPayload(){
     const data =  {
       "email": this.form.get('email').value,
-	  "name": this.form.get('name').value,
+	    "name": this.form.get('name').value,
       "endDate": this.form.get('endDate').value ? this.helper.changeDateFormat2(this.form.get('endDate').value) : '',
       "length": this.pageSize,
       "start": this.page,

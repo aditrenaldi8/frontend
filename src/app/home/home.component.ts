@@ -41,10 +41,10 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.user = JSON.parse(localStorage.getItem('data')).sub;
+    this.user = JSON.parse(localStorage.getItem('data')).email;
 
     this.account = JSON.parse(localStorage.getItem('account'));
-    if(this.account && this.account == 'NORMAL'){
+    if(this.account && this.account == 'USER'){
       this.getLatest();
     }
 
@@ -56,7 +56,7 @@ export class HomeComponent implements OnInit {
         this.appService.changeCloak(false)
         this.appService.initUser().subscribe(response=>{
           this.appService.changeCloak(true)
-          if(!_.isEmpty(response.data)){
+          if(!_.isEmpty(response)){
             localStorage.setItem('latest', JSON.stringify(response));
             this.appService.changeLatest(response)
           }

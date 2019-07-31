@@ -25,24 +25,32 @@ export class DiscComponent implements OnInit {
 
   // canAnswer : boolean;
   graphVal : any;
+  isNew: boolean;
 
   ngOnInit() {
-    this.email = JSON.parse(localStorage.getItem('data')).sub;
+    this.email = JSON.parse(localStorage.getItem('data')).email;
     this.checkLatest();
 
     const account = JSON.parse(localStorage.getItem('account'));
-    if(account != 'NORMAL'){
+    if(account != 'USER'){
       this.router.navigate(['/home/dashboard']);
     }
   }
 
   checkLatest(){
-    this.graphVal = localStorage.getItem('latest') ? JSON.parse(localStorage.getItem('latest')) : null;
-    if(this.graphVal){
-      const canAnswer = this.helper.compareDate(this.graphVal.updateDate)
+    const latest = localStorage.getItem('latest') ? JSON.parse(localStorage.getItem('latest')) : null;
+    console.log(latest);
+    if(latest){
+      const canAnswer = this.helper.compareDate(latest.updated_at);
+      this.isNew = true;
       if(!canAnswer){
+        this.graphVal = JSON.parse(latest.form_data);
+        console.log(this.graphVal)
+        this.isNew = false;
         this.setGraph();
       }
+    }else{
+      this.isNew = true;
     }
   }
 

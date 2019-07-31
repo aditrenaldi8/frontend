@@ -43,7 +43,7 @@ export class DashboardComponent implements OnInit {
     });
     
     const account = JSON.parse(localStorage.getItem('account'));
-    if(account != 'NORMAL'){
+    if(account != 'USER'){
       this.router.navigate(['/home/dashboard']);
     }
   }

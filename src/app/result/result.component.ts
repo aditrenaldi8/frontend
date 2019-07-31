@@ -20,74 +20,13 @@ export class ResultComponent implements OnInit {
     @Input() response: any ;
     @Input() hideButton: boolean = false;
     @Input() user: any = null;
+    @Input() isNew: boolean = false;
 
     publicValue : yAxis;
     privateValue : yAxis;
     percievedValue : yAxis;
 
-    // lineChartLabels:Array<any> = ['D', 'I', 'S', 'C'];
-    // lineChartOptions:any = {
-    //   responsive: true,
-    //   maintainAspectRatio: false,
-    //   elements: {
-    //     line: {
-    //         tension: 0, // disables bezier curves
-    //     }
-    //   },
-    //   scales: {
-    //     yAxes: [
-    //       {
-    //         ticks: {
-    //           min: -40,
-    //           max: 40
-    //         }
-    //       }
-    //     ],
-    //   }
-    // };
-
-    // lineChartDataPublic:Array<any> = []
-    // lineChartDataPrivate:Array<any> = []
-    // lineChartDataPercieved:Array<any> = []
-
-    // publicChartColors:Array<any> = [
-    //   { // blue
-    //     backgroundColor: '#B0C4DE',
-    //     borderColor: '#27408B',
-    //     pointBackgroundColor: '#6495ED',
-    //     pointBorderColor: '#4876FF',
-    //     pointHoverBackgroundColor: '#fff',
-    //     pointHoverBorderColor: '#4876FF'
-    //   },
-    // ];
-
-    // privateChartColors:Array<any> = [
-    //   { // sea green
-    //     backgroundColor: '#BDFCC9',
-    //     borderColor: '#2E8B57',
-    //     pointBackgroundColor: '#54FF9F',
-    //     pointBorderColor: '#43CD80',
-    //     pointHoverBackgroundColor: '#fff',
-    //     pointHoverBorderColor: '#43CD80'
-    //   },
-    // ];
-
-    // percievedChartColors:Array<any> = [
-    //   { // gold
-    //     backgroundColor: '#EEDC82',
-    //     borderColor: '#8B7500',
-    //     pointBackgroundColor: '#CDBE70',
-    //     pointBorderColor: '#CDAD00',
-    //     pointHoverBackgroundColor: '#fff',
-    //     pointHoverBorderColor: '#CDAD00'
-    //   },
-    // ];
-
-    // lineChartLegend:boolean = true;
-    // lineChartType:string = 'line';
-
     show:boolean = false;
-    // type : string;
     description: string;
 
     watcher: Subscription;
@@ -123,7 +62,6 @@ export class ResultComponent implements OnInit {
       
       this.show = true;
       setTimeout(()=>{  
-        // this.setData(this.response);
         this.drawChart();
       },200)
     }
@@ -138,36 +76,8 @@ export class ResultComponent implements OnInit {
       this.draw('private', this.response);
     }
 
-    // setData(response : any){
-    //     this.lineChartDataPublic.push({
-    //       'data' : [
-    //           response.data.publicSelf.dominant, response.data.publicSelf.influence, response.data.publicSelf.steady, response.data.publicSelf.compliance 
-    //       ],
-    //       label: 'Public',
-    //     })
-
-    //     this.lineChartDataPrivate.push({
-    //       'data' : [
-    //           response.data.privateSelf.dominant, response.data.privateSelf.influence, response.data.privateSelf.steady, response.data.privateSelf.compliance
-    //       ],
-    //       label: 'Private'
-    //     })
-
-    //     this.lineChartDataPercieved.push({
-    //       'data' : [
-    //           response.data.perceivedSelf.dominant, response.data.perceivedSelf.influence, response.data.perceivedSelf.steady, response.data.perceivedSelf.compliance 
-    //       ],
-    //       label: 'Percieved'
-    //     })
-
-    //     // this.type = response.data.resultProfiling.profileName;
-    //     this.description = response.data.resultProfiling ?  response.data.resultProfiling.profileDescription : response.result.profileDescription;
-
-    //     this.show = true;
-    // }
-
     draw(type : string, response:any){
-      this.description = response.data.resultProfiling ?  response.data.resultProfiling.profileDescription : response.result.profileDescription;
+      // this.description = response.data.resultProfiling ?  response.data.resultProfiling.profileDescription : response.result.profileDescription;
 
       let context : any;
       let title : string = type == 'public' ? 'Public Self' : type=='private' ? 'Private Self' : 'Percieved Self';
@@ -176,7 +86,7 @@ export class ResultComponent implements OnInit {
       let detail : string = type == 'public' ? 'MOST' : type=='private' ? 'LEAST' : 'CHANGE';
       let detail2 : string = type == 'public' ? 'Mask' : type=='private' ? 'Core' : 'Mirror';
 
-      let data = response.formData ? response.formData : response.data.formData;
+      let data = this.isNew ? response.data : response;
     
       let dominance : any;
       let influence : any;

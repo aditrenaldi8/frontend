@@ -41,17 +41,7 @@
                     [rowspan]="1"
                 >
                     <div class="chart" *ngIf='show'>
-                        <!-- <canvas baseChart 
-                            [datasets]="lineChartDataPublic"
-                            [labels]="lineChartLabels"
-                            [options]="lineChartOptions"
-                            [legend]="lineChartLegend"
-                            [chartType]="lineChartType"
-                            [colors]="publicChartColors"
-                        >
-                        </canvas> -->
                         <canvas #canvasPublic width="200" height="600"></canvas>
-
                     </div>
                 </mat-grid-tile>
 
@@ -60,18 +50,7 @@
                     [rowspan]="1"
                 >
                     <div class="chart" *ngIf='show'>
-                        <!-- <canvas baseChart
-                            [datasets]="lineChartDataPrivate"
-                            [labels]="lineChartLabels"
-                            [options]="lineChartOptions"
-                            [legend]="lineChartLegend"
-                            [chartType]="lineChartType"
-                            [colors]="privateChartColors"
-                        >
-                        </canvas> -->
-
                         <canvas #canvasPrivate width="200" height="600"></canvas>
-
                     </div>
                 </mat-grid-tile>
 
@@ -80,18 +59,7 @@
                     [rowspan]="1"
                 >
                     <div class="chart" *ngIf='show'>
-                        <!-- <canvas baseChart
-                            [datasets]="lineChartDataPercieved"
-                            [labels]="lineChartLabels"
-                            [options]="lineChartOptions"
-                            [legend]="lineChartLegend"
-                            [chartType]="lineChartType"
-                            [colors]="percievedChartColors"
-                        >
-                        </canvas> -->
-
                         <canvas #canvasPercieved width="200" height="600"></canvas>
-
                     </div>
                 </mat-grid-tile>
 

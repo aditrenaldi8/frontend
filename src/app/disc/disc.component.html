@@ -5,4 +5,4 @@
 </div> -->
 
 <app-question *ngIf="!questionDone" (sentVal)="getAnswer($event)"></app-question>
-<app-result *ngIf="questionDone" [response]="graph"></app-result>
+<app-result *ngIf="questionDone" [response]="graph" [isNew]="isNew"></app-result>

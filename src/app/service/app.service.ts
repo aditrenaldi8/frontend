@@ -11,7 +11,8 @@ export class AppService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl : string = "http://35.198.200.111/api-service/";
+  // baseUrl : string = "http://devtechinlabs-125514040.ap-southeast-1.elb.amazonaws.com/api-service/";
+  baseUrl : string = "https://service.campusin.id/api-service/";
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -67,7 +68,7 @@ export class AppService {
       })
     };
     
-    return this.http.get<any>(this.baseUrl+'data', httpOptions)
+    return this.http.get<any>(this.baseUrl+'user', httpOptions)
       .pipe(map(response => response));
   }
 
