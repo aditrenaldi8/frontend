@@ -51,7 +51,12 @@ export class DashboardComponent implements OnInit {
   checkLatest(){
     this.graphVal = localStorage.getItem('latest') ? JSON.parse(localStorage.getItem('latest')) : null;
     if(this.graphVal){
-      this.canAnswer = this.helper.compareDate(this.graphVal.updateDate)
+      const latest = this.helper.compareDate(this.graphVal.updated_at);
+      if(!latest && this.graphVal.form_data){
+        this.canAnswer = false;
+      }else{
+        this.canAnswer = true;
+      }
     }else{
       this.canAnswer = true;
     }

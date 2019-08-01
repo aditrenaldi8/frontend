@@ -30,7 +30,8 @@ export class AdminComponent implements OnInit {
   }
 
   form: FormGroup;
-  data: UserList[] = [];
+  data: any[] = [];
+  response: any = null;
 
   displayedColumns: string[] = ['no','nama', 'email', 'phone', 'result', 'waktu'];
 
@@ -76,7 +77,8 @@ export class AdminComponent implements OnInit {
     this.appService.getUserList(params).subscribe(
       response=>{
         this.appService.changeCloak(true);
-        this.data = response.data;
+        this.response = response.datas;
+        this.data = response.datas.data;
         this.changeDateFormat();
         this.length = response.countFilterData;
       },
@@ -108,13 +110,13 @@ export class AdminComponent implements OnInit {
   changeDateFormat(){
     this.data.map(value =>{
       if(value.kuis_date){
-         value.kuis_date = this.helper.changesDateFormat(value.kuis_date);
+         value.updated_at = this.helper.changesDateFormat(value.updated_at);
       }
     })
   }
 
   getData(data: any){
-    if(data.has_kuis){
+    if(data.form_data){
       this.getUserDetail(data);
     }
   }
@@ -126,10 +128,10 @@ export class AdminComponent implements OnInit {
     this.appService.getUserDetail(params).subscribe(
       response=>{
         this.appService.changeCloak(true);
-        this.graph = response;
+        this.graph = response.datas ? response.datas[0] : null;
         this.setStep(1);
         this.title = data.name;
-        this.user = data;
+        this.user = data.assessments_result ? JSON.parse(data.assessments_result) : null;
       },
       error=>{
         this.appService.changeCloak(true);

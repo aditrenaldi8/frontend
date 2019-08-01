@@ -86,7 +86,7 @@ export class ResultComponent implements OnInit {
       let detail : string = type == 'public' ? 'MOST' : type=='private' ? 'LEAST' : 'CHANGE';
       let detail2 : string = type == 'public' ? 'Mask' : type=='private' ? 'Core' : 'Mirror';
 
-      let data = this.isNew ? response.data : response;
+      let data = this.isNew ? response.graph : JSON.parse(response.form_data);
     
       let dominance : any;
       let influence : any;

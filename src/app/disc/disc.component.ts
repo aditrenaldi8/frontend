@@ -39,13 +39,11 @@ export class DiscComponent implements OnInit {
 
   checkLatest(){
     const latest = localStorage.getItem('latest') ? JSON.parse(localStorage.getItem('latest')) : null;
-    console.log(latest);
     if(latest){
       const canAnswer = this.helper.compareDate(latest.updated_at);
       this.isNew = true;
-      if(!canAnswer){
-        this.graphVal = JSON.parse(latest.form_data);
-        console.log(this.graphVal)
+      if(!canAnswer && latest.form_data){
+        this.graphVal = latest;
         this.isNew = false;
         this.setGraph();
       }

@@ -50,8 +50,13 @@ export class RegisterComponent implements OnInit {
         this.appService.registerUser(params).subscribe(
           response=>{
             this.appService.changeCloak(true);
-            this.appService.changeMessage('Proses Sign Up Berhasil, Silahkan Login')
-            this.resetForm()
+            if(response.status){
+              this.appService.changeMessage('Proses Sign Up Berhasil, Silahkan Login')
+              this.resetForm()
+            }else{
+              this.appService.changeMessage(response.message)
+            } 
+            
           },
           error=>{
             this.appService.changeCloak(true);
