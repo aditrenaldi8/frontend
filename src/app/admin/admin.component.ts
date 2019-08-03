@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AppService } from '../service/app.service';
 import { AppHelper } from '../helper/app.helper';
 import { Router } from '@angular/router';
 import { UserList } from '../shared/model/user-list';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { PageEvent } from '@angular/material';
+import { PageEvent, MatPaginator } from '@angular/material';
 
 @Component({
   selector: 'app-admin',
@@ -12,6 +12,7 @@ import { PageEvent } from '@angular/material';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
+  @ViewChild('paginator') paginator: MatPaginator;
 
   constructor(
     private appService: AppService,
@@ -40,6 +41,7 @@ export class AdminComponent implements OnInit {
   pageSizeOptions: number[] = [10];
   page: number = 0;
   step: number = 0;
+  pageNo: number = 1;
 
   title: string;
 
@@ -49,6 +51,7 @@ export class AdminComponent implements OnInit {
   // MatPaginator Output
   pageChangeEvent(event : PageEvent){
     this.page = (event.pageIndex * this.pageSize);
+    this.pageNo = event.pageIndex + 1;
     this.getDataList();
   }
 
@@ -67,6 +70,8 @@ export class AdminComponent implements OnInit {
 
   search(){
     this.page = 0;
+    this.pageNo = 1;
+    this.paginator.pageIndex = 0;
     this.getDataList();
   }
 
@@ -74,17 +79,17 @@ export class AdminComponent implements OnInit {
     let params = this.buildPayload()
 
     this.appService.changeCloak(false);
-    this.appService.getUserList(params).subscribe(
+    this.appService.getUserList(params, this.pageNo).subscribe(
       response=>{
         this.appService.changeCloak(true);
         this.response = response.datas;
         this.data = response.datas.data;
         this.changeDateFormat();
-        this.length = response.countFilterData;
+        this.length = response.datas.total;
       },
       error=>{
         this.appService.changeCloak(true);
-        if(error.status == 401){
+        if(error.error == 'Provided token is expired'){
           this.appService.changeMessage('Otorisasi tidak Sah, Silahkan Login Ulang');
         }else{
           this.appService.changeMessage('Gagal mendapatkan data')
@@ -98,10 +103,8 @@ export class AdminComponent implements OnInit {
   buildPayload(){
     const data =  {
       "email": this.form.get('email').value,
-	    "name": this.form.get('name').value,
+	    "username": this.form.get('name').value,
       "endDate": this.form.get('endDate').value ? this.helper.changeDateFormat2(this.form.get('endDate').value) : '',
-      "length": this.pageSize,
-      "start": this.page,
       "startDate": this.form.get('startDate').value ? this.helper.changeDateFormat2(this.form.get('startDate').value) : ''
     }
     return data;
@@ -128,6 +131,7 @@ export class AdminComponent implements OnInit {
     this.appService.getUserDetail(params).subscribe(
       response=>{
         this.appService.changeCloak(true);
+        console.log(response.datas)
         this.graph = response.datas ? response.datas[0] : null;
         this.setStep(1);
         this.title = data.name;

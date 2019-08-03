@@ -77,7 +77,7 @@ export class AppService {
       .pipe(map(response => response));
   }
 
-  getUserList(value : any): Observable<any> {
+  getUserList(value : any, page: number = 1): Observable<any> {
     let token :string = 'Bearer ' + JSON.parse(localStorage.getItem('wai'));
     
     const  httpOptions = {
@@ -87,7 +87,7 @@ export class AppService {
       })
     };
 
-    return this.http.post<any>(this.baseUrl+'admin', value, httpOptions)
+    return this.http.post<any>(this.baseUrl+'admin?page='+page, value, httpOptions)
       .pipe(map(response => response));
   }
 

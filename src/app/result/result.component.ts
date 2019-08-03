@@ -87,6 +87,8 @@ export class ResultComponent implements OnInit {
       let detail2 : string = type == 'public' ? 'Mask' : type=='private' ? 'Core' : 'Mirror';
 
       let data = this.isNew ? response.graph : JSON.parse(response.form_data);
+      console.log('CHECK',response.form_data);
+      console.log("DATA",data);
     
       let dominance : any;
       let influence : any;

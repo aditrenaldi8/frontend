@@ -52,7 +52,7 @@
                   
                     <ng-container matColumnDef="nama">
                       <th mat-header-cell *matHeaderCellDef> Nama </th>
-                      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                      <td mat-cell *matCellDef="let element"> {{element.username}} </td>
                     </ng-container>
                   
                     <ng-container matColumnDef="email">
@@ -85,12 +85,12 @@
                     </ng-container>
                   
                     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                    <tr mat-row [ngClass]="row.form_data ? 'canClick' : cantClick" (click)="getData(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
+                    <tr mat-row [ngClass]="row.form_data ? 'canClick' : cantClick" (click)="getData(row)" *matRowDef="let row; columns: displayedColumns"></tr>
                   </table>     
                   
                   <h4 *ngIf="data.length == 0"> Data tidak ditemukan</h4>
                   <div style="margin-top:30px;">
-                    <mat-paginator *ngIf="data.length > 0"
+                    <mat-paginator #paginator *ngIf="data.length > 0"
                         [length]="length"
                         [pageSize]="pageSize"
                         [pageSizeOptions]="pageSizeOptions"
